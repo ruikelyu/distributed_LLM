@@ -1,0 +1,40 @@
+{
+  "status": "validated_for_simple_scenario_use",
+  "parameter_case": "base",
+  "model_name": "Qwen2.5-32B-Instruct",
+  "model_version": "2024-09-19",
+  "precision": "INT4/AWQ",
+  "context_length": 8192,
+  "concurrent_requests": 4,
+  "required_model_replicas": 1,
+  "vram_gb_per_replica": 29.33,
+  "recommended_l20_gpus_per_replica": 2,
+  "minimum_server_groups_for_model_state": 1,
+  "model_storage_required_gb_per_deployment": 200.0,
+  "model_storage_copy_equivalents": 3.0,
+  "bundled_storage_gb_per_server_group": 7680.0,
+  "incremental_storage_capex_rmb_per_server_group": 0.0,
+  "storage_lifetime_years": 5.0,
+  "initialization_accelerator_h_per_version": 4.0,
+  "major_versions_per_year": 1.0,
+  "operations_fte_per_deployment": 0.25,
+  "loaded_cost_rmb_per_fte_year": 300000.0,
+  "source_parameter_ids": [
+    "LC004",
+    "LC012",
+    "LC013",
+    "LC020",
+    "ST001",
+    "ST002",
+    "ST005",
+    "ST006",
+    "ST007"
+  ],
+  "evidence_boundary": "Official weights and bundled storage support capacity; initialization and operations are scenario proxies, not observed manufacturing averages.",
+  "excluded_details": [
+    "per_request_kv_cache_scheduling",
+    "cold_start_dispatch",
+    "multi_model_replica_assignment",
+    "rag_project_cost"
+  ]
+}

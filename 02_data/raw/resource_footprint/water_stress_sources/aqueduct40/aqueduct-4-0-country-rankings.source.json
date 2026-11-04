@@ -1,0 +1,11 @@
+{
+  "status": "official_source_frozen_and_checksum_verified",
+  "source_id": "wri_aqueduct40_country_rankings_y2023m07d05",
+  "source_url_used": "preexisting_official_copy",
+  "source_page": "https://www.wri.org/data/aqueduct-40-country-rankings",
+  "technical_note_doi": "10.46830/writn.23.00061",
+  "access_date": "2026-09-13",
+  "path": "02_data/raw/resource_footprint/water_stress_sources/aqueduct40/aqueduct-4-0-country-rankings.zip",
+  "bytes": 12790153,
+  "sha256": "97d50c4b5ba144523f90a06b95369431d54e0f846b9296b11880ed4d4dbc4ba5"
+}

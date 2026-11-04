@@ -1,0 +1,73 @@
+experiment_id: group_multisite_31industry_core_v1
+solver: gurobi
+industry: null
+production_load_site_count: registry_or_representative_group_case
+max_modeled_routing_nodes: 5
+ai_deployment_node_rule: same_as_modeled_routing_nodes
+architectures: [PF, SHG, MSG]
+architecture_display_labels:
+  PF: PF
+  SHG: SHG-plant
+  MSG: MSG-coordinated
+base_load_cases_by_architecture:
+  PF: [actual_load]
+  SHG: [actual_load, zero_load]
+  MSG: [actual_load]
+integer_boundary:
+  PF_installed_server_groups_integer: true
+  SHG_installed_server_groups_integer: false
+  MSG_installed_server_groups_integer: false
+  online_server_groups_integer: false
+  planning_reserve_fraction: 0.15
+  n_plus_spare_server_groups: 0
+  model_state_minimum_groups_enabled: false
+task_boundary:
+  same_group_total_service: true
+  representative_group_condition: known_AI_adopter
+  industry_demand_interpretation: unconditional_total_including_nonadopters
+  group_service_scale: group_activity_share_divided_by_adopter_activity_coverage
+  industry_reconstruction: adopter_activity_coverage_divided_by_group_activity_share
+  task_origin_scope: all_registered_production_load_sites
+  task_origin_weighting: equal_share_proxy_within_adopted_group
+  execution_node_scope: modeled_AI_deployment_routing_nodes
+  AI_deployment_points_equal_routing_nodes: true
+  all_six_core_tasks_group_routable: true
+  flexible_jobs_keep_original_deadlines: true
+  report_AI_power_decomposition: fixed_overhead_unshiftable_active_shiftable_active
+  cross_factory_routing: MSG_only
+mechanism_controls:
+  MSG_no_routing:
+    enabled: true
+    output_code: MSG_NO_ROUTING
+    display_label: MSG-no-routing
+    formal_architecture: false
+    paired_treatment: MSG
+    fixed_share_source: registered_represented_factory_counts
+    rigid_assignment: each_task_hour_fixed_to_ex_ante_node_share
+    flexible_assignment: each_job_total_fixed_to_ex_ante_node_share_within_original_deadline
+    effect_definition: MSG_no_routing_minus_MSG_coordinated
+    positive_effect_interpretation: burden_avoided_by_cross_site_coordination
+energy_boundary:
+  pv_capacity_mode: none
+  battery_investment_enabled: false
+  same_provincial_hourly_price_at_all_factories: true
+load_curve_selection:
+  source: EWELD
+  source_isic: auto_from_core_lineage
+  rule: distinct_users_first_then_distinct_complete_weeks_until_modeled_routing_node_count
+  proxy_rule: reuse_the_active_core_profile_source_isic_for_industries_without_direct_EWELD_samples
+  scaling: production_load_registry_with_explicit_legacy_compatibility_for_uncalibrated_industries
+  representative_sampling_rule: weighted_load_curves_reconstruct_all_production_sites_only_for_IF
+  electrical_boundary: each_AI_node_uses_only_its_host_factory_load_no_cross_meter_aggregation
+  ai_deployment_rule: one_AI_deployment_point_per_modeled_routing_node
+  simultaneity: align_by_weekday_and_hour_not_same_calendar_week
+  week_quality_by_industry:
+    C36:
+      minimum_monday_to_tuesday_friday_mean_ratio: 0.75
+      maximum_weekday_daily_mean_cv: 0.35
+      maximum_weekly_peak_to_mean_ratio: 3.0
+counterfactual:
+  architecture: SHG
+  definition: zero_original_factory_load_reoptimized_minus_actual_load_reoptimized
+  interpretation: value_of_cooptimizing_AI_with_the_fixed_host_factory_load_shape
+interpretation: infrastructure_first_v1_core_with_C36_calibrated_and_other_industries_explicit_legacy_compatibility_boundaries

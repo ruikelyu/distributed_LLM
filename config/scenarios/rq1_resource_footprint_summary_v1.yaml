@@ -1,0 +1,41 @@
+schema_version: 1
+analysis_version: rq1_resource_footprint_summary_v1
+status: active_author_approved_resource_summary
+audit_config: config/scenarios/rq1_resource_footprint_audit_v1.yaml
+
+outputs:
+  subdirectory: result/rq1_resource_footprint
+  summary_table: rq1_resource_footprint_summary.csv
+  field_status_table: rq1_resource_footprint_field_status.csv
+  interpretation_review: rq1_resource_footprint_interpretation_review.md
+  validation: validated.approved.json
+
+validation:
+  relative_tolerance: 1.0e-9
+  it_energy_relative_tolerance: 0.001
+  selected_floor_case: central
+  expected_floor_direction: PF_LOWER
+  expected_summary_rows: 6
+  required_metrics:
+    - onsite_cooling_humidification_water
+    - total_facility_floor_requirement
+    - offsite_land_conversion
+  required_architectures: [PF, LDC_AGGREGATE]
+  forbidden_architectures: [SHG, MSG, SHG_zero_load]
+
+claim_boundaries:
+  water: scenario_accounting_from_IT_energy_times_registered_WUE_not_architecture_only_effect_and_not_split_withdrawal_or_consumption
+  pf_floor: total_facility_floor_requirement_under_reference_equipment_and_rack_scenarios_not_new_building_area_or_site_suitability
+  ldc_floor: greenfield_project_screening_proxy_not_provider_weighted_or_national_mean
+  pf_land: zero_only_under_existing_factory_site_boundary_not_empirical_zero_land_need
+  ldc_land: greenfield_project_screening_proxy_not_observed_portfolio_land_conversion
+  comparison: equal_effective_service_logical_portfolio_comparison_with_different_registered_facility_boundaries
+
+evidence_status: outputs_validated_interpretation_author_approved
+interpretation_status: author_approved_for_figure_and_later_manuscript_migration
+figure_authorization: true
+automatic_manuscript_edit: false
+author_approval:
+  status: approved
+  date: '2026-09-13'
+  authority: user_selected_central_floor_scenario_and_instructed_continuation

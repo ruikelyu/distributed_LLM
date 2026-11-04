@@ -1,0 +1,75 @@
+{
+  "status": "validated_author_approved_RQ1_resource_figure",
+  "model_version": "v1.0.0",
+  "figure_version": "figure4_rq1_resource_footprint_v1",
+  "interpretation_status": "author_approved_for_figure_and_later_manuscript_migration",
+  "author_approval": {
+    "status": "approved",
+    "date": "2026-09-13",
+    "authority": "user_selected_central_floor_scenario_and_instructed_continuation"
+  },
+  "selected_floor_case": "central",
+  "inputs": {
+    "configuration": {
+      "path": "config/scenarios/figure4_rq1_resource_footprint_v1.yaml",
+      "sha256": "bcf369c190e678b45ae2e31322a914ac2133df7181e30c7bac596df0560f87e4"
+    },
+    "figure_script": {
+      "path": "08_code/build_figure4_rq1_resource_footprint.py",
+      "sha256": "c316e83c1ea92f842b8ad0afc7daece741f5286152da600ad582e6c65ba0b866"
+    },
+    "defaults": {
+      "path": "config/defaults.yaml",
+      "sha256": "46e15afecba40dcb8a1bab939cd033c11c0ad5479850261c1f4ed3453e5f98a1"
+    },
+    "resource_summary_configuration": {
+      "path": "config/scenarios/rq1_resource_footprint_summary_v1.yaml",
+      "sha256": "5773127641848f6aeb0f38a174c54afc9fb498fc1cf0acda85c6feff19180d4e"
+    },
+    "resource_summary": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/rq1_resource_footprint_summary.csv",
+      "sha256": "39115f3c8bc6341595420575a8a33637f13bdd4847c7ec4da53a045ff0adefbf"
+    },
+    "field_status": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/rq1_resource_footprint_field_status.csv",
+      "sha256": "a4c0d45dc29e5b9552123a038f0607135b871cc33847b791eecd5e35055863fb"
+    },
+    "approval_marker": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/validated.approved.json",
+      "sha256": "cb4f887e4f849de4678594fee7d4b5686ec6a414bd2e9709c3d203d690f67cb3"
+    }
+  },
+  "outputs": {
+    "data": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_footprint_data.csv",
+      "sha256": "d4a46095a5c51f1b9125f64205843dc23d1aae676735c74ae24888a6d18d32c7"
+    },
+    "svg": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_footprint.svg",
+      "sha256": "f907257fdce4ec23738777ce79a274e007153265f8547c2db41d98b90fa3c4c5"
+    },
+    "png": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_footprint.png",
+      "sha256": "3fca21e7fa1de7b57602803402d054bd1a76f12cbcafde361f530d204ce0fcaa"
+    },
+    "pdf": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_footprint.pdf",
+      "sha256": "f64c7f60c67d6eef4d4b7ca2d5dd21dcbeda997a20a981c88b943f4f65e9c1d2"
+    }
+  },
+  "panels": [
+    "onsite_cooling_humidification_water",
+    "total_facility_floor_requirement",
+    "offsite_land_conversion"
+  ],
+  "claim_boundaries": [
+    "values_are_registered_scenario_calculations_not_architecture_only_causal_effects",
+    "water_uses_distinct_registered_WUE_cases_and_does_not_split_withdrawal_or_consumption",
+    "facility_floor_uses_the_author_selected_central_case_only",
+    "PF_new_building_area_remains_unquantified",
+    "PF_zero_offsite_land_is_an_existing_factory_site_boundary_not_an_empirical_estimate",
+    "LDC_floor_and_land_are_greenfield_project_screening_proxies_not_national_means",
+    "LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_physical_site"
+  ],
+  "main_manuscript_updated": false
+}

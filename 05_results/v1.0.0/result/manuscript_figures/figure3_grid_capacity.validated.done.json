@@ -1,0 +1,69 @@
+{
+  "status": "validated_author_approved_RQ1_figure",
+  "model_version": "v1.0.0",
+  "figure_version": "figure3_rq1_grid_capacity_v2",
+  "interpretation_status": "author_approved_for_figure_and_manuscript_migration",
+  "author_approval": {
+    "status": "approved",
+    "date": "2026-09-13",
+    "authority": "user_confirmation_after_controlled_RQ1_review"
+  },
+  "inputs": {
+    "configuration": {
+      "path": "config/scenarios/figure3_rq1_grid_capacity_v2.yaml",
+      "sha256": "43ef827979399071188a28bb1e14d7508cb33642c03861846acc50249b1b2daf"
+    },
+    "defaults": {
+      "path": "config/defaults.yaml",
+      "sha256": "46e15afecba40dcb8a1bab939cd033c11c0ad5479850261c1f4ed3453e5f98a1"
+    },
+    "rq1_configuration": {
+      "path": "config/scenarios/rq1_infrastructure_summary_v1.yaml",
+      "sha256": "ba01bdb722baa3e82183e2f7e7b2ee203224b1b321394a07594bd5e109b96025"
+    },
+    "aggregate_summary": {
+      "path": "05_results/v1.0.0/result/rq1_infrastructure/rq1_aggregate_capacity_summary.csv",
+      "sha256": "5c61489192a8f7491bd9bde0c73648d4fcf8f4a471548465f6b6882558b446b4"
+    },
+    "node_scale_summary": {
+      "path": "05_results/v1.0.0/result/rq1_infrastructure/rq1_node_scale_distribution_summary.csv",
+      "sha256": "2f5708eac3b4a3fcde5a5bc43bbc40e0e670b30500073ecda172a05b3946fc5f"
+    },
+    "approval_marker": {
+      "path": "05_results/v1.0.0/result/rq1_infrastructure/rq1_controlled_interpretation_review.approved.json",
+      "sha256": "f2a647629aaff2e735e5c3e94dcc3c1efb001330930b4fae6dc3fe296b8720ff"
+    }
+  },
+  "outputs": {
+    "data": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure3_grid_capacity_data.csv",
+      "sha256": "1fe58b3af852845dca6ed240fb298c0706cfa97f1e9b4e18ee793374fabd83a7"
+    },
+    "svg": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure3_grid_capacity.svg",
+      "sha256": "28754b3de862403cfdeae907866b6bda799aa301ade12672c5ca64ebb0059b9e"
+    },
+    "png": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure3_grid_capacity.png",
+      "sha256": "94a13d9d1851bfcd46315332bee7ac1e4e4756342a1e4939c0ef8838fcba019f"
+    },
+    "pdf": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure3_grid_capacity.pdf",
+      "sha256": "0039785e8e9b97bc28d88c4da8d5105b16cf4e351a19e11cf63f04f9a253acc3"
+    }
+  },
+  "panels": {
+    "aggregate_capacity": 4,
+    "node_scale_distributions": 4,
+    "common_bins_per_distribution": 7
+  },
+  "claim_boundaries": [
+    "national_aggregate_and_node_scale_are_separate_estimands",
+    "LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_site",
+    "modeled_node_distributions_use_registered_weights_not_a_national_site_sample",
+    "Epoch_is_an_international_facility_or_campus_scale_reference_not_an_equal_service_or_china_specific_LDC_distribution",
+    "capacity_bins_are_statistical_intervals_not_grid_equipment_thresholds",
+    "no_maximum_percentile_top_k_HHI_or_effective_node_count_claim"
+  ],
+  "main_manuscript_updated": false
+}

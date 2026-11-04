@@ -1,0 +1,64 @@
+run_config_path: 05_results/sensitivity/v1.0.0/national_oat_group_architecture/configs/PHY03__no_shift.yaml
+model_version: v1.0.0
+selected_industries:
+- C13
+- C14
+- C15
+- C16
+- C17
+- C18
+- C19
+- C20
+- C21
+- C22
+- C23
+- C24
+- C25
+- C26
+- C27
+- C28
+- C29
+- C30
+- C31
+- C32
+- C33
+- C34
+- C35
+- C36
+- C37
+- C38
+- C39
+- C40
+- C41
+- C42
+- C43
+selected_scenarios:
+- PF
+- SHG
+- MSG
+industry_parameter_case: base
+sensitivity_metadata:
+  sensitivity_version: national_oat_extension_v1.2.0
+  factor_id: PHY03
+  factor_label_cn: 任务柔性
+  case_name: no_shift
+  display_value: no_shift
+  baseline_value: central
+  primary_claims:
+  - C2
+  baseline_invariant: true
+  version_source: config/defaults.yaml
+  paired_counterfactual:
+    baseline_config: config/runs/all_industries_core.yaml
+    architecture: SHG
+    base_load_case: actual_load
+    treatment_case: central
+    control_case: no_shift
+    changed_paths:
+    - demand.flexibility_scenario
+    effect_definition: no_shift_minus_flexible
+    positive_effect_interpretation: grid_capacity_avoided_by_temporal_shifting
+paths:
+  hourly_industry_profiles: 02_data/processed/core/manufacturing_31sector_real_weeks.csv
+demand:
+  flexibility_scenario: no_shift

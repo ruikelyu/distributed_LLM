@@ -1,0 +1,62 @@
+schema_version: 1
+analysis_version: rq2_mechanism_summary_v1
+defaults_config: config/defaults.yaml
+status: active_infrastructure_first_rq2_standardization
+
+sources:
+  core_national_subdirectory: result/group_architecture_core/national
+  temporal_pair_subdirectory: national_oat_group_architecture/result/PHY03__no_shift
+
+output_subdirectory: result/rq2_mechanisms
+effect_definition: control_minus_mechanism_enabled
+paired_diagnostics_are_additive: false
+mechanism_families_are_additive: false
+evidence_status: outputs_validated_not_interpreted
+claim_boundary: model_based_paired_scenario_effects_not_empirical_causal_effects
+
+mechanism_families:
+  within_site_production_compute_temporal_alignment:
+    display_name: within_site_production_compute_temporal_alignment
+    paired_diagnostics:
+      - production_load_context
+      - task_temporal_flexibility
+    interpretation: production_load_context_provides_temporal_headroom_and_task_flexibility_enables_active_use
+  cross_site_spatial_coordination:
+    display_name: cross_site_spatial_coordination
+    paired_diagnostics:
+      - cross_site_routing
+    interpretation: routing_across_the_same_MSG_nodes_uses_spatial_load_diversity
+
+paired_diagnostics:
+  production_load_context:
+    mechanism_family: within_site_production_compute_temporal_alignment
+    diagnostic_role: production_load_context_with_task_flexibility_enabled
+    architecture: SHG
+    control_case: SHG_ZERO_PRODUCTION_LOAD
+    mechanism_enabled_case: SHG_ACTUAL_PRODUCTION_LOAD
+    source_effect_definition: SHG_zero_load_reoptimized_minus_actual_load_reoptimized
+    positive_value_interpretation: grid_capacity_avoided_by_production_load_colocation
+    pairing_boundary: SHG_zero_production_load_minus_SHG_actual_production_load_with_all_other_registered_boundaries_held_fixed
+  task_temporal_flexibility:
+    mechanism_family: within_site_production_compute_temporal_alignment
+    diagnostic_role: task_flexibility_under_actual_production_load
+    architecture: SHG
+    control_case: SHG_NO_SHIFT
+    mechanism_enabled_case: SHG_FLEXIBLE
+    source_effect_definition: no_shift_minus_flexible
+    positive_value_interpretation: grid_capacity_avoided_by_temporal_task_shifting
+    pairing_boundary: SHG_no_shift_minus_SHG_flexible_under_actual_production_load_with_all_other_registered_boundaries_held_fixed
+  cross_site_routing:
+    mechanism_family: cross_site_spatial_coordination
+    diagnostic_role: spatial_routing_on_the_same_MSG_nodes
+    architecture: MSG
+    control_case: MSG_NO_ROUTING
+    mechanism_enabled_case: MSG_COORDINATED
+    source_effect_definition: MSG_no_routing_minus_MSG_coordinated
+    positive_value_interpretation: grid_capacity_avoided_by_cross_site_coordination
+    pairing_boundary: MSG_no_routing_minus_MSG_coordinated_on_the_same_registered_nodes_with_all_other_boundaries_held_fixed
+
+validation:
+  expected_industry_count: 31
+  absolute_tolerance_mw: 1.0e-8
+  relative_tolerance: 1.0e-10

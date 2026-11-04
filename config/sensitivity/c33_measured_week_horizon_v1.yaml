@@ -1,0 +1,24 @@
+experiment_id: c33_measured_week_horizon_v1
+output_root: 05_results/sensitivity/v1.0.0/group_multisite/C33_measured_week
+solver: highs
+industry: C33
+production_load_site_count: 6
+ai_deployment_node_rule: same_as_modeled_routing_nodes
+modeled_routing_node_count: 6
+architectures: [PF, SHG, MSG]
+base_load_cases_by_architecture:
+  PF: [actual_load]
+  SHG: [actual_load, zero_load]
+  MSG: [actual_load]
+task_boundary:
+  representative_group_condition: known_AI_adopter
+  industry_demand_interpretation: unconditional_total_including_nonadopters
+  group_service_scale: group_activity_share_divided_by_adopter_activity_coverage
+  industry_reconstruction: adopter_activity_coverage_divided_by_group_activity_share
+  task_origin_weighting: equal_share_proxy_within_adopted_group
+load_curve_selection:
+  source: EWELD
+  source_isic: 25
+  rule: same_six_users_or_weeks_as_the_registered_selection_algorithm
+  scaling: equal_factory_mean_preserve_total_group_activity_share
+interpretation: common_model_168_hour_reference_with_six_explicit_routing_nodes

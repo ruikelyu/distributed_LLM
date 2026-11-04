@@ -1,0 +1,150 @@
+{
+  "status": "READY_FOR_SPATIAL_REBUILD",
+  "model_version": "v1.0.0",
+  "audit_version": "rq1_spatial_water_audit_v1",
+  "evidence_status": "audit_only_no_manuscript_authorization",
+  "solver_required": false,
+  "automatic_manuscript_edit": false,
+  "approved_national_onsite_water_m3_per_year": {
+    "PF": 465812.4899066726,
+    "LDC_AGGREGATE": 3120547.11207474
+  },
+  "water_stress_context_method": {
+    "source": "Aqueduct 4.0 Current and Future Country Rankings",
+    "indicator": "bws",
+    "aggregation_weight": "industrial_gross_withdrawal_weighted_within_province",
+    "approved_water_inventory_is_unsplit_site_water": true,
+    "technical_note_doi": "10.46830/writn.23.00061",
+    "future_2030_bau_active_in_main_figure": false
+  },
+  "checks": {
+    "pf_allocation": {
+      "rows_equal_31_by_31": true,
+      "industry_count": true,
+      "province_count": true,
+      "each_industry_share_sums_to_one": true,
+      "lineage_declares_scenario_not_observation": true,
+      "lineage_source_exists": true,
+      "lineage_source_hash_matches": true
+    },
+    "ldc_capacity_proxy": {
+      "province_count": true,
+      "share_sums_to_one": true,
+      "embedded_source_metadata_complete": true,
+      "explicitly_capacity_proxy": true
+    },
+    "water_stress_context": {
+      "has_exactly_31_unique_provinces": true,
+      "required_columns_present": true,
+      "scores_complete_and_in_range": true,
+      "categories_complete_and_in_range": true,
+      "industrial_weight_is_explicit": true,
+      "context_separation_flag_is_true": true,
+      "raw_source_snapshot_exists": true,
+      "raw_source_hash_matches_contract": true,
+      "lineage_hash_matches_source": true,
+      "receipt_hash_matches_source": true,
+      "baseline_is_main_and_2030_bau_is_rq3_only": true
+    }
+  },
+  "legacy_figure5_findings": {
+    "hardcodes_v1_result_roots": true,
+    "hardcodes_pf_facility_multiplier": true,
+    "reuses_pf_it_energy_for_ldc": true,
+    "uses_forbidden_withdrawal_label": true,
+    "has_versioned_validation_marker": false
+  },
+  "components": [
+    {
+      "component": "PF_province_water_allocation",
+      "disposition": "REBUILD_POSTPROCESS_NO_SOLVE",
+      "ready": true,
+      "reason": "allocate the approved PF national water total with the frozen 31-industry REFERENCE electricity-share scenario"
+    },
+    {
+      "component": "LDC_province_water_allocation",
+      "disposition": "REBUILD_POSTPROCESS_NO_SOLVE_USING_OWN_APPROVED_WATER_TOTAL",
+      "ready": true,
+      "reason": "allocate LDC's own approved water total with the frozen 2025 CAICT capacity proxy; do not reuse PF IT energy"
+    },
+    {
+      "component": "national_water_total",
+      "disposition": "PRESERVE_APPROVED_TOTALS",
+      "ready": true,
+      "reason": "uniform architecture-specific WUE means spatial allocation changes distribution, not the approved national total"
+    },
+    {
+      "component": "formal_water_scarcity_LCIA_application",
+      "disposition": "NOT_APPLICABLE_BY_APPROVED_DESIGN",
+      "ready": true,
+      "reason": "the approved design does not multiply site water by a characterization factor or report world-equivalent impact"
+    },
+    {
+      "component": "province_water_stress_context_and_Figure5",
+      "disposition": "USE_SEPARATE_BASELINE_CONTEXT_PANEL",
+      "ready": true,
+      "reason": "use the checksum-frozen WRI province baseline, industrial-demand-weighted score only as a prioritization context separate from site-water quantities"
+    }
+  ],
+  "claim_boundaries": {
+    "pf_allocation": "2030_REFERENCE_manufacturing_electricity_spatial_scenario_not_observed_enterprise_AI_locations",
+    "ldc_allocation": "2025_CAict_in_use_intelligent_compute_capacity_proxy_not_provider_traffic_or_2030_siting_forecast",
+    "water": "registered_onsite_cooling_and_humidification_water_not_split_withdrawal_or_consumption",
+    "uniform_wue": "spatial_allocation_changes_distribution_and_water_stress_context_not_national_water_total",
+    "water_stress": "Aqueduct40_baseline_industrial_demand_weighted_admin1_prioritization_context_not_real_time_or_local_validation_and_never_multiplied_by_site_water"
+  },
+  "input_hashes": {
+    "configuration": {
+      "path": "config/scenarios/rq1_spatial_water_audit_v1.yaml",
+      "sha256": "fb36c261a2215610da8e62137a047939c368381e8b0e6b0caf4dc26fdabf9fc1"
+    },
+    "defaults": {
+      "path": "config/defaults.yaml",
+      "sha256": "46e15afecba40dcb8a1bab939cd033c11c0ad5479850261c1f4ed3453e5f98a1"
+    },
+    "scenario_registry": {
+      "path": "config/scenarios/mainline.yaml",
+      "sha256": "1b0ca5a3d2e9e3141277fa6d0e86e30adbf787b20f421adb7a343a4a6ade1a4d"
+    },
+    "water_stress_source_config": {
+      "path": "config/scenarios/aqueduct40_province_water_stress_v1.yaml",
+      "sha256": "271d568400cd8879ddc7efe52ee9a63a105483f7b887abe9ce6a1beffec3cc48"
+    },
+    "legacy_figure_script": {
+      "path": "08_code/build_figure5_spatial_concentration_draft.py",
+      "sha256": "1f8327f9f069e7287076266a0702ad2fbc8b42c05511a7ced8c4a0692d4d125a"
+    },
+    "resource_summary": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/rq1_resource_footprint_summary.csv",
+      "sha256": "39115f3c8bc6341595420575a8a33637f13bdd4847c7ec4da53a045ff0adefbf"
+    },
+    "resource_validation": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/validated.approved.json",
+      "sha256": "cb4f887e4f849de4678594fee7d4b5686ec6a414bd2e9709c3d203d690f67cb3"
+    },
+    "pf_allocation": {
+      "path": "02_data/processed/resource_footprint/province_industry_ai_allocation.csv",
+      "sha256": "8ea3d66b98800a2542ce5f4617c6a4e9407a88c73ae0b2fd864b7eed9f644732"
+    },
+    "pf_lineage": {
+      "path": "02_data/processed/resource_footprint/province_industry_ai_allocation.lineage.json",
+      "sha256": "db7726e70cbd9a4b9f4e7ec1c7d56d83f7f2632c438151b818a172687a6e2e01"
+    },
+    "ldc_proxy": {
+      "path": "02_data/processed/resource_footprint/china_province_cloud_ai_capacity_share_caict2025.csv",
+      "sha256": "529394869120c7fb1f2656e0e103dfac8d03dfa1256faf8f8f9f079ac161c9ea"
+    },
+    "water_stress": {
+      "path": "02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.csv",
+      "sha256": "d660bd46bd81dec779d21e91ea76f3c3ea2a9f667f4af39ddffbc064ba9d1446"
+    },
+    "water_stress_lineage": {
+      "path": "02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.lineage.json",
+      "sha256": "fef511083d70c3623d9d77914a4cbf70dff254cf240616843447f1a6a88bbcc5"
+    },
+    "water_stress_source_receipt": {
+      "path": "02_data/raw/resource_footprint/water_stress_sources/aqueduct40/aqueduct-4-0-country-rankings.source.json",
+      "sha256": "451404161209770f2b953edc10f642867e6d31580c390c2543cce88ccd8dd3ba"
+    }
+  }
+}

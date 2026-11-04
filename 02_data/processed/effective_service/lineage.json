@@ -1,0 +1,45 @@
+{
+  "schema_version": 3,
+  "output": "02_data/processed/effective_service/manufacturing_ai_effective_service_2030.csv",
+  "formula": "structural_weight_2030 = legacy_task_service_2030 / [(adopting_firms_2030 / ai_using_firms_2023) * legacy_per_adopter_growth] * task_total_service_growth",
+  "inputs": {
+    "02_data/interim/effective_service/legacy_manufacturing_ai_31sector_bottomup_weights.csv": {
+      "sha256": "d61c283865ac6d6c3eb5501accc9f7616aaefc7ff7f538f66ab95fb550c62d5a"
+    },
+    "02_data/interim/effective_service/legacy_manufacturing_ai_task_hardware_demo_task_results.csv": {
+      "sha256": "570f0c67fbc7642119699d2f5fd5a330600cd9626cba8020d76a09b9fdc0f05a"
+    },
+    "02_data/raw/curated/effective_service_task_growth_scenarios.csv": {
+      "sha256": "8c5c51679143afc29e40038c1e61a0c9e103ed718fdee6ae2dd5ce77df4ccd33"
+    },
+    "02_data/manufacturing_ai_task_core_scope_v0.1.csv": {
+      "sha256": "c08ac7f907aac56c32d6f6c26a1c780d32790fa07498dbba7173fccce11abb49"
+    },
+    "02_data/raw/curated/effective_service_template_fallbacks.csv": {
+      "sha256": "84abfe3f695957b91888db6160819e1c585fa9f750bbd0fe3aae72836a277eff"
+    }
+  },
+  "rows": 558,
+  "parameter_cases": [
+    "low",
+    "base",
+    "high"
+  ],
+  "tasks": [
+    "agent",
+    "maintenance",
+    "office",
+    "scheduling",
+    "simulation",
+    "vision"
+  ],
+  "notes": [
+    "Growth factors are joint research scenarios, not observed forecasts.",
+    "Four legacy auto-calibrated templates use documented structural fallbacks.",
+    "The six-task values define both industry-task structure and the national service total.",
+    "All six core task families are explicitly scoped to K_choice; K_edge and K_pool components are excluded from this ledger.",
+    "The scope classification is author-approved but is not an empirical estimate of national K_edge/K_choice/K_pool shares.",
+    "No external electricity target or post-hoc national multiplier is applied.",
+    "Hardware efficiency and PUE affect reference or architecture electricity, not service demand."
+  ]
+}

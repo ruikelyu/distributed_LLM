@@ -1,0 +1,118 @@
+{
+  "status": "validated",
+  "model_version": "v1.0.0",
+  "analysis_version": "rq2_mechanism_summary_v1",
+  "effect_definition": "control_minus_mechanism_enabled",
+  "industry_count": 31,
+  "mechanism_family_count": 2,
+  "paired_diagnostic_count": 3,
+  "industry_rows": 93,
+  "national_rows": 3,
+  "paired_diagnostics_are_additive": false,
+  "mechanism_families_are_additive": false,
+  "non_additivity_reason": "different_paired_controls_and_counterfactual_boundaries;_the_two_within_site_diagnostics_share_one_enabled_endpoint",
+  "mechanism_families": {
+    "within_site_production_compute_temporal_alignment": {
+      "display_name": "within_site_production_compute_temporal_alignment",
+      "paired_diagnostics": [
+        "production_load_context",
+        "task_temporal_flexibility"
+      ],
+      "interpretation": "production_load_context_provides_temporal_headroom_and_task_flexibility_enables_active_use"
+    },
+    "cross_site_spatial_coordination": {
+      "display_name": "cross_site_spatial_coordination",
+      "paired_diagnostics": [
+        "cross_site_routing"
+      ],
+      "interpretation": "routing_across_the_same_MSG_nodes_uses_spatial_load_diversity"
+    }
+  },
+  "paired_diagnostic_definitions": {
+    "production_load_context": {
+      "architecture": "SHG",
+      "control_case": "SHG_ZERO_PRODUCTION_LOAD",
+      "mechanism_enabled_case": "SHG_ACTUAL_PRODUCTION_LOAD",
+      "pairing_boundary": "SHG_zero_production_load_minus_SHG_actual_production_load_with_all_other_registered_boundaries_held_fixed"
+    },
+    "task_temporal_flexibility": {
+      "architecture": "SHG",
+      "control_case": "SHG_NO_SHIFT",
+      "mechanism_enabled_case": "SHG_FLEXIBLE",
+      "pairing_boundary": "SHG_no_shift_minus_SHG_flexible_under_actual_production_load_with_all_other_registered_boundaries_held_fixed"
+    },
+    "cross_site_routing": {
+      "architecture": "MSG",
+      "control_case": "MSG_NO_ROUTING",
+      "mechanism_enabled_case": "MSG_COORDINATED",
+      "pairing_boundary": "MSG_no_routing_minus_MSG_coordinated_on_the_same_registered_nodes_with_all_other_boundaries_held_fixed"
+    }
+  },
+  "national_summary": {
+    "production_load_context": {
+      "control_incremental_grid_capacity_mw": 1585.2041755766995,
+      "mechanism_enabled_incremental_grid_capacity_mw": 575.7839373174064,
+      "avoided_incremental_grid_capacity_mw": 1009.4202382592931,
+      "effect_fraction_of_control": 0.6367761666361146,
+      "positive_industry_count": 31
+    },
+    "task_temporal_flexibility": {
+      "control_incremental_grid_capacity_mw": 1343.286470357126,
+      "mechanism_enabled_incremental_grid_capacity_mw": 575.7839373174064,
+      "avoided_incremental_grid_capacity_mw": 767.5025330397197,
+      "effect_fraction_of_control": 0.5713617683022382,
+      "positive_industry_count": 31
+    },
+    "cross_site_routing": {
+      "control_incremental_grid_capacity_mw": 561.9442746264255,
+      "mechanism_enabled_incremental_grid_capacity_mw": 30.16369954872454,
+      "avoided_incremental_grid_capacity_mw": 531.7805750777007,
+      "effect_fraction_of_control": 0.9463226143396919,
+      "positive_industry_count": 31
+    }
+  },
+  "source_files": {
+    "core_scenarios": {
+      "path": "05_results/v1.0.0/result/group_architecture_core/national/core_scenarios.csv",
+      "sha256": "c5a35d2e4d721b9547290e20a25e383a6a1be300e616d5104bc59177b3407cd1"
+    },
+    "shg_load_alignment": {
+      "path": "05_results/v1.0.0/result/group_architecture_core/national/shg_load_alignment.csv",
+      "sha256": "10af73437ab5f8a56a5a40abc00addae993878f4eba88e7ac223461ac57f7b1b"
+    },
+    "msg_coordination_value": {
+      "path": "05_results/v1.0.0/result/group_architecture_core/national/msg_coordination_value.csv",
+      "sha256": "a5b6e40d656ac094b709e3b87518f44c3115247388ec5d76687c5622e176d474"
+    },
+    "core_validation": {
+      "path": "05_results/v1.0.0/result/group_architecture_core/national/validated.done.json",
+      "sha256": "40217c7e2aba0876a3b64d56842058ac1c0d596e95d8ccf0681652b219330228"
+    },
+    "temporal_shifting_value": {
+      "path": "05_results/sensitivity/v1.0.0/national_oat_group_architecture/result/PHY03__no_shift/temporal_shifting_value.csv",
+      "sha256": "82bc52f63a1c5a7e9184906ac8efdd9648b75968799d2ef883a7bc51a907f5ab"
+    },
+    "temporal_validation": {
+      "path": "05_results/sensitivity/v1.0.0/national_oat_group_architecture/result/PHY03__no_shift/temporal_shifting.validated.done.json",
+      "sha256": "99197aa4fd35ec75a8ba71a2abedc0211075b3818c591a4db6a9a21d6d8f0c76"
+    }
+  },
+  "claim_boundary": "model_based_paired_scenario_effects_not_empirical_causal_effects",
+  "production_load_boundary_status": "mixed_explicit_C36_calibrated_other_industries_legacy_compatibility",
+  "evidence_status": "outputs_validated_not_interpreted",
+  "configuration_files": {
+    "analysis": {
+      "path": "config/scenarios/rq2_mechanism_summary_v1.yaml",
+      "sha256": "a6c0e8f1de29daa2f45e960b91244e8f3519f7a0ed4c518b6af70fa18fcde925"
+    },
+    "defaults": {
+      "path": "config/defaults.yaml",
+      "sha256": "46e15afecba40dcb8a1bab939cd033c11c0ad5479850261c1f4ed3453e5f98a1"
+    }
+  },
+  "output": {
+    "filename": "rq2_mechanism_effects.csv",
+    "rows": 96,
+    "sha256": "710a0f18a4b6c1bfb6adf519bf5ee4918a14c1c6a76b5c03dbc8fa2e72695f58"
+  }
+}

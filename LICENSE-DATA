@@ -1,0 +1,14 @@
+Data licence
+
+Copyright (c) 2026 Ruike Lyu and Bolun Xu
+
+Except where noted otherwise, the data in 02_data/ and the model results in
+05_results/ are licensed under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Third-party data included in this repository remain under their original
+licences, as listed in DATA_SOURCES.md. When reusing them, please also cite
+the original sources.
+
+The source code is licensed separately under the MIT licence (see LICENSE).

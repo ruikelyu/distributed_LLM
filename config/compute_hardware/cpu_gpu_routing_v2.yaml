@@ -1,0 +1,71 @@
+scenario_version: cpu_gpu_routing_v2.0.0
+calibration_industry_code: C36
+calibration_owned_architecture: PF
+same_service_and_sla: true
+active_core_routing_case: practice_routed
+
+routing_cases:
+  gpu_only:
+    maintenance: 0.0
+    scheduling: 0.0
+    simulation: 0.0
+  practice_routed:
+    maintenance: 0.5
+    scheduling: 0.8
+    simulation: 0.5
+  cpu_heavy:
+    maintenance: 0.75
+    scheduling: 1.0
+    simulation: 0.75
+
+core_cpu_server_hour_per_reference_compute_hour:
+  maintenance: 2.0
+  scheduling: 1.0
+  simulation: 1.0
+  rationale:
+    maintenance: conservative_CPU_inference_time_proxy_pending_matched_window_benchmark
+    scheduling: CPU_native_solver_normalization_pending_matched_instance_gap_and_time_limit_benchmark
+    simulation: inactive_in_core_CPU_route
+
+cloud_cpu_product_by_task:
+  office: ecs_reserved
+  agent: ecs_reserved
+  vision: ecs_reserved
+  maintenance: eas_managed
+  scheduling: ecs_reserved
+  simulation: ecs_reserved
+
+cloud_cpu_products:
+  ecs_reserved:
+    configuration: Alibaba_Cloud_ecs.c8i.8xlarge_32vCPU_64GiB_proxy
+    service_capacity_relative_to_local_cpu_server: 0.25
+    annual_price_cases_rmb:
+      low: 24422.76
+      base: 28086.174
+      high: 31749.588
+    pricing_boundary: annual_reserved_instance_proxy
+    source_record_ids: [CLD023, CLD025]
+  eas_managed:
+    configuration: Alibaba_Cloud_PAI_EAS_32CPU_core_64GB_specified_resources
+    service_capacity_relative_to_local_cpu_server: 0.25
+    annual_price_cases_rmb:
+      low: 67837.44
+      base: 67837.44
+      high: 67837.44
+    pricing_boundary: continuous_occupied_managed_endpoint_before_system_disk_and_gateway
+    source_record_ids: [CLD017, CLD018, CLD030]
+
+cloud_capacity_price_scenarios:
+  active_case: base
+  interpretation:
+    ecs_reserved: public_subscription_proxy_plus_existing_delivery_case
+    eas_managed: official_specified_resource_rate
+
+method:
+  cloud_local_effectiveness_assumption: equal_quality_and_service_efficiency_per_equivalent_physical_compute_resource
+  cloud_performance_benchmark_required: false
+  cloud_instance_capacity_interpretation: specification_scaling_not_a_cloud_performance_penalty
+  capacity_basis: short_deadline_first_waterfilled_peak_upper_bound_under_existing_task_release_and_deadline_windows
+  server_count: integer_capacity_groups_for_cloud_screen
+  cloud_boundary: managed_model_API_plus_task_specific_EAS_or_ECS_residual_CPU_plus_GPU
+  warning: routing_shares_CPU_service_time_and_capacity_ratios_are_structural_scenarios_not_task_benchmarks

@@ -1,0 +1,319 @@
+{
+  "status": "validated",
+  "model_version": "v1.0.0",
+  "industry_count": 31,
+  "actual_load_architectures": [
+    "PF",
+    "SHG",
+    "MSG"
+  ],
+  "actual_load_rows": 93,
+  "shg_zero_load_pair_rows": 31,
+  "msg_no_routing_pair_rows": 31,
+  "msg_coordination_effect_definition": "MSG_no_routing_minus_MSG_coordinated",
+  "msg_coordination_positive_value_interpretation": "burden_avoided_by_cross_site_coordination",
+  "msg_no_routing_is_formal_architecture": false,
+  "II_1host_in_core": false,
+  "factory_counts": {
+    "C13": 40,
+    "C14": 20,
+    "C15": 35,
+    "C16": 5,
+    "C17": 7,
+    "C18": 4,
+    "C19": 6,
+    "C20": 5,
+    "C21": 6,
+    "C22": 10,
+    "C23": 5,
+    "C24": 7,
+    "C25": 15,
+    "C26": 10,
+    "C27": 8,
+    "C28": 8,
+    "C29": 8,
+    "C30": 30,
+    "C31": 10,
+    "C32": 10,
+    "C33": 6,
+    "C34": 6,
+    "C35": 6,
+    "C36": 9,
+    "C37": 8,
+    "C38": 15,
+    "C39": 20,
+    "C40": 4,
+    "C41": 4,
+    "C42": 8,
+    "C43": 6
+  },
+  "production_load_site_counts": {
+    "C13": 40,
+    "C14": 20,
+    "C15": 35,
+    "C16": 5,
+    "C17": 7,
+    "C18": 4,
+    "C19": 6,
+    "C20": 5,
+    "C21": 6,
+    "C22": 10,
+    "C23": 5,
+    "C24": 7,
+    "C25": 15,
+    "C26": 10,
+    "C27": 8,
+    "C28": 8,
+    "C29": 8,
+    "C30": 30,
+    "C31": 10,
+    "C32": 10,
+    "C33": 6,
+    "C34": 6,
+    "C35": 6,
+    "C36": 9,
+    "C37": 8,
+    "C38": 15,
+    "C39": 20,
+    "C40": 4,
+    "C41": 4,
+    "C42": 8,
+    "C43": 6
+  },
+  "ai_deployment_node_counts": {
+    "C13": {
+      "PF": 40,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C14": {
+      "PF": 20,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C15": {
+      "PF": 35,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C16": {
+      "PF": 5,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C17": {
+      "PF": 7,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C18": {
+      "PF": 4,
+      "SHG": 1,
+      "MSG": 4
+    },
+    "C19": {
+      "PF": 6,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C20": {
+      "PF": 5,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C21": {
+      "PF": 6,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C22": {
+      "PF": 10,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C23": {
+      "PF": 5,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C24": {
+      "PF": 7,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C25": {
+      "PF": 15,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C26": {
+      "PF": 10,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C27": {
+      "PF": 8,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C28": {
+      "PF": 8,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C29": {
+      "PF": 8,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C30": {
+      "PF": 30,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C31": {
+      "PF": 10,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C32": {
+      "PF": 10,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C33": {
+      "PF": 6,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C34": {
+      "PF": 6,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C35": {
+      "PF": 6,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C36": {
+      "PF": 9,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C37": {
+      "PF": 8,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C38": {
+      "PF": 15,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C39": {
+      "PF": 20,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C40": {
+      "PF": 4,
+      "SHG": 1,
+      "MSG": 4
+    },
+    "C41": {
+      "PF": 4,
+      "SHG": 1,
+      "MSG": 4
+    },
+    "C42": {
+      "PF": 8,
+      "SHG": 1,
+      "MSG": 5
+    },
+    "C43": {
+      "PF": 6,
+      "SHG": 1,
+      "MSG": 5
+    }
+  },
+  "production_load_mode_by_industry": {
+    "C13": "legacy_industry_electricity_share",
+    "C14": "legacy_industry_electricity_share",
+    "C15": "legacy_industry_electricity_share",
+    "C16": "legacy_industry_electricity_share",
+    "C17": "legacy_industry_electricity_share",
+    "C18": "legacy_industry_electricity_share",
+    "C19": "legacy_industry_electricity_share",
+    "C20": "legacy_industry_electricity_share",
+    "C21": "legacy_industry_electricity_share",
+    "C22": "legacy_industry_electricity_share",
+    "C23": "legacy_industry_electricity_share",
+    "C24": "legacy_industry_electricity_share",
+    "C25": "legacy_industry_electricity_share",
+    "C26": "legacy_industry_electricity_share",
+    "C27": "legacy_industry_electricity_share",
+    "C28": "legacy_industry_electricity_share",
+    "C29": "legacy_industry_electricity_share",
+    "C30": "legacy_industry_electricity_share",
+    "C31": "legacy_industry_electricity_share",
+    "C32": "legacy_industry_electricity_share",
+    "C33": "legacy_industry_electricity_share",
+    "C34": "legacy_industry_electricity_share",
+    "C35": "legacy_industry_electricity_share",
+    "C36": "calibrated_registry",
+    "C37": "legacy_industry_electricity_share",
+    "C38": "legacy_industry_electricity_share",
+    "C39": "legacy_industry_electricity_share",
+    "C40": "legacy_industry_electricity_share",
+    "C41": "legacy_industry_electricity_share",
+    "C42": "legacy_industry_electricity_share",
+    "C43": "legacy_industry_electricity_share"
+  },
+  "production_load_mode_counts": {
+    "legacy_industry_electricity_share": 30,
+    "calibrated_registry": 1
+  },
+  "representative_group_condition": "known_AI_adopter",
+  "adopter_activity_share_proxy_by_industry": {
+    "C13": 0.39750625618078583,
+    "C14": 0.4404363041653273,
+    "C15": 0.46164195002887676,
+    "C16": 0.6398242636260237,
+    "C17": 0.3354617982496107,
+    "C18": 0.289101013819851,
+    "C19": 0.262396789416776,
+    "C20": 0.2592504222047835,
+    "C21": 0.44233541502443413,
+    "C22": 0.4169009005666281,
+    "C23": 0.5309220499043302,
+    "C24": 0.3454311628580322,
+    "C25": 0.48870880744643797,
+    "C26": 0.5096478914141239,
+    "C27": 0.5643287288079546,
+    "C28": 0.4634879188665512,
+    "C29": 0.4557314503879106,
+    "C30": 0.39583395623487716,
+    "C31": 0.3763664632192461,
+    "C32": 0.4075755832903634,
+    "C33": 0.44657517037530636,
+    "C34": 0.5373973536369671,
+    "C35": 0.5579375354306916,
+    "C36": 0.6183866117445506,
+    "C37": 0.4879491333252909,
+    "C38": 0.538412985595444,
+    "C39": 0.6721766798742002,
+    "C40": 0.6624373453211673,
+    "C41": 0.3821121147527844,
+    "C42": 0.375588916582116,
+    "C43": 0.45035879400726175
+  },
+  "adopter_conditioning_identity": "conditional_group_ai_scale_times_industry_equivalent_multiplier_equals_one",
+  "common_it_effective_efficiency_case": "it_efficiency_3p0",
+  "common_it_effective_efficiency_multiplier": 3.0,
+  "baseline_reference_workload_per_service_unit": 1.0,
+  "reference_compute_h_per_service_unit": 0.3333333333333333,
+  "reference_server_group": "dual_accelerator_reference_server_group_calibrated_to_2x_NVIDIA_L20_48GB",
+  "production_load_boundary_status": "mixed_explicit_C36_calibrated_other_industries_legacy_compatibility",
+  "evidence_status": "outputs_validated_not_interpreted"
+}

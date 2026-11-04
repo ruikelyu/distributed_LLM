@@ -1,0 +1,32 @@
+industry_code,industry_name_cn,us_naics_3,us_industry_name,mapping_type,evidence_grade,mapping_note
+C13,农副食品加工业,311,Food,direct_sector,A,对应食品加工
+C14,食品制造业,311,Food,direct_sector,A,对应食品制造
+C15,酒、饮料和精制茶制造业,312,Beverage and Tobacco Products,direct_sector,A,对应饮料制造
+C16,烟草制品业,312,Beverage and Tobacco Products,direct_sector,A,对应烟草制造
+C17,纺织业,313,Textile Mills,direct_sector,A,对应纺织业
+C18,纺织服装、服饰业,315,Apparel,direct_sector,A,对应服装制造
+C19,皮革、毛皮、羽毛及其制品和制鞋业,316,Leather and Allied Products,direct_sector,A,对应皮革及制品
+C20,木材加工和木、竹、藤、棕、草制品业,321,Wood Products,direct_sector,A,对应木制品
+C21,家具制造业,337,Furniture and Related Products,direct_sector,A,对应家具制造
+C22,造纸和纸制品业,322,Paper,direct_sector,A,对应造纸业
+C23,印刷和记录媒介复制业,323,Printing and Related Support,direct_sector,A,对应印刷业
+C24,文教、工美、体育和娱乐用品制造业,339,Miscellaneous,nearest_sector,B,美国三位行业无完全对应项，采用其他制造业
+C25,石油、煤炭及其他燃料加工业,324,Petroleum and Coal Products,direct_sector,A,对应石油和煤制品
+C26,化学原料和化学制品制造业,325,Chemicals,direct_sector,A,对应化学品制造
+C27,医药制造业,325,Chemicals,parent_sector,B,医药属于美国化学品制造的细分行业
+C28,化学纤维制造业,325,Chemicals,parent_sector,B,化学纤维属于化学品相关制造
+C29,橡胶和塑料制品业,326,Plastics and Rubber Products,direct_sector,A,对应橡胶和塑料制品
+C30,非金属矿物制品业,327,Nonmetallic Mineral Products,direct_sector,A,对应非金属矿物制品
+C31,黑色金属冶炼和压延加工业,331,Primary Metals,parent_sector,B,采用初级金属三位行业平均值；露天作业使封闭面积代理偏弱
+C32,有色金属冶炼和压延加工业,331,Primary Metals,parent_sector,B,采用初级金属三位行业平均值；露天作业使封闭面积代理偏弱
+C33,金属制品业,332,Fabricated Metal Products,direct_sector,A,对应金属制品
+C34,通用设备制造业,333,Machinery,direct_sector,A,对应机械制造
+C35,专用设备制造业,333,Machinery,direct_sector,A,对应机械制造
+C36,汽车制造业,336,Transportation Equipment,parent_sector,B,采用运输设备行业平均值
+C37,铁路、船舶、航空航天和其他运输设备制造业,336,Transportation Equipment,direct_sector,A,对应运输设备制造
+C38,电气机械和器材制造业,335,"Electrical Equipment, Appliances, and Components",direct_sector,A,对应电气设备制造
+C39,计算机、通信和其他电子设备制造业,334,Computer and Electronic Products,direct_sector,A,对应计算机和电子产品
+C40,仪器仪表制造业,334,Computer and Electronic Products,parent_sector,B,仪器仪表属于美国计算机和电子产品相关细分行业
+C41,其他制造业,339,Miscellaneous,direct_sector,A,对应其他制造业
+C42,废弃资源综合利用业,339,Miscellaneous,nearest_sector,C,美国制造业三位行业无直接对应项，暂用其他制造业屋顶代理
+C43,金属制品、机械和设备修理业,333,Machinery,nearest_sector,C,修理业不属于美国制造业三位行业，暂用机械制造屋顶代理

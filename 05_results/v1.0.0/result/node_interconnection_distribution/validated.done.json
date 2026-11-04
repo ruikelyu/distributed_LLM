@@ -1,0 +1,103 @@
+{
+  "status": "validated",
+  "model_version": "v1.0.0",
+  "analysis_version": "node_interconnection_distribution_v1.0.0",
+  "configuration": "config/scenarios/node_interconnection_distribution_v1.yaml",
+  "version_resolution": "model_version_and_result_root_read_from_defaults_config",
+  "architectures": [
+    "PF",
+    "SHG",
+    "MSG"
+  ],
+  "distributed_reconciliation": {
+    "PF": {
+      "modeled_record_count": 152,
+      "weighted_site_count": 7586.099686823536,
+      "zero_record_count": 0,
+      "zero_weighted_site_count": 0.0,
+      "weighted_capacity_total_mw": 555.6535342027437
+    },
+    "SHG": {
+      "modeled_record_count": 31,
+      "weighted_site_count": 888.4167040312886,
+      "zero_record_count": 0,
+      "zero_weighted_site_count": 0.0,
+      "weighted_capacity_total_mw": 575.7839373174072
+    },
+    "MSG": {
+      "modeled_record_count": 152,
+      "weighted_site_count": 4231.163121834036,
+      "zero_record_count": 40,
+      "zero_weighted_site_count": 940.8032164309764,
+      "weighted_capacity_total_mw": 30.1636995487262
+    }
+  },
+  "epoch_source": {
+    "dataset_updated_date": "2026-09-10",
+    "access_date": "2026-09-13",
+    "as_of_date": "2026-09-10",
+    "positive_facility_campus_records": 69,
+    "same_address_collision_groups": 1,
+    "registered_distinct_record_groups": 1,
+    "unresolved_address_collision_groups": 0,
+    "data_centers_sha256": "322419d5516203f94f258af3ba6b4c08ba14eb0987321b27a8b1792c7d868f12",
+    "timelines_sha256": "53367a531521525925ac02d0abcfddfa0a8171a1d0703d4aae7b53a3f5f9b5ce"
+  },
+  "ldc_empirical_reference": {
+    "architecture_code": "LDC_EMPIRICAL_REFERENCE",
+    "main_case": "peak_facility_multiplier_1p20",
+    "peak_facility_to_it_multiplier_cases": {
+      "peak_facility_multiplier_1p20": 1.2,
+      "peak_facility_multiplier_1p40": 1.4
+    },
+    "statistical_unit": "public_facility_or_campus_record_not_independent_interconnection",
+    "equal_service_comparator": false,
+    "china_specific": false,
+    "normalized_to_modeled_national_service_or_capacity": false
+  },
+  "histogram": {
+    "zero_capacity_is_separate_bin": true,
+    "common_positive_bin_edges_mw": [
+      1e-13,
+      1e-12,
+      1e-11,
+      1e-10,
+      1e-09,
+      1e-08,
+      1e-07,
+      1e-06,
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0,
+      10000.0
+    ],
+    "proportions_sum_to_one": true
+  },
+  "forbidden_metrics_not_emitted": [
+    "maximum_modeled_node_claim",
+    "P50_or_P95_claim",
+    "top_k_share",
+    "HHI",
+    "effective_node_count"
+  ],
+  "claim_boundary": "weighted_modeled_node_distribution_vs_international_empirical_facility_campus_scale_reference_not_grid_projects_or_equal_service_LDC_sites",
+  "evidence_status": "outputs_validated_not_interpreted",
+  "outputs": {
+    "node_data": {
+      "filename": "node_interconnection_distribution.csv",
+      "sha256": "da510a12ebd10446a0544a0860257081888f31a1cb5754708ffff3595bb22ac3",
+      "rows": 473
+    },
+    "histogram_data": {
+      "filename": "node_interconnection_histogram.csv",
+      "sha256": "b047121613e1307c484bd33197b748dbefb9c5d433b60fcae5ea8dab51fd716e",
+      "rows": 90
+    }
+  }
+}

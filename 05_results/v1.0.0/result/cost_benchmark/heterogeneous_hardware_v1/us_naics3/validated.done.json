@@ -1,0 +1,53 @@
+{
+  "status": "complete_validated_us_21_naics_shared_cloud_service_contract",
+  "model_version": "v1.0.0",
+  "demand_case_version": "us_manufacturing_ai_demand_v0.3.0",
+  "industries": 21,
+  "demand_cases": [
+    "base",
+    "high",
+    "low"
+  ],
+  "cpu_price_cases": [
+    "base",
+    "high",
+    "low"
+  ],
+  "providers": [
+    "Anthropic",
+    "Google",
+    "OpenAI"
+  ],
+  "aggregation_boundary": "national_pooled_residual_service_capacity_after_managed_api_delivery",
+  "cloud_delivery_contract_case": "base",
+  "cloud_delivery_contract_source": "config/demand_cases/c36_local_cloud_core_v2.yaml",
+  "cloud_routing_contract_source": "config/compute_hardware/cpu_gpu_routing_v2.yaml",
+  "managed_and_residual_service_are_mutually_exclusive": true,
+  "cloud_capacity_pooling": "national_21_naics_fixed_profile_pool",
+  "installed_capacity_rule": "daily_average_plus_planning_headroom_and_n_plus_spare",
+  "planning_reserve_fraction": 0.15,
+  "n_plus_spare_server_groups": 0,
+  "normal_dispatch_reserve_fraction": 0.0,
+  "reference_compute_h_per_service_unit": 0.3333333333333333,
+  "common_it_effective_efficiency_case": "it_efficiency_3p0",
+  "common_it_effective_efficiency_multiplier": 3.0,
+  "baseline_reference_workload_per_service_unit": 1.0,
+  "excluded_unpriced_managed_components": [
+    "RAG_runtime_and_embedding",
+    "Agent_session_and_MCP_runtime",
+    "QLoRA_SFT_and_adapted_model_lifecycle"
+  ],
+  "interpretation_boundary": "enterprise_payment_screen_with_public_prices_not_social_cost_or_procurement_recommendation",
+  "input_sha256": {
+    "demand": "d7bbff6ff55cea9df209726ec3f610d3d51bdae179c07cf1b719d818f6a775e1",
+    "national_task_summary": "3611ddd6798edc6b94b73a0215f755d6cac36c5c528c837685bfc5a259d43f70",
+    "demand_config": "1bc57394ad1928541970874780651ac9adf8310388eec8930fb350100a4e6fba",
+    "routing_config": "e6d9685b8ceffb3e425043fd704082e755b884135dc7962d7c479b4575d8cc83",
+    "cloud_routing_config": "5510d2f88d0bb6bb2e436e51d10faec48aead7a2ffd9affbc476b838a670f49b",
+    "cloud_delivery_config": "126ed2bcf96f4fba92e9590603a9e0a65f47daea24ab23364f04771940789a74",
+    "us_cost_config": "171e071de3773567661e9a3f165053a428e06aa9f9e64277f7708fefb3fd9f24",
+    "us_parameters": "2024f638a4f1f94532dc25567402c016ab251fbcd55d2502b07ed07c1458fb2a",
+    "us_api_prices": "3853bdb0b3139223e25551ba6e5a8d616ef5984dd145b2be8742e692cd00ef44",
+    "compute_efficiency": "1a6ce9d5771d8b6a49fb9915e68c553da89e16d8e6313339aa19bf679ba375c4"
+  }
+}

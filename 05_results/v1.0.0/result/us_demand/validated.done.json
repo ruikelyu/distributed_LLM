@@ -1,0 +1,34 @@
+{
+  "status": "validated",
+  "model_version": "v1.0.0",
+  "demand_case_version": "us_manufacturing_ai_demand_v0.3.0",
+  "rows": 378,
+  "naics3": 21,
+  "tasks": [
+    "agent",
+    "maintenance",
+    "office",
+    "scheduling",
+    "simulation",
+    "vision"
+  ],
+  "parameter_cases": [
+    "low",
+    "base",
+    "high"
+  ],
+  "checks": [
+    "activity/task/case coverage",
+    "adoption and coverage bounds",
+    "industry/task reconciliation",
+    "tokens restricted to office and agent",
+    "single 15% installed reserve",
+    "bottom-up formula and external scale check"
+  ],
+  "input_sha256": {
+    "service": "d7bbff6ff55cea9df209726ec3f610d3d51bdae179c07cf1b719d818f6a775e1",
+    "task_summary": "3611ddd6798edc6b94b73a0215f755d6cac36c5c528c837685bfc5a259d43f70",
+    "validation": "11879074e1af564d659726f5a1e8f52e844aab0c17e34961880cc51cd00d3d52",
+    "config": "1bc57394ad1928541970874780651ac9adf8310388eec8930fb350100a4e6fba"
+  }
+}

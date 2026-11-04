@@ -1,0 +1,27 @@
+{
+  "artifact_id": "figure1-manufacturing-ai-demand-v100",
+  "status": "author_approved_for_active_manuscript",
+  "model_version": "v1.0.0",
+  "displayed_panels": [
+    "2030_low_base_high_demand_and_task_composition",
+    "top_eight_industries_in_base_demand_scenario"
+  ],
+  "context_strip": null,
+  "main_figure_exclusions": [
+    "full_31_industry_adoption_ranking",
+    "reconstructed_2023_and_intermediate_2025_demand",
+    "external_top_down_national_electricity_range",
+    "deployment_architecture_schematic",
+    "foundation_model_and_strict_llm_attribution",
+    "fixed_reference_system_conversion",
+    "explanatory_percentage_callouts"
+  ],
+  "service_input": "02_data/processed/effective_service/manufacturing_ai_effective_service_2030.csv",
+  "attribution_input": "02_data/manufacturing_foundation_model_task_attribution_parameters_v0.1.csv",
+  "outputs": {
+    "data": "05_results/v1.0.0/result/manuscript_figures/figure1_manufacturing_ai_demand_data.csv",
+    "png": "05_results/v1.0.0/result/manuscript_figures/figure1_manufacturing_ai_demand.png",
+    "pdf": "05_results/v1.0.0/result/manuscript_figures/figure1_manufacturing_ai_demand.pdf",
+    "svg": "05_results/v1.0.0/result/manuscript_figures/figure1_manufacturing_ai_demand.svg"
+  }
+}

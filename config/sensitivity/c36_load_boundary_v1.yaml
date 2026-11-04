@@ -1,0 +1,56 @@
+experiment_id: c36_integrated_oem_load_boundary_v1
+solver: highs
+industry: C36
+production_load_site_count: registry_or_representative_group_case
+max_modeled_routing_nodes: 5
+ai_deployment_node_rule: same_as_modeled_routing_nodes
+architectures: [PF, SHG, MSG]
+base_load_cases_by_architecture:
+  PF: [actual_load]
+  SHG: [actual_load, zero_load]
+  MSG: [actual_load]
+integer_boundary:
+  PF_installed_server_groups_integer: true
+  SHG_installed_server_groups_integer: false
+  MSG_installed_server_groups_integer: false
+  online_server_groups_integer: false
+  planning_reserve_fraction: 0.15
+  n_plus_spare_server_groups: 0
+  model_state_minimum_groups_enabled: false
+task_boundary:
+  same_group_total_service: true
+  representative_group_condition: known_AI_adopter
+  industry_demand_interpretation: unconditional_total_including_nonadopters
+  group_service_scale: group_activity_share_divided_by_adopter_activity_coverage
+  industry_reconstruction: adopter_activity_coverage_divided_by_group_activity_share
+  task_origin_weighting: equal_share_proxy_within_adopted_group
+  task_origin_scope: all_nine_production_load_sites
+  execution_node_scope: five_modeled_AI_deployment_routing_nodes
+  AI_deployment_points_equal_routing_nodes: true
+  all_six_core_tasks_group_routable: true
+  flexible_jobs_keep_original_deadlines: true
+  report_AI_power_decomposition: fixed_overhead_unshiftable_active_shiftable_active
+  cross_factory_routing: MSG_only
+energy_boundary:
+  pv_capacity_mode: none
+  battery_investment_enabled: false
+  same_provincial_hourly_price_at_all_factories: true
+load_curve_selection:
+  source: EWELD
+  source_isic: auto_from_core_lineage
+  rule: distinct_users_first_then_best_complete_week_passing_quality_constraints
+  proxy_rule: reuse_the_active_core_profile_source_isic_for_industries_without_direct_EWELD_samples
+  scaling: C36_activity_consistent_integrated_OEM_electricity_boundary
+  representative_sampling_rule: five_weighted_load_curves_reconstruct_nine_sites_only_for_IF
+  electrical_boundary: each_AI_node_uses_only_its_host_factory_load_no_cross_meter_aggregation
+  ai_deployment_rule: one_AI_deployment_point_per_modeled_routing_node
+  simultaneity: align_by_weekday_and_hour_not_same_calendar_week
+  week_quality:
+    minimum_monday_to_tuesday_friday_mean_ratio: 0.75
+    maximum_weekday_daily_mean_cv: 0.35
+    maximum_weekly_peak_to_mean_ratio: 3.0
+counterfactual:
+  architecture: SHG
+  definition: zero_original_factory_load_reoptimized_minus_actual_load_reoptimized
+  interpretation: value_of_cooptimizing_AI_with_the_fixed_host_factory_load_shape
+interpretation: C36_formal_integrated_OEM_production_load_boundary

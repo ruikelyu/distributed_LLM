@@ -1,0 +1,4 @@
+efficiency_case,normalization_year,target_year,baseline_reference_workload_per_service_unit,common_it_effective_efficiency_multiplier,evidence_status,scope,interpretation
+it_efficiency_1p5,2024,2030,1.0,1.5,author_confirmed_evidence_constrained_scenario,all_architectures_and_cpu_gpu_paths,Low-efficiency 2030 sensitivity relative to the common 2024 reference workload
+it_efficiency_3p0,2024,2030,1.0,3.0,author_confirmed_main_scenario,all_architectures_and_cpu_gpu_paths,Main 2030 scenario relative to the common 2024 reference workload
+it_efficiency_5p0,2024,2030,1.0,5.0,author_confirmed_evidence_constrained_scenario,all_architectures_and_cpu_gpu_paths,High-efficiency 2030 sensitivity relative to the common 2024 reference workload

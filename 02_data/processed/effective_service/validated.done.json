@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "validation_method": "core_hourly_shapes_and_server_capacity_logic",
+  "demand_method": "unscaled_bottom_up_six_task_ledger",
+  "demand_scaling_factor": 1.0,
+  "core_deployment_scope": "K_choice",
+  "scope_share_interpretation": "author_approved_boundary_not_empirical_national_share",
+  "selected_parameter_case": "base",
+  "service_unit": "2024_baseline_reference_workload_unit",
+  "common_it_effective_efficiency_case": "it_efficiency_3p0",
+  "common_it_effective_efficiency_multiplier": 3.0,
+  "reference_compute_h_per_service_unit": 0.3333333333333333,
+  "derived_reference_energy_twh": 13.982936253420563,
+  "external_range_twh": [
+    7.999999999999998,
+    13.999999999999998,
+    27.999999999999996
+  ],
+  "derived_reference_energy_twh_by_parameter_case": {
+    "low": 8.123729002061372,
+    "base": 13.982936253420563,
+    "high": 27.965872506841126
+  },
+  "external_values_used_as_model_inputs": false,
+  "industries_inside_warning_band": 30,
+  "per_industry_check": "diagnostic"
+}

@@ -1,0 +1,106 @@
+schema_version: 1
+audit_version: rq1_consumptive_water_evidence_v1
+status: active_evidence_qualification
+defaults_config: config/defaults.yaml
+current_water_scenario: 02_data/processed/resource_footprint/small_china_us_water_baseline_comparison.csv
+aware_source_config: config/scenarios/aware20_subnational_source_v1.yaml
+
+validation:
+  value_tolerance: 1.0e-12
+  expected_current_cases:
+    small_factory_site: 0.05
+    china_hyperscaler_harmonized_baseline: 0.335
+  forbidden_current_boundary_fragment: not_split_withdrawal_or_consumption
+  aware_required_inventory: water_consumption
+
+evidence:
+  - evidence_id: PF_CURRENT_005
+    architecture_role: PF_current_Figure4_case
+    provider: researcher_construct
+    geography: China_scenario
+    period: 2030_scenario
+    value_l_per_kwh_it: 0.05
+    numerator_boundary: onsite_cooling_humidification_water_not_split_withdrawal_or_consumption
+    source_url: null
+    local_source: 02_data/processed/resource_footprint/small_china_us_water_baseline_comparison.csv
+    classification: NOT_ELIGIBLE_FOR_AWARE
+    figure5_role: excluded
+    reason: The value is a small-facility scenario, not an observed or consumption-calibrated WUE.
+
+  - evidence_id: ALIBABA_AIR_COOLED_FY2025_0329
+    architecture_role: input_to_current_LDC_harmonized_case
+    provider: Alibaba
+    geography: self_built_data_centres
+    period: FY2025
+    value_l_per_kwh_it: 0.329
+    numerator_boundary: reported_WUE_without_verified_net_consumption_definition
+    source_url: https://www.hkexnews.hk/listedco/listconews/sehk/2025/0626/2025062601088.pdf
+    local_source: null
+    classification: NOT_ELIGIBLE_FOR_AWARE
+    figure5_role: excluded
+    reason: The official report gives the air-cooled WUE value but the verified disclosure does not establish water input minus water returned.
+
+  - evidence_id: MICROSOFT_AMERICAS_FY2025_0340
+    architecture_role: input_to_current_LDC_harmonized_case
+    provider: Microsoft
+    geography: Americas
+    period: FY2025
+    value_l_per_kwh_it: 0.34
+    numerator_boundary: official_pages_use_water_used_or_consumption_but_do_not_establish_net_consumption_for_this_value
+    source_url: https://datacenters.microsoft.com/sustainability/efficiency/
+    corroborating_url: https://www.microsoft.com/en-us/microsoft-cloud/blog/2024/12/09/sustainable-by-design-next-generation-datacenters-consume-zero-water-for-cooling/
+    local_source: null
+    classification: AMBIGUOUS_NOT_ELIGIBLE_FOR_AWARE
+    figure5_role: excluded
+    reason: Official wording is not sufficient to prove that the FY2025 Americas numerator is the AWARE-compatible net-consumption inventory.
+
+  - evidence_id: LDC_CURRENT_HARMONIZED_0335
+    architecture_role: LDC_current_Figure4_case
+    provider: derived_Alibaba_Microsoft_mean
+    geography: harmonized_technology_scenario
+    period: mixed_FY2025
+    value_l_per_kwh_it: 0.335
+    numerator_boundary: mean_of_inputs_without_common_verified_consumption_boundary
+    source_url: null
+    local_source: 02_data/processed/resource_footprint/small_china_us_water_baseline_comparison.csv
+    classification: NOT_ELIGIBLE_FOR_AWARE
+    figure5_role: excluded
+    reason: Averaging two inputs cannot repair their unresolved and potentially inconsistent inventory boundaries.
+
+  - evidence_id: GOOGLE_GLOBAL_CATEGORY2_1150
+    architecture_role: external_method_compatible_reference
+    provider: Google
+    geography: global_fleet
+    period: 2023_and_2024
+    value_l_per_kwh_it: 1.15
+    numerator_boundary: ISO_WUE_Category_2_water_input_minus_water_returned
+    source_url: https://services.google.com/fh/files/misc/measuring_the_environmental_impact_of_delivering_ai_at_google_scale.pdf
+    corroborating_url: https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference
+    local_source: null
+    classification: METHOD_COMPATIBLE_TRANSFER_ONLY
+    figure5_role: optional_transferred_reference_or_sensitivity_only
+    reason: The numerator is compatible with AWARE, but a global Google fleet value is not a central China PF or LDC parameter.
+
+decision_rule:
+  approved_figure5_design: separate_site_water_distribution_and_province_water_stress_context
+  eligible_main_classification: ELIGIBLE_FOR_AWARE_MAIN_CASE
+  current_main_case_status_if_none: CONSUMPTIVE_WUE_NOT_REQUIRED_FOR_APPROVED_CONTEXTUAL_EXPOSURE_DESIGN
+  transferred_references_cannot_become_central_automatically: true
+  do_not_infer_consumptive_fraction: true
+  do_not_modify_figure4_water_contract: true
+  do_not_build_figure5: true
+  do_not_multiply_site_water_by_aware: true
+  do_not_report_m3_world_equivalent: true
+  methodological_precedent:
+    citation: Xiao et al. (2025), Environmental impact and net-zero pathways for sustainable artificial intelligence servers in the USA
+    doi: 10.1038/s41893-025-01681-y
+    adopted_feature: separate onsite_WUE_water_accounting_and_spatial_water_resource_context
+    project_clarification: site_water_and_AWARE20_context_remain_unmultiplied_and_no_formal_LCA_scarcity_impact_is_claimed
+
+outputs:
+  subdirectory: audit/rq1_consumptive_water
+  evidence_table: evidence_qualification.csv
+  report_json: audit_report.json
+  report_markdown: audit_summary.md
+
+automatic_manuscript_edit: false

@@ -1,0 +1,5 @@
+requested_template,resolved_template,rationale,evidence_status
+C29,C34,legacy auto-calibration used the general-equipment template as its structural base,proxy_mapping
+C30,C31,legacy auto-calibration used the ferrous-metals template as its structural base,proxy_mapping
+C33,C34,legacy auto-calibration used the general-equipment template as its structural base,proxy_mapping
+C35,C34,legacy auto-calibration used the general-equipment template as its structural base,proxy_mapping

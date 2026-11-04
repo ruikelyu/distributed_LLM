@@ -1,0 +1,88 @@
+schema_version: 1
+analysis_version: rq1_spatial_water_interpretation_v1
+status: active_author_approved_interpretation_generator
+defaults_config: config/defaults.yaml
+figure5_config: config/scenarios/figure5_rq1_spatial_water_v1.yaml
+required_figure_status: validated_approved_design_RQ1_spatial_water_figure
+evidence_status: outputs_validated_interpretation_author_approved
+
+validation:
+  expected_architectures: [PF, LDC_AGGREGATE]
+  expected_provinces: 31
+  expected_rows: 62
+  share_tolerance: 1.0e-10
+  water_tolerance_m3_per_year: 1.0e-6
+  required_context_flag: true
+  required_automatic_manuscript_edit: false
+  require_score_volume_product_missing: true
+  required_stress_categories:
+    0: Low (<10%)
+    1: Low - Medium (10-20%)
+    2: Medium - High (20-40%)
+    3: High (40-80%)
+    4: Extremely High (>80%)
+
+summary:
+  top_n: 7
+  high_or_extremely_high_categories: [3, 4]
+  architecture_labels:
+    PF: PF
+    LDC_AGGREGATE: LDC aggregate
+  # Chinese province names written to the province_label columns of the CSV
+  # outputs; keep unchanged. Markdown review text uses the English keys.
+  province_labels:
+    anhui: 安徽
+    beijing: 北京
+    chongqing: 重庆
+    fujian: 福建
+    gansu: 甘肃
+    guangdong: 广东
+    guangxi: 广西
+    guizhou: 贵州
+    hainan: 海南
+    hebei: 河北
+    heilongjiang: 黑龙江
+    henan: 河南
+    hubei: 湖北
+    hunan: 湖南
+    inner mongolia: 内蒙古
+    jiangsu: 江苏
+    jiangxi: 江西
+    jilin: 吉林
+    liaoning: 辽宁
+    ningxia: 宁夏
+    qinghai: 青海
+    shaanxi: 陕西
+    shandong: 山东
+    shanghai: 上海
+    shanxi: 山西
+    sichuan: 四川
+    tianjin: 天津
+    tibet: 西藏
+    xinjiang: 新疆
+    yunnan: 云南
+    zhejiang: 浙江
+
+outputs:
+  subdirectory: result/rq1_spatial_water_interpretation
+  architecture_summary: architecture_summary.csv
+  top_provinces: top7_province_allocations.csv
+  stress_category_composition: water_stress_category_composition.csv
+  interpretation_review: rq1_spatial_water_interpretation_review.md
+  validation: rq1_spatial_water_interpretation_review.approved.json
+
+claim_boundaries:
+  - results_describe_two_registered_provincial_spatial_allocations_not_observed_facility_siting
+  - top7_share_is_registered_spatial_allocation_not_physical_site_concentration
+  - stress_composition_is_the_share_of_allocated_site_water_in_province_categories_not_a_scarcity_weighted_impact
+  - site_water_quantity_and_stress_score_are_never_multiplied
+  - PF_and_LDC_national_water_totals_use_different_registered_WUE_scenarios_and_their_difference_is_not_an_architecture_effect
+  - cross_architecture_distribution_differences_are_descriptive_input_based_differences_not_causal_architecture_effects
+  - Aqueduct40_baseline_is_a_1979_2019_prioritization_screen_not_real_time_or_site_validated_stress
+  - industrial_gross_withdrawal_is_a_within_province_aggregation_weight_not_a_data_center_water_inventory
+  - no_m3_world_equivalent_formal_LCIA_or_local_water_impact_is_reported
+  - LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_physical_site
+  - 2030_BAU_water_stress_is_excluded_and_reserved_for_RQ3_sensitivity
+  - author_approved_wording_is_reserved_for_later_coordinated_manuscript_migration
+
+automatic_manuscript_edit: false

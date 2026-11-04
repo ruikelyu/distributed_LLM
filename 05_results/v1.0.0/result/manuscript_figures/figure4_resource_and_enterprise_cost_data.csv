@@ -1,0 +1,40 @@
+﻿panel,metric_id,comparison_item,value_low,value_high,unit,scenario_boundary,series_id,demand_case
+a,onsite_cooling_humidification_water,Factory deployment,0.4658124899066726,0.4658124899066726,million m³/year,scenario_accounting_from_IT_energy_times_registered_WUE_not_architecture_only_effect_and_not_split_withdrawal_or_consumption,,
+a,onsite_cooling_humidification_water,New large data centers,3.12054711207474,3.12054711207474,million m³/year,scenario_accounting_from_IT_energy_times_registered_WUE_not_architecture_only_effect_and_not_split_withdrawal_or_consumption,,
+b,total_facility_floor_requirement,Factory deployment,0.9168492878657872,0.9168492878657872,million m²,total_facility_floor_requirement_under_reference_equipment_and_rack_scenarios_not_new_building_area_or_site_suitability,,
+b,total_facility_floor_requirement,New large data centers,1.341326610103361,1.341326610103361,million m²,greenfield_project_screening_proxy_not_provider_weighted_or_national_mean,,
+c,offsite_land_conversion,Factory deployment,0.0,0.0,million m²,zero_only_under_existing_factory_site_boundary_not_empirical_zero_land_need,,
+c,offsite_land_conversion,New large data centers,0.3816683899657745,0.3816683899657745,million m²,greenfield_project_screening_proxy_not_observed_portfolio_land_conversion,,
+d,annual_enterprise_total_payment,On-site deployment,32.20387796943644,32.20387796943644,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,PF,low
+d,annual_enterprise_total_payment,On-site deployment,32.04719184414888,32.04719184414888,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,SHG,low
+d,annual_enterprise_total_payment,On-site deployment,31.90625616245334,31.90625616245334,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,MSG,low
+d,annual_enterprise_total_payment,Cloud procurement,58.36379554954418,58.36379554954418,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,Alibaba Cloud | standard_agent,low
+d,annual_enterprise_total_payment,Cloud procurement,58.51876523305581,58.51876523305581,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,Alibaba Cloud | managed_agents,low
+d,annual_enterprise_total_payment,Cloud procurement,55.271692054042774,55.271692054042774,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,DeepSeek | standard_agent,low
+d,annual_enterprise_total_payment,Cloud procurement,55.4266617375544,55.4266617375544,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,DeepSeek | managed_agents,low
+d,annual_enterprise_total_payment,On-site deployment,55.42867644614045,55.42867644614045,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,PF,base
+d,annual_enterprise_total_payment,On-site deployment,55.15899139297987,55.15899139297987,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,SHG,base
+d,annual_enterprise_total_payment,On-site deployment,54.91641569113949,54.91641569113949,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,MSG,base
+d,annual_enterprise_total_payment,Cloud procurement,100.45460806784284,100.45460806784284,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,Alibaba Cloud | standard_agent,base
+d,annual_enterprise_total_payment,Cloud procurement,100.72133881544033,100.72133881544033,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,Alibaba Cloud | managed_agents,base
+d,annual_enterprise_total_payment,Cloud procurement,95.1325408201409,95.1325408201409,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,DeepSeek | standard_agent,base
+d,annual_enterprise_total_payment,Cloud procurement,95.39927156773841,95.39927156773841,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,DeepSeek | managed_agents,base
+d,annual_enterprise_total_payment,On-site deployment,110.8573528922809,110.8573528922809,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,PF,high
+d,annual_enterprise_total_payment,On-site deployment,110.31798278595974,110.31798278595974,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,SHG,high
+d,annual_enterprise_total_payment,On-site deployment,109.83283138227898,109.83283138227898,billion RMB/year,current base local ledger scaled by national effective-service demand ratio,MSG,high
+d,annual_enterprise_total_payment,Cloud procurement,200.90921613568568,200.90921613568568,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,Alibaba Cloud | standard_agent,high
+d,annual_enterprise_total_payment,Cloud procurement,201.44267763088067,201.44267763088067,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,Alibaba Cloud | managed_agents,high
+d,annual_enterprise_total_payment,Cloud procurement,190.2650816402818,190.2650816402818,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,DeepSeek | standard_agent,high
+d,annual_enterprise_total_payment,Cloud procurement,190.79854313547682,190.79854313547682,billion RMB/year,current base cloud ledger scaled by national effective-service demand ratio,DeepSeek | managed_agents,high
+e,annual_enterprise_total_payment,On-site deployment,9.233023440266184,9.233023440266184,billion USD/year,21 NAICS industries sized independently and summed nationally,industry-sized,low
+e,annual_enterprise_total_payment,Cloud procurement,11.159413571436708,11.159413571436708,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,OpenAI,low
+e,annual_enterprise_total_payment,Cloud procurement,11.17463012876928,11.17463012876928,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,Anthropic,low
+e,annual_enterprise_total_payment,Cloud procurement,11.006051802645901,11.006051802645901,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,Google,low
+e,annual_enterprise_total_payment,On-site deployment,15.876936701500233,15.876936701500233,billion USD/year,21 NAICS industries sized independently and summed nationally,industry-sized,base
+e,annual_enterprise_total_payment,Cloud procurement,19.10238689202502,19.10238689202502,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,OpenAI,base
+e,annual_enterprise_total_payment,Cloud procurement,19.14117771136807,19.14117771136807,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,Anthropic,base
+e,annual_enterprise_total_payment,Cloud procurement,18.70640901717842,18.70640901717842,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,Google,base
+e,annual_enterprise_total_payment,On-site deployment,31.873489938813265,31.873489938813265,billion USD/year,21 NAICS industries sized independently and summed nationally,industry-sized,high
+e,annual_enterprise_total_payment,Cloud procurement,38.78016938233239,38.78016938233239,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,OpenAI,high
+e,annual_enterprise_total_payment,Cloud procurement,38.88434072666189,38.88434072666189,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,Anthropic,high
+e,annual_enterprise_total_payment,Cloud procurement,37.710327863746066,37.710327863746066,billion USD/year,nationally pooled residual cloud capacity after managed/API delivery,Google,high

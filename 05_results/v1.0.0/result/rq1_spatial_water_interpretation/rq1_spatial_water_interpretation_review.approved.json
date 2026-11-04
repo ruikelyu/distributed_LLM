@@ -1,0 +1,89 @@
+{
+  "status": "author_approved_for_later_manuscript_migration",
+  "model_version": "v1.0.0",
+  "analysis_version": "rq1_spatial_water_interpretation_v1",
+  "solver_required": false,
+  "architecture_count": 2,
+  "top_n": 7,
+  "stress_category_count": 5,
+  "distribution_diagnostic": {
+    "top_n": 7,
+    "top_n_overlap_count": 2,
+    "top_n_overlap_provinces": [
+      "guangdong",
+      "zhejiang"
+    ],
+    "top_n_overlap_province_labels": [
+      "广东",
+      "浙江"
+    ],
+    "high_or_extremely_high_spatial_allocation_share_difference_percentage_points_pf_minus_ldc": -19.677909892061564,
+    "interpretation": "descriptive_difference_between_registered_spatial_allocation_inputs_not_architecture_effect"
+  },
+  "automatic_manuscript_edit": false,
+  "main_manuscript_updated": false,
+  "evidence_status": "outputs_validated_interpretation_author_approved",
+  "inputs": {
+    "configuration": {
+      "path": "config/scenarios/rq1_spatial_water_interpretation_v1.yaml",
+      "sha256": "ce5fad53c162a1defdfb2251638b45ecb3706abab504c612175dd58cf99ed617"
+    },
+    "defaults": {
+      "path": "config/defaults.yaml",
+      "sha256": "46e15afecba40dcb8a1bab939cd033c11c0ad5479850261c1f4ed3453e5f98a1"
+    },
+    "figure_configuration": {
+      "path": "config/scenarios/figure5_rq1_spatial_water_v1.yaml",
+      "sha256": "0923539259f535f394dd6b641c02e904195a65809990147583e2783252ab2f02"
+    },
+    "figure_data": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure5_spatial_water_data.csv",
+      "sha256": "95ae32b43a1220ab6d4e55418e59fac2d0308a97f14d16b5a934d50ead04d7e6"
+    },
+    "figure_validation": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure5_spatial_water.validated.done.json",
+      "sha256": "02dd4fb586255813e83c47d49cc0fb66733672788a67f3cf14b6f00b8d47cef2",
+      "status": "validated_approved_design_RQ1_spatial_water_figure"
+    }
+  },
+  "outputs": {
+    "architecture_summary": {
+      "path": "05_results/v1.0.0/result/rq1_spatial_water_interpretation/architecture_summary.csv",
+      "sha256": "ca466c9b0cb27720249400833f280a6718c4b2dd666dedd1b39de618d079dce6"
+    },
+    "top_provinces": {
+      "path": "05_results/v1.0.0/result/rq1_spatial_water_interpretation/top7_province_allocations.csv",
+      "sha256": "8d86fca96b6b8cec260528f9a95968b93546fc3c69be19bd3bb81a2e355e736b"
+    },
+    "stress_category_composition": {
+      "path": "05_results/v1.0.0/result/rq1_spatial_water_interpretation/water_stress_category_composition.csv",
+      "sha256": "121873423ff35b4a3462f992a5be48fd5458ccd3274608e0462f99167be3a459"
+    },
+    "interpretation_review": {
+      "path": "05_results/v1.0.0/result/rq1_spatial_water_interpretation/rq1_spatial_water_interpretation_review.md",
+      "sha256": "306cc57b7c00d27dd79cbfd0aff4c0c8997928fccd4e29a5dd211a106c7af702"
+    }
+  },
+  "checks": {
+    "source_rows": 62,
+    "province_count": 31,
+    "score_volume_product_all_missing": true,
+    "water_and_stress_remain_independent": true,
+    "future_2030_BAU_excluded": true,
+    "interpretation_author_approved": true
+  },
+  "claim_boundaries": [
+    "results_describe_two_registered_provincial_spatial_allocations_not_observed_facility_siting",
+    "top7_share_is_registered_spatial_allocation_not_physical_site_concentration",
+    "stress_composition_is_the_share_of_allocated_site_water_in_province_categories_not_a_scarcity_weighted_impact",
+    "site_water_quantity_and_stress_score_are_never_multiplied",
+    "PF_and_LDC_national_water_totals_use_different_registered_WUE_scenarios_and_their_difference_is_not_an_architecture_effect",
+    "cross_architecture_distribution_differences_are_descriptive_input_based_differences_not_causal_architecture_effects",
+    "Aqueduct40_baseline_is_a_1979_2019_prioritization_screen_not_real_time_or_site_validated_stress",
+    "industrial_gross_withdrawal_is_a_within_province_aggregation_weight_not_a_data_center_water_inventory",
+    "no_m3_world_equivalent_formal_LCIA_or_local_water_impact_is_reported",
+    "LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_physical_site",
+    "2030_BAU_water_stress_is_excluded_and_reserved_for_RQ3_sensitivity",
+    "author_approved_wording_is_reserved_for_later_coordinated_manuscript_migration"
+  ]
+}

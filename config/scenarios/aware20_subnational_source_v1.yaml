@@ -1,0 +1,82 @@
+schema_version: 1
+source_id: aware20_subnational_gadm41_v1_0_2
+status: official_source_identified_download_pending
+dataset:
+  title: Data to 'The updated and improved method for water scarcity impact assessment in LCA, AWARE2.0'
+  version: 1.0.2
+  publication_date: '2026-07-30'
+  concept_doi: 10.5281/zenodo.8215863
+  record_doi: 10.5281/zenodo.21708463
+  record_url: https://zenodo.org/records/21708463
+  documented_by_doi: 10.1111/jiec.70023
+  publisher: Zenodo
+file:
+  name: AWARE20_Subnational_Resolution.xlsx
+  official_md5: 45a67a3b50f94a224963cf32cf713296
+  destination: 02_data/raw/resource_footprint/water_scarcity_sources/aware20_v1.0.2/AWARE20_Subnational_Resolution.xlsx
+  download_urls:
+    - https://zenodo.org/api/records/21708463/files/AWARE20_Subnational_Resolution.xlsx/content
+    - https://zenodo.org/records/21708463/files/AWARE20_Subnational_Resolution.xlsx?download=1
+    - https://zenodo.org/records/16332127/files/AWARE20_Subnational_Resolution.xlsx?download=1
+    - https://zenodo.org/records/15133241/files/AWARE20_Subnational_Resolution.xlsx?download=1
+  version_note: The official v1.0.2 record states that unchanged file contents retain their prior metadata; all three official records list the same MD5 for this file.
+spatial_definition:
+  resolution: subnational_admin1
+  geography: GADM_4.1
+  intended_case: annual_nonagricultural_characterization_factor
+method_boundary:
+  required_inventory: water_consumption
+  factor_unit: m3_world_equivalent_per_m3_consumed
+  project_inventory_status: unresolved_site_water_use_not_split_withdrawal_or_consumption
+  application_status: blocked_pending_consumptive_water_inventory
+access:
+  verified_on: '2026-09-13'
+  download_status: official_public_and_API_endpoints_returned_HTTP_504_during_current_run
+  manual_fallback: Place the official file at file.destination; the freeze checker must verify its MD5 before extraction.
+extraction:
+  intended_sheet_name_candidates: [CFs_nonagri, CFs_non-agri, CFs_non_agri]
+  header_row_candidates: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  country_column_candidates: [GID_0, ISO3, ISO_3, country_code, Country]
+  province_column_candidates: [NAME_1, region_name, subnational_name, Province]
+  annual_factor_column_candidates: [annual, Annual, annual_CF, CF_annual, AWARE20_nonagri_annual]
+  country_value_candidates: [CHN, China]
+  output: 02_data/processed/resource_footprint/china_province_aware20_nonagri_annual_official.csv
+  lineage: 02_data/processed/resource_footprint/china_province_aware20_nonagri_annual_official.lineage.json
+  expected_provinces: 31
+  source_name_to_project_province:
+    Anhui: anhui
+    Beijing: beijing
+    Chongqing: chongqing
+    Fujian: fujian
+    Gansu: gansu
+    Guangdong: guangdong
+    Guangxi: guangxi
+    Guangxi Zhuang: guangxi
+    Guizhou: guizhou
+    Hainan: hainan
+    Hebei: hebei
+    Heilongjiang: heilongjiang
+    Henan: henan
+    Hubei: hubei
+    Hunan: hunan
+    Jiangsu: jiangsu
+    Jiangxi: jiangxi
+    Jilin: jilin
+    Liaoning: liaoning
+    Inner Mongolia: inner mongolia
+    Nei Mongol: inner mongolia
+    Ningxia: ningxia
+    Ningxia Hui: ningxia
+    Qinghai: qinghai
+    Shaanxi: shaanxi
+    Shandong: shandong
+    Shanghai: shanghai
+    Shanxi: shanxi
+    Sichuan: sichuan
+    Tianjin: tianjin
+    Xinjiang: xinjiang
+    Xinjiang Uygur: xinjiang
+    Tibet: tibet
+    Xizang: tibet
+    Yunnan: yunnan
+    Zhejiang: zhejiang

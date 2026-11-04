@@ -1,0 +1,145 @@
+﻿scenario_version,price_case,provider_bundle,component,annual_cost_rmb,included_in_total
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,text_llm_api_generic,6872883810.622931,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,agent_runtime,0.0,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,residual_gpu_reserved_capacity,27608106411.600002,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,residual_cpu_ecs_reserved_capacity,36642663543.24,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | standard_agent,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,text_llm_api_generic,6872883810.622931,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,agent_runtime,266730747.59750006,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,residual_gpu_reserved_capacity,27608106411.600002,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,residual_cpu_ecs_reserved_capacity,36642663543.24,True
+national_local_cloud_core_v1.0.0,low,Alibaba Cloud | managed_agents,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,text_llm_api_generic,1550816562.9209988,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,agent_runtime,0.0,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,residual_gpu_reserved_capacity,27608106411.600002,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,residual_cpu_ecs_reserved_capacity,36642663543.24,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | standard_agent,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,text_llm_api_generic,1550816562.9209988,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,agent_runtime,266730747.59750006,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,residual_gpu_reserved_capacity,27608106411.600002,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,residual_cpu_ecs_reserved_capacity,36642663543.24,True
+national_local_cloud_core_v1.0.0,low,DeepSeek | managed_agents,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,text_llm_api_generic,6872883810.622931,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,agent_runtime,0.0,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,residual_gpu_reserved_capacity,31749322373.34,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,residual_cpu_ecs_reserved_capacity,42139063074.726,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | standard_agent,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,text_llm_api_generic,6872883810.622931,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,agent_runtime,266730747.59750006,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,residual_gpu_reserved_capacity,31749322373.34,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,residual_cpu_ecs_reserved_capacity,42139063074.726,True
+national_local_cloud_core_v1.0.0,base,Alibaba Cloud | managed_agents,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,text_llm_api_generic,1550816562.9209988,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,agent_runtime,0.0,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,residual_gpu_reserved_capacity,31749322373.34,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,residual_cpu_ecs_reserved_capacity,42139063074.726,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | standard_agent,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,text_llm_api_generic,1550816562.9209988,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,agent_runtime,266730747.59750006,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,residual_gpu_reserved_capacity,31749322373.34,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,residual_cpu_ecs_reserved_capacity,42139063074.726,True
+national_local_cloud_core_v1.0.0,base,DeepSeek | managed_agents,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,text_llm_api_generic,6872883810.622931,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,agent_runtime,0.0,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,residual_gpu_reserved_capacity,35890538335.08,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,residual_cpu_ecs_reserved_capacity,47635462606.212,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | standard_agent,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,text_llm_api_generic,6872883810.622931,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,agent_runtime,266730747.59750006,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,residual_gpu_reserved_capacity,35890538335.08,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,residual_cpu_ecs_reserved_capacity,47635462606.212,True
+national_local_cloud_core_v1.0.0,high,Alibaba Cloud | managed_agents,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,text_llm_api_generic,1550816562.9209988,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,agent_runtime,0.0,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,residual_gpu_reserved_capacity,35890538335.08,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,residual_cpu_ecs_reserved_capacity,47635462606.212,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | standard_agent,residual_cpu_eas_managed_capacity,17098291077.12,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,qlora_adapted_model_inference,85147480.26175858,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,vlm_api,618586.228584755,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,rag_knowledge_base_runtime,1064187985.4424002,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,rag_embedding,64790744.92800001,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,rag_rerank,140510469.7980375,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,qlora_sft_training,1214826467.4,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,text_llm_api_generic,1550816562.9209988,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,agent_runtime,266730747.59750006,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,custom_mcp_runtime,24965997.975126,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,residual_gpu_reserved_capacity,35890538335.08,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,residual_cpu_ecs_reserved_capacity,47635462606.212,True
+national_local_cloud_core_v1.0.0,high,DeepSeek | managed_agents,residual_cpu_eas_managed_capacity,17098291077.12,True

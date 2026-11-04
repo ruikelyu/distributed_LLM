@@ -1,0 +1,79 @@
+schema_version: 1
+analysis_version: rq1_infrastructure_summary_v1
+defaults_config: config/defaults.yaml
+node_distribution_config: config/scenarios/node_interconnection_distribution_v1.yaml
+status: active_infrastructure_first_rq1_controlled_interpretation
+
+sources:
+  aggregate_comparison_subdirectory: sensitivity
+  aggregate_comparison_filename: national_grid_capacity_comparison.csv
+  aggregate_validation_filename: national_grid_capacity_comparison.validated.done.json
+  node_distribution_subdirectory: result/node_interconnection_distribution
+  node_data_filename: node_interconnection_distribution.csv
+  node_histogram_filename: node_interconnection_histogram.csv
+  node_validation_filename: validated.done.json
+
+outputs:
+  subdirectory: result/rq1_infrastructure
+  aggregate_summary: rq1_aggregate_capacity_summary.csv
+  node_scale_summary: rq1_node_scale_distribution_summary.csv
+  interpretation_review: rq1_controlled_interpretation_review.md
+  validation: rq1_controlled_interpretation_review.approved.json
+
+distributed_architectures: [PF, SHG, MSG]
+centralized_architecture: LDC_AGGREGATE
+empirical_reference_architecture: LDC_EMPIRICAL_REFERENCE
+
+node_scale_bins:
+  - id: exact_zero
+    label: 0 MW
+    kind: zero
+  - id: positive_below_0p1_mw
+    label: (0, 0.1) MW
+    lower_mw: 0.0
+    upper_mw: 0.1
+  - id: 0p1_to_1_mw
+    label: '[0.1, 1) MW'
+    lower_mw: 0.1
+    upper_mw: 1.0
+  - id: 1_to_10_mw
+    label: '[1, 10) MW'
+    lower_mw: 1.0
+    upper_mw: 10.0
+  - id: 10_to_100_mw
+    label: '[10, 100) MW'
+    lower_mw: 10.0
+    upper_mw: 100.0
+  - id: 100_to_1000_mw
+    label: '[100, 1000) MW'
+    lower_mw: 100.0
+    upper_mw: 1000.0
+  - id: 1000_to_10000_mw
+    label: '[1000, 10000) MW'
+    lower_mw: 1000.0
+    upper_mw: 10000.0
+
+validation:
+  expected_industry_count: 31
+  expected_epoch_record_count: 69
+  absolute_tolerance_mw: 1.0e-5
+  relative_tolerance: 1.0e-7
+
+claim_boundaries:
+  aggregate: site_facing_continuous_MW_screen_not_grid_equipment_investment_projects_or_schedules
+  ldc_aggregate: logical_equal_service_new_capacity_portfolio_not_one_physical_facility_or_interconnection
+  node_distribution: weighted_modeled_deployment_nodes_not_observed_national_site_sample
+  empirical_reference: international_public_facility_or_campus_records_not_china_specific_equal_service_sites_or_independent_interconnections
+  forbidden_metrics:
+    - maximum_modeled_node_claim
+    - P50_or_P95_claim
+    - top_k_share
+    - HHI
+    - effective_node_count
+
+evidence_status: outputs_validated_and_interpretation_author_approved
+interpretation_status: author_approved_for_figure_and_manuscript_migration
+author_approval:
+  status: approved
+  date: '2026-09-13'
+  authority: user_confirmation_after_controlled_RQ1_review

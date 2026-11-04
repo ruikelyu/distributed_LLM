@@ -1,0 +1,17 @@
+{
+  "status": "prepared",
+  "parameter_boundary": "US_reference_proxy_for_China_manufacturing",
+  "source_paper": "Namin, Eckelman and Isaacs (2023), doi:10.1088/2634-4505/acb5bf",
+  "source_data": "02_data/raw/curated/us_manufacturing_mecs_2022.csv",
+  "crosswalk": "02_data/raw/curated/china_manufacturing_to_us_mecs_rooftop_crosswalk.csv",
+  "conversion_sqft_to_m2": 0.09290304,
+  "industries": 31,
+  "minimum_roof_area_m2": 1090.9504079110013,
+  "maximum_roof_area_m2": 23199.75131019037,
+  "limitations": [
+    "US average enclosed floorspace is not measured Chinese rooftop area",
+    "enclosed floorspace may overstate roof correspondence for multistorey buildings",
+    "enclosed floorspace omits outdoor production areas in process industries",
+    "C42 and C43 use nearest-sector proxies"
+  ]
+}

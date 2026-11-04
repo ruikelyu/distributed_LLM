@@ -1,0 +1,64 @@
+﻿demand_case_version,model_version,parameter_case,naics3,industry_name,effective_service_units_day,annual_effective_service_units
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,311,Food manufacturing,5653795.054819741,2063635195.0092056
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,312,Beverage and tobacco product manufacturing,1618750.304611413,590843861.1831657
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,313,Textile mills,311106.42673520744,113553845.75835072
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,314,Textile product mills,613918.7399391873,224080340.07780334
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,315,Apparel manufacturing,536986.9397076512,196000232.9932927
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,316,Leather and allied product manufacturing,137389.49175958964,50147164.49225023
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,321,Wood product manufacturing,2050438.8034378178,748410163.2548035
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,322,Paper manufacturing,1066022.4209568023,389098183.6492328
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,323,Printing and related support activities,2691446.51148466,982377976.6919011
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,324,Petroleum and coal products manufacturing,463616.0226767467,169219848.27701256
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,325,Chemical manufacturing,4089423.451006906,1492639559.6175208
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,326,Plastics and rubber products manufacturing,2623703.2995829666,957651704.3477827
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,327,Nonmetallic mineral product manufacturing,2219277.797562429,810036396.1102866
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,331,Primary metal manufacturing,1123757.994084879,410171667.8409808
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,332,Fabricated metal product manufacturing,7346978.382432219,2681647109.58776
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,333,Machinery manufacturing,4113871.3731232174,1501563051.1899743
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,334,Computer and electronic product manufacturing,3408795.7103920234,1244210434.2930884
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,335,"Electrical equipment, appliance, and component manufacturing",1211494.3647124616,442195443.1200485
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,336,Transportation equipment manufacturing,4544422.942190925,1658714373.8996878
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,337,Furniture and related product manufacturing,2036527.1980514543,743332427.2887808
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,339,Miscellaneous manufacturing,3436699.5763295237,1254395345.3602762
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,311,Food manufacturing,11370818.726717511,4150348835.2518916
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,312,Beverage and tobacco product manufacturing,3254027.3736668346,1187719991.3883946
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,313,Textile mills,625420.6158369489,228278524.78048632
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,314,Textile product mills,1234308.5193113454,450522609.5486411
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,315,Apparel manufacturing,1079556.1049280616,394037978.2987425
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,316,Leather and allied product manufacturing,276256.46669088444,100833610.34217282
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,321,Wood product manufacturing,4123190.9741391707,1504964705.5607975
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,322,Paper manufacturing,2142975.7142825923,782186135.7131462
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,323,Printing and related support activities,5411134.928932861,1975064249.0604944
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,324,Petroleum and coal products manufacturing,930634.4151828748,339681561.5417493
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,325,Chemical manufacturing,8199621.025102787,2992861674.1625175
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,326,Plastics and rubber products manufacturing,5275765.534478724,1925654420.0847344
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,327,Nonmetallic mineral product manufacturing,4460922.914514565,1628236863.7978163
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,331,Primary metal manufacturing,2257358.6535466323,823935908.5445209
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,332,Fabricated metal product manufacturing,14772458.286856592,5391947274.702656
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,333,Machinery manufacturing,8266221.993287953,3017171027.550103
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,334,Computer and electronic product manufacturing,6833634.3288023155,2494276530.0128455
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,335,"Electrical equipment, appliance, and component manufacturing",2435125.2209196957,888820705.635689
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,336,Transportation equipment manufacturing,9128855.485827694,3332032252.3271084
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,337,Furniture and related product manufacturing,4093680.1948726717,1494193271.128525
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,339,Miscellaneous manufacturing,6903341.681579503,2519719713.776519
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,311,Food manufacturing,3232831.3866203185,1179983456.1164165
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,312,Beverage and tobacco product manufacturing,942012.1982257981,343834452.3524163
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,313,Textile mills,179073.29334364115,65361752.07042901
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,314,Textile product mills,356963.2668392732,130291592.39633472
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,315,Apparel manufacturing,313650.2457523324,114482339.6996013
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,316,Leather and allied product manufacturing,79700.9026308136,29090829.460246965
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,321,Wood product manufacturing,1185090.4564240493,432558016.59477806
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,322,Paper manufacturing,609177.3318338587,222349726.11935845
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,323,Printing and related support activities,1570217.4008265804,573129351.3017018
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,324,Petroleum and coal products manufacturing,270570.42417128454,98758204.82251886
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,325,Chemical manufacturing,2347652.779532013,856893264.5291848
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,326,Plastics and rubber products manufacturing,1496744.9026702198,546311889.4746302
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,327,Nonmetallic mineral product manufacturing,1289287.1934317918,470589825.60260403
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,331,Primary metal manufacturing,646334.9547255033,235912258.4748087
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,332,Fabricated metal product manufacturing,4252898.9257088,1552308107.8837118
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,333,Machinery manufacturing,2348030.8059976893,857031244.1891565
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,334,Computer and electronic product manufacturing,1931972.5946925394,705169997.0627769
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,335,"Electrical equipment, appliance, and component manufacturing",687957.596549793,251104522.7406745
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,336,Transportation equipment manufacturing,2550747.9630651553,931023006.5187817
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,337,Furniture and related product manufacturing,1183749.8826157432,432068707.1547463
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,339,Miscellaneous manufacturing,1992113.570230233,727121453.1340351

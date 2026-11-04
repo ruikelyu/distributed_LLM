@@ -1,0 +1,7 @@
+﻿task_id,managed_model_share,residual_service_share,residual_cpu_share_of_total_service,residual_gpu_share_of_total_service,cloud_cpu_product
+agent,1.0,0.0,0.0,0.0,none
+maintenance,0.5,0.5,0.25,0.25,eas_managed
+office,1.0,0.0,0.0,0.0,none
+scheduling,0.35,0.65,0.52,0.12999999999999998,ecs_reserved
+simulation,0.2500000000000001,0.7499999999999999,0.37499999999999994,0.37499999999999994,ecs_reserved
+vision,0.75,0.25,0.0,0.25,none

@@ -1,0 +1,15 @@
+﻿model_version,architecture,rank,province,province_label,allocation_share,province_onsite_cooling_humidification_water_m3_per_year,aqueduct40_baseline_water_stress_score,aqueduct40_baseline_water_stress_category,aqueduct40_baseline_water_stress_label,allocation_proxy
+v1.0.0,PF,1,guangdong,广东,0.1345355424825633,62668.336024747754,0.993661109,0,Low (<10%),2030_REFERENCE_manufacturing_electricity_spatial_scenario
+v1.0.0,PF,2,zhejiang,浙江,0.1212285201924761,56469.758838558664,2.698304122,2,Medium - High (20-40%),2030_REFERENCE_manufacturing_electricity_spatial_scenario
+v1.0.0,PF,3,jiangsu,江苏,0.0935853694224741,43593.233949518464,2.524063846,2,Medium - High (20-40%),2030_REFERENCE_manufacturing_electricity_spatial_scenario
+v1.0.0,PF,4,shandong,山东,0.0893354529831082,41613.56979100215,4.445861991,4,Extremely High (>80%),2030_REFERENCE_manufacturing_electricity_spatial_scenario
+v1.0.0,PF,5,sichuan,四川,0.0595386135337266,27733.82981573633,2.971403208,2,Medium - High (20-40%),2030_REFERENCE_manufacturing_electricity_spatial_scenario
+v1.0.0,PF,6,hubei,湖北,0.0358589217995581,16703.53364882085,1.098523384,1,Low - Medium (10-20%),2030_REFERENCE_manufacturing_electricity_spatial_scenario
+v1.0.0,PF,7,fujian,福建,0.0357902090683361,16671.52640040201,2.264551535,2,Medium - High (20-40%),2030_REFERENCE_manufacturing_electricity_spatial_scenario
+v1.0.0,LDC_AGGREGATE,1,hebei,河北,0.148,461840.9725870615,4.699826907,4,Extremely High (>80%),2025_CAict_in_use_intelligent_compute_capacity_proxy
+v1.0.0,LDC_AGGREGATE,2,shanghai,上海,0.10346871,322878.9841805988,3.522721669,3,High (40-80%),2025_CAict_in_use_intelligent_compute_capacity_proxy
+v1.0.0,LDC_AGGREGATE,3,zhejiang,浙江,0.088777012,277032.8484152246,2.698304122,2,Medium - High (20-40%),2025_CAict_in_use_intelligent_compute_capacity_proxy
+v1.0.0,LDC_AGGREGATE,4,guizhou,贵州,0.082627278,257842.3137414967,1.47576951,1,Low - Medium (10-20%),2025_CAict_in_use_intelligent_compute_capacity_proxy
+v1.0.0,LDC_AGGREGATE,5,inner mongolia,内蒙古,0.076784946,239611.04149111488,3.724002882,3,High (40-80%),2025_CAict_in_use_intelligent_compute_capacity_proxy
+v1.0.0,LDC_AGGREGATE,6,guangdong,广东,0.074188353,231508.25070373135,0.993661109,0,Low (<10%),2025_CAict_in_use_intelligent_compute_capacity_proxy
+v1.0.0,LDC_AGGREGATE,7,ningxia,宁夏,0.053724732,167650.55728958937,3.878998886,3,High (40-80%),2025_CAict_in_use_intelligent_compute_capacity_proxy

@@ -1,0 +1,96 @@
+schema_version: 1
+audit_version: rq3_sensitivity_design_audit_v1
+status: active_infrastructure_first_RQ3_design_audit
+defaults_config: config/defaults.yaml
+research_contract: 00_admin/infrastructure_first_research_design_v1.md
+
+inputs:
+  national_oat_registry: config/sensitivity/rq3_core_sensitivity_v1.yaml
+  extended_oat_registry: config/sensitivity/national_oat_extended_screen_v1.yaml
+  parameter_bounds: config/sensitivity/parameter_bounds_design_v1.csv
+  parameter_provenance: config/sensitivity/parameter_range_provenance_v1.csv
+  compute_efficiency_cases: 02_data/processed/compute_efficiency/common_it_effective_efficiency_scenarios.csv
+  effective_service_cases: 02_data/processed/effective_service/manufacturing_ai_effective_service_2030.csv
+  water_main_cases: 02_data/processed/resource_footprint/small_china_us_water_baseline_comparison.csv
+  water_scenario_cases: 02_data/processed/resource_footprint/resource_footprint_water_scenarios.csv
+  aqueduct_config: config/scenarios/aqueduct40_province_water_stress_v1.yaml
+  ldc_config: config/sensitivity/national_cloud_center_v1.yaml
+  ldc_runner: 08_code/run_national_cloud_center.py
+  workflow_rules: workflow/rules/single_industry_sensitivity.smk
+  makefile: Makefile
+  core_week_profiles: 02_data/processed/core/manufacturing_31sector_real_weeks.csv
+  core_week_lineage: 02_data/processed/core/manufacturing_31sector_real_weeks.lineage.json
+
+architecture_contract:
+  distributed: [PF, SHG, MSG]
+  centralized: LDC_AGGREGATE
+  equal_service_required: true
+  main_claim_requires_all_architectures: true
+
+# name_cn values are written to the dimension_cn column of the audit CSV;
+# keep them unchanged (English glosses inline).
+required_dimensions:
+  - id: RQ3_D1
+    name_cn: AI服务需求规模  # AI service demand scale
+    registry: national
+    factor_id: PHY01
+    requires_optimization: true
+    parameter_status: existing_model_ready_cases
+  - id: RQ3_D2
+    name_cn: 2030共同IT有效效率  # 2030 common IT effective efficiency
+    registry: national
+    factor_id: PHY02
+    requires_optimization: true
+    parameter_status: author_confirmed_1p5_3p0_5p0
+  - id: RQ3_D3
+    name_cn: 综合规划装机裕量  # combined planning installed-capacity margin
+    registry: extended
+    factor_id: PHY07
+    requires_optimization: true
+    parameter_status: author_confirmed_0_0p15_0p30_0p50
+    expected_values: [0.0, 0.15, 0.30, 0.50]
+  - id: RQ3_D4
+    name_cn: 设施效率  # facility efficiency
+    registry: extended
+    factor_id: PHY06
+    requires_optimization: true
+    parameter_status: author_confirmed_reality_main_common_controls_and_two_dimensional_sensitivity
+    expected_distributed_values: [1.20, 1.30, 1.60]
+    expected_ldc_values: [1.10, 1.22, 1.30]
+  - id: RQ3_D5
+    name_cn: 冷却与现场用水参数  # cooling and onsite water parameters
+    registry: none
+    factor_id: null
+    requires_optimization: conditional
+    parameter_status: WUE_only_postprocess_possible_PUE_coupled_case_requires_solve
+  - id: RQ3_D6
+    name_cn: 代表周选择  # representative-week selection
+    registry: none
+    factor_id: PHY13
+    requires_optimization: true
+    parameter_status: alternative_week_input_missing
+
+supplementary_context_dimensions:
+  - id: RQ3_S1
+    name_cn: Aqueduct 2030 BAU省级水压力背景  # Aqueduct 2030 BAU provincial water-stress background
+    requires_optimization: false
+    parameter_status: registered_for_RQ3_extraction_not_implemented
+
+outputs:
+  subdirectory: audit/rq3_sensitivity_design
+  matrix_csv: rq3_sensitivity_design_matrix.csv
+  report_json: audit_report.json
+  report_markdown: audit_summary.md
+
+claim_boundaries:
+  - RQ3_cases_are_scenarios_not_confidence_intervals_or_forecasts
+  - robustness_requires_equal_service_comparisons_against_the_matching_LDC_case
+  - SHG_only_results_cannot_establish_robustness_for_PF_SHG_and_MSG_collectively
+  - WUE_only_changes_are_solver_free_only_when_IT_energy_and_facility_efficiency_are_held_fixed
+  - cooling_cases_that_change_PUE_require_consistent_physical_reruns
+  - representative_week_robustness_requires_alternative_measured_or_predeclared_week_inputs
+  - Aqueduct_2030_BAU_remains_context_only_and_is_never_multiplied_by_site_water
+  - this_audit_does_not_authorize_or_launch_optimization_runs
+
+automatic_run: false
+automatic_manuscript_edit: false

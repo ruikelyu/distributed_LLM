@@ -1,0 +1,19 @@
+﻿demand_case_version,model_version,parameter_case,task_id,task_name,effective_service_units_day,annual_effective_service_units,annual_input_tokens,annual_output_tokens,token_boundary
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,agent,Business-process agent,18039122.690038275,6584279781.863971,37650674331895.9,18825337165947.95,API_tokens
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,maintenance,Predictive maintenance,2436493.5625695735,889320150.3378944,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,office,Office knowledge/RAG/Copilot,1464236.9498375233,534446486.69069594,30434045793342.73,15217022896671.365,API_tokens
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,scheduling,Production scheduling,23709309.342065245,8653897909.853815,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,simulation,R&D simulation/digital twin,3792981.4686481273,1384438236.0565665,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,vision,Vision anomaly review,1856278.792439077,677541759.2402632,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,agent,Business-process agent,36395673.12562639,13284420690.853634,103755534677875.38,51877767338937.69,API_tokens
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,maintenance,Predictive maintenance,4861568.018011185,1774472326.5740829,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,office,Office knowledge/RAG/Copilot,2913061.121411854,1063267309.3153267,80730317660396.25,40365158830198.125,API_tokens
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,scheduling,Production scheduling,47540542.2081725,17352297905.982964,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,simulation,R&D simulation/digital twin,7533898.450596585,2749872934.4677534,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,vision,Vision anomaly review,3830566.2356597073,1398156676.015793,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,agent,Business-process agent,9808153.96732793,3579976198.074694,14329883554560.004,7164941777280.002,API_tokens
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,maintenance,Predictive maintenance,1522623.8382072223,555757700.9456362,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,office,Office knowledge/RAG/Copilot,799854.177855574,291946774.9172845,11874931405425.0,5937465702712.5,API_tokens
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,scheduling,Production scheduling,14110972.988961507,5150505140.97095,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,simulation,R&D simulation/digital twin,2134079.019529245,778938842.1281744,0.0,0.0,reserved_GPU_no_token_conversion
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,vision,Vision anomaly review,1091094.084005954,398249340.6621732,0.0,0.0,reserved_GPU_no_token_conversion

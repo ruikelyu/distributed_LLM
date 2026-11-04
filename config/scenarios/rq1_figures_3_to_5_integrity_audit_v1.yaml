@@ -1,0 +1,50 @@
+schema_version: 1
+audit_version: rq1_figures_3_to_5_integrity_audit_v1
+status: active_solver_free_cross_figure_audit
+defaults_config: config/defaults.yaml
+
+figures:
+  figure3:
+    config: config/scenarios/figure3_rq1_grid_capacity_v2.yaml
+    required_status: validated_author_approved_RQ1_figure
+  figure4:
+    config: config/scenarios/figure4_rq1_resource_footprint_v1.yaml
+    required_status: validated_author_approved_RQ1_resource_figure
+  figure5:
+    config: config/scenarios/figure5_rq1_spatial_water_v1.yaml
+    required_status: validated_approved_design_RQ1_spatial_water_figure
+
+approved_interpretations:
+  spatial_water_config: config/scenarios/rq1_spatial_water_interpretation_v1.yaml
+  required_status: author_approved_for_later_manuscript_migration
+
+validation:
+  expected_figure3_aggregate_architectures: [LDC_AGGREGATE, PF, SHG, MSG]
+  expected_resource_architectures: [PF, LDC_AGGREGATE]
+  expected_resource_metrics:
+    - onsite_cooling_humidification_water
+    - total_facility_floor_requirement
+    - offsite_land_conversion
+  expected_provinces: 31
+  expected_figure5_rows: 62
+  selected_floor_case: central
+  water_absolute_tolerance_m3_per_year: 1.0e-6
+  water_relative_tolerance: 1.0e-12
+  required_common_colors:
+    PF: '#3C78A8'
+    LDC_AGGREGATE: '#8D959C'
+
+outputs:
+  subdirectory: audit/rq1_figures_3_to_5_integrity
+  report_json: audit_report.json
+  report_markdown: audit_summary.md
+
+claim_boundaries:
+  - audit_certifies_internal_version_data_and_boundary_consistency_not_empirical_validity
+  - figure3_grid_capacity_is_a_continuous_site_facing_screen_not_grid_equipment_or_investment
+  - figure4_water_floor_and_land_are_registered_scenario_comparisons_not_architecture_only_effects
+  - figure5_is_a_province_spatial_screen_with_independent_water_quantity_and_stress_context
+  - LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_physical_site
+  - cross_figure_consistency_does_not_authorize_unreviewed_manuscript_language
+
+automatic_manuscript_edit: false

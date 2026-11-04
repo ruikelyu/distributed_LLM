@@ -1,0 +1,79 @@
+sensitivity_version: national_oat_extension_v1.2.0
+defaults_config: config/defaults.yaml
+status: group_architecture_oat_extension
+default_enabled: false
+# `industry` is retained for compatibility with the common materializer;
+# selected_industries controls this national extension.
+industry: C38
+selected_industries: [C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40, C41, C42, C43]
+architectures: [PF, SHG, MSG]
+# Parameter screens default to SHG only. Core and C33/C36 still compare all three.
+# Default national OAT targets cover PHY01–PHY03 only.
+# Expanded PHY04–PHY11 / HW01–HW02 live in national_oat_extended_screen_v1.yaml
+# and run only via `national_extended_sensitivity`.
+solve_architectures: [SHG]
+output_subdirectory: national_oat_group_architecture
+common_overrides:
+  paths:
+    hourly_industry_profiles: 02_data/processed/core/manufacturing_31sector_real_weeks.csv
+reference_case:
+  case_id: REF__baseline
+  display_value: central
+  overrides: {}
+baseline_invariant: true
+# label_cn values are Chinese factor labels written to the factor_label_cn
+# column of the sensitivity CSV outputs; keep them unchanged (English glosses inline).
+factors:
+  PHY01:
+    label_cn: AI服务需求规模  # AI service demand scale
+    baseline_value: base
+    primary_claims: [C2]
+    cases:
+      low:
+        display_value: low
+        overrides:
+          demand:
+            effective_service:
+              parameter_case: low
+      high:
+        display_value: high
+        overrides:
+          demand:
+            effective_service:
+              parameter_case: high
+  PHY02:
+    label_cn: 2030共同IT有效效率  # 2030 common IT effective efficiency
+    baseline_value: 3.0
+    primary_claims: [C2]
+    cases:
+      low_efficiency:
+        display_value: 1.5
+        overrides:
+          demand:
+            effective_service:
+              common_it_effective_efficiency_case: it_efficiency_1p5
+      high_efficiency:
+        display_value: 5.0
+        overrides:
+          demand:
+            effective_service:
+              common_it_effective_efficiency_case: it_efficiency_5p0
+  PHY03:
+    label_cn: 任务柔性  # task flexibility
+    baseline_value: central
+    primary_claims: [C2]
+    paired_counterfactual:
+      baseline_config: config/runs/all_industries_core.yaml
+      architecture: SHG
+      base_load_case: actual_load
+      treatment_case: central
+      control_case: no_shift
+      changed_paths: [demand.flexibility_scenario]
+      effect_definition: no_shift_minus_flexible
+      positive_effect_interpretation: grid_capacity_avoided_by_temporal_shifting
+    cases:
+      no_shift:
+        display_value: no_shift
+        overrides:
+          demand:
+            flexibility_scenario: no_shift

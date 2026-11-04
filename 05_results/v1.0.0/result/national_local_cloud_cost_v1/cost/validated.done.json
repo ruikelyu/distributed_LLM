@@ -1,0 +1,43 @@
+{
+  "status": "validated_national_all_local_vs_all_cloud_screening",
+  "scenario_version": "national_local_cloud_core_v1.0.0",
+  "industry_count": 31,
+  "same_service": true,
+  "equal_effectiveness_assumption": true,
+  "cloud_performance_benchmark_required": false,
+  "local_architectures": [
+    "PF",
+    "SHG",
+    "MSG"
+  ],
+  "cloud_provider_bundles": [
+    "Alibaba Cloud | managed_agents",
+    "Alibaba Cloud | standard_agent",
+    "DeepSeek | managed_agents",
+    "DeepSeek | standard_agent"
+  ],
+  "cloud_price_cases": [
+    "base",
+    "high",
+    "low"
+  ],
+  "annual_effective_service_units": 34873853017.949524,
+  "cloud_gpu_groups": 151138,
+  "cloud_cpu_groups_by_product": {
+    "ecs_reserved": 1500349,
+    "eas_managed": 252048
+  },
+  "maximum_service_reconciliation_error": 2.3283064365386963e-10,
+  "cloud_components_reconcile": true,
+  "base_cloud_to_local_ratio_range": [
+    1.7163054743437784,
+    1.8340843543379919
+  ],
+  "limitations": [
+    "managed-service and workload quantities are evidence-bounded scenarios rather than enterprise traces",
+    "cloud CPU capacity ratios are specification conversions rather than measured performance",
+    "public cloud prices exclude negotiated discounts, WAN, migration, support, tax, and integration",
+    "national pooled capacity uses the registered deadline-feasible water-filling upper-bound heuristic",
+    "local physical input retains the mixed production-load boundary: C36 calibrated and 30 industries legacy"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "validated_national_shared_demand_ledger_screening_parameters",
+  "scenario_version": "national_local_cloud_core_v1.0.0",
+  "base_scenario_version": "c36_local_cloud_core_v2.0.0",
+  "industry_count": 31,
+  "task_rows": 558,
+  "lifecycle_rows": 372,
+  "maximum_service_reconciliation_error": 9.313225746154783e-10,
+  "same_ledger_required_for_local_and_cloud": true,
+  "manuscript_outputs_modified": false
+}

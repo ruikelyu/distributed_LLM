@@ -1,0 +1,65 @@
+schema_version: 1
+figure_version: figure4_rq1_resource_footprint_v1
+status: active_author_approved_RQ1_resource_figure
+defaults_config: config/defaults.yaml
+resource_summary_config: config/scenarios/rq1_resource_footprint_summary_v1.yaml
+required_interpretation_status: author_approved_for_figure_and_later_manuscript_migration
+
+outputs:
+  subdirectory: result/manuscript_figures
+  data: figure4_resource_footprint_data.csv
+  svg: figure4_resource_footprint.svg
+  png: figure4_resource_footprint.png
+  pdf: figure4_resource_footprint.pdf
+  validation: figure4_resource_footprint.validated.done.json
+
+architectures: [PF, LDC_AGGREGATE]
+architecture_labels:
+  PF: PF
+  LDC_AGGREGATE: LDC aggregate
+colors:
+  PF: '#3C78A8'
+  LDC_AGGREGATE: '#8D959C'
+
+panels:
+  - id: onsite_cooling_humidification_water
+    title: a  On-site cooling and humidification water
+    subtitle: 'Registered WUE: PF 0.05; LDC 0.335 L/kWh-IT'
+    unit_scale: 1.0e-6
+    axis_label: million m³/year
+    sensitivity_case: registered_main
+    row_labels:
+      PF: PF
+      LDC_AGGREGATE: LDC aggregate
+  - id: total_facility_floor_requirement
+    title: b  Total facility floor requirement
+    subtitle: PF central case; LDC greenfield project proxy
+    unit_scale: 1.0e-6
+    axis_label: million m²
+    sensitivity_case: central
+    row_labels:
+      PF: PF
+      LDC_AGGREGATE: LDC aggregate
+  - id: offsite_land_conversion
+    title: c  Off-site land conversion
+    subtitle: PF existing-site boundary; LDC greenfield project proxy
+    unit_scale: 1.0e-6
+    axis_label: million m²
+    sensitivity_case: registered_boundary
+    row_labels:
+      PF: PF
+      LDC_AGGREGATE: LDC aggregate
+
+figure:
+  width_inches: 14.2
+  height_inches: 4.8
+  png_dpi: 240
+
+claim_boundaries:
+  - values_are_registered_scenario_calculations_not_architecture_only_causal_effects
+  - water_uses_distinct_registered_WUE_cases_and_does_not_split_withdrawal_or_consumption
+  - facility_floor_uses_the_author_selected_central_case_only
+  - PF_new_building_area_remains_unquantified
+  - PF_zero_offsite_land_is_an_existing_factory_site_boundary_not_an_empirical_estimate
+  - LDC_floor_and_land_are_greenfield_project_screening_proxies_not_national_means
+  - LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_physical_site

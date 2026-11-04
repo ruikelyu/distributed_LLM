@@ -1,0 +1,16 @@
+{
+  "status": "validated",
+  "roundtrip_efficiency": 0.9,
+  "sizing_rule": "P_n = max_t e_nt; E_n = max_d sum_{t in d} e_nt / eta_dis",
+  "power_reconciles_with_additional_capacity": true,
+  "national_power_mw": {
+    "PF": 555.654,
+    "SHG": 575.784,
+    "MSG": 30.164
+  },
+  "national_energy_mwh": {
+    "PF": 1079.869,
+    "SHG": 1583.005,
+    "MSG": 46.491
+  }
+}

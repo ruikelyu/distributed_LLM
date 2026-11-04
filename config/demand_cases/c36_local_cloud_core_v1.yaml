@@ -1,0 +1,141 @@
+scenario_version: c36_local_cloud_core_v1.0.0
+industry_code: C36
+year: 2030
+enterprise_size_weight:
+  large: 0.5
+  sme: 0.5
+
+# These three cases are evidence-bounded scenarios, not observed C36 workload means.
+# All deployment alternatives consume the same ledger generated from this file.
+workload_cases:
+  low:
+    rag_tasks_per_active_user_day: 3.0
+    rag_input_tokens_per_call: 2000
+    rag_output_tokens_per_call: 250
+    rag_knowledge_bases_per_adopting_enterprise: 1
+    rag_corpus_tokens_per_knowledge_base: 2000000
+    rag_monthly_refresh_fraction: 0.01
+    agent_workflows_per_active_user_day: 0.5
+    agent_model_steps_per_workflow: 3
+    agent_input_tokens_per_step: 2000
+    agent_output_tokens_per_step: 150
+    agent_tool_calls_per_workflow: 2
+    agent_session_minutes_per_workflow: 2
+    agent_retry_fraction: 0.05
+    qlora_adoption_fraction_of_llm_enterprises: 0.05
+    qlora_models_per_adopter: 1
+    qlora_updates_per_model_year: 1
+    qlora_dataset_tokens_per_update: 500000
+    qlora_epochs: 1
+  base:
+    rag_tasks_per_active_user_day: 6.0
+    rag_input_tokens_per_call: 3500
+    rag_output_tokens_per_call: 500
+    rag_knowledge_bases_per_adopting_enterprise: 3
+    rag_corpus_tokens_per_knowledge_base: 20000000
+    rag_monthly_refresh_fraction: 0.05
+    agent_workflows_per_active_user_day: 1.5
+    agent_model_steps_per_workflow: 8
+    agent_input_tokens_per_step: 4000
+    agent_output_tokens_per_step: 250
+    agent_tool_calls_per_workflow: 5
+    agent_session_minutes_per_workflow: 5
+    agent_retry_fraction: 0.10
+    qlora_adoption_fraction_of_llm_enterprises: 0.15
+    qlora_models_per_adopter: 2
+    qlora_updates_per_model_year: 4
+    qlora_dataset_tokens_per_update: 5000000
+    qlora_epochs: 3
+  high:
+    rag_tasks_per_active_user_day: 10.0
+    rag_input_tokens_per_call: 6000
+    rag_output_tokens_per_call: 800
+    rag_knowledge_bases_per_adopting_enterprise: 8
+    rag_corpus_tokens_per_knowledge_base: 100000000
+    rag_monthly_refresh_fraction: 0.15
+    agent_workflows_per_active_user_day: 4.0
+    agent_model_steps_per_workflow: 10
+    agent_input_tokens_per_step: 10000
+    agent_output_tokens_per_step: 500
+    agent_tool_calls_per_workflow: 10
+    agent_session_minutes_per_workflow: 15
+    agent_retry_fraction: 0.20
+    qlora_adoption_fraction_of_llm_enterprises: 0.30
+    qlora_models_per_adopter: 5
+    qlora_updates_per_model_year: 12
+    qlora_dataset_tokens_per_update: 20000000
+    qlora_epochs: 5
+
+# The shares split each existing effective-service task into a managed
+# foundation-model route and a residual cloud CPU/GPU route. They must sum to
+# one and therefore do not add an LLM overlay on top of the same tool compute.
+task_delivery:
+  low:
+    office: {managed_model_share: 1.0, calls_per_managed_service_unit: 0.0, input_tokens_per_call: 0, output_tokens_per_call: 0}
+    agent: {managed_model_share: 1.0, calls_per_managed_service_unit: 0.0, input_tokens_per_call: 0, output_tokens_per_call: 0}
+    vision: {managed_model_share: 0.50, calls_per_managed_service_unit: 0.25, input_tokens_per_call: 1000, output_tokens_per_call: 100}
+    maintenance: {managed_model_share: 0.25, calls_per_managed_service_unit: 0.10, input_tokens_per_call: 2500, output_tokens_per_call: 200}
+    scheduling: {managed_model_share: 0.15, calls_per_managed_service_unit: 0.05, input_tokens_per_call: 3000, output_tokens_per_call: 200}
+    simulation: {managed_model_share: 0.10, calls_per_managed_service_unit: 0.02, input_tokens_per_call: 4000, output_tokens_per_call: 250}
+  base:
+    office: {managed_model_share: 1.0, calls_per_managed_service_unit: 0.0, input_tokens_per_call: 0, output_tokens_per_call: 0}
+    agent: {managed_model_share: 1.0, calls_per_managed_service_unit: 0.0, input_tokens_per_call: 0, output_tokens_per_call: 0}
+    vision: {managed_model_share: 0.75, calls_per_managed_service_unit: 0.50, input_tokens_per_call: 1500, output_tokens_per_call: 200}
+    maintenance: {managed_model_share: 0.50, calls_per_managed_service_unit: 0.25, input_tokens_per_call: 4000, output_tokens_per_call: 250}
+    scheduling: {managed_model_share: 0.35, calls_per_managed_service_unit: 0.10, input_tokens_per_call: 5000, output_tokens_per_call: 250}
+    simulation: {managed_model_share: 0.25, calls_per_managed_service_unit: 0.05, input_tokens_per_call: 6000, output_tokens_per_call: 300}
+  high:
+    office: {managed_model_share: 1.0, calls_per_managed_service_unit: 0.0, input_tokens_per_call: 0, output_tokens_per_call: 0}
+    agent: {managed_model_share: 1.0, calls_per_managed_service_unit: 0.0, input_tokens_per_call: 0, output_tokens_per_call: 0}
+    vision: {managed_model_share: 1.00, calls_per_managed_service_unit: 1.00, input_tokens_per_call: 3000, output_tokens_per_call: 400}
+    maintenance: {managed_model_share: 0.75, calls_per_managed_service_unit: 0.50, input_tokens_per_call: 8000, output_tokens_per_call: 500}
+    scheduling: {managed_model_share: 0.60, calls_per_managed_service_unit: 0.20, input_tokens_per_call: 10000, output_tokens_per_call: 500}
+    simulation: {managed_model_share: 0.40, calls_per_managed_service_unit: 0.10, input_tokens_per_call: 12000, output_tokens_per_call: 600}
+
+evidence_notes:
+  rag_token_shape: RAGPulse input clustered near 3500 and output near 500 tokens
+  agent_steps: IBM CAP reports 68 percent of production agents execute at most 10 steps before human intervention
+  qlora_upper_adoption: IBM CAP reports 70 percent rely on prompting off-the-shelf models rather than weight tuning
+  qlora_feasibility: QLoRA demonstrates 65B fine-tuning on one 48GB GPU; frequency remains a scenario assumption
+  task_managed_model_shares: aligned_to_02_data/manufacturing_foundation_model_task_attribution_parameters_v0.1.csv; exploratory_not_observed_C36_mean
+
+cloud_managed_service_prices:
+  knowledge_base_runtime_rmb_per_kb_hour: 0.03
+  embedding_rmb_per_million_tokens: 0.5
+  rerank_rmb_per_million_tokens: 0.5
+  agent_runtime_rmb_per_session_hour: 0.5
+  vlm_input_rmb_per_million_tokens: 0.15
+  vlm_output_rmb_per_million_tokens: 1.5
+  # Use the 27B public training price as the closest available cloud proxy for
+  # the 32B local QLoRA workload (FT006). The 8B price is not model-matched.
+  qlora_training_rmb_per_thousand_tokens: 0.05
+  source_record_ids: [CLD009, CLD006, CLD008, CLD011, CLD003, CLD013]
+  boundary: official_public_price_anchors_not_enterprise_contract
+
+local_lifecycle_conversion:
+  qlora_gpu_hours_parameter_id: FT006
+  qlora_gpu_hours_case: base
+  qlora_reference_training_tokens: 15360000
+  qlora_reference_training_tokens_derivation: Guanaco_33B_OASST1_1875_steps_x_batch16_x_target_length512
+  qlora_is_fully_shiftable: true
+  additional_training_capacity_reserve_fraction: 0.15
+  rag_storage_bytes_per_corpus_token: 6.0
+  rag_storage_copy_equivalents: 2.0
+  bundled_storage_parameter_id: ST006
+  boundary: storage_conversion_and_shiftability_are_engineering_scenarios
+
+cloud_cpu_capacity_sensitivity_relative_to_local_64core_server: [0.125, 0.25, 0.50]
+
+# Base uses the national post-processing table. Low/high reuse completed C36
+# joint physical optimizations and are expanded from the 8.5% representative
+# group to the industry equivalent with ai_service_group_share.
+local_cost_sources:
+  base:
+    format: national_detail
+    path: 05_results/v1.0.0/result/national/industry_cost_differences/core_scenario_detail.csv
+  low:
+    format: representative_group_summary
+    path: 05_results/sensitivity/v1.0.0/national_oat_group_architecture/model/PHY01__low/C36/summary.csv
+  high:
+    format: representative_group_summary
+    path: 05_results/sensitivity/v1.0.0/national_oat_group_architecture/model/PHY01__high/C36/summary.csv

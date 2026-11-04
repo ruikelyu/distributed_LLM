@@ -1,0 +1,30 @@
+{
+  "status": "validated",
+  "source": "02_data/raw/curated/common_it_effective_efficiency_scenarios.csv",
+  "output": "02_data/processed/compute_efficiency/common_it_effective_efficiency_scenarios.csv",
+  "cases": [
+    "it_efficiency_1p5",
+    "it_efficiency_3p0",
+    "it_efficiency_5p0"
+  ],
+  "normalization_year": 2024,
+  "target_year": 2030,
+  "main_case": "it_efficiency_3p0",
+  "common_it_effective_efficiency_multipliers": [
+    1.5,
+    3.0,
+    5.0
+  ],
+  "minimum_reference_compute_h_per_service_unit": 0.2,
+  "maximum_reference_compute_h_per_service_unit": 0.6666666666666666,
+  "conversion_rule": "baseline_reference_workload_divided_by_common_it_effective_efficiency",
+  "external_energy_calibration_applied": false,
+  "excluded_from_multiplier": [
+    "PUE",
+    "planning_headroom",
+    "temporal_shifting",
+    "MSG_spatial_coordination",
+    "workload_rebound"
+  ],
+  "interpretation": "Author-confirmed common IT-effective-efficiency scenarios; not a forecast, confidence interval, hardware SKU, or rack-density assumption."
+}

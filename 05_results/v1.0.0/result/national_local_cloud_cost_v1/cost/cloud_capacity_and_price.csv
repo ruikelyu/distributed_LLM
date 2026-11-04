@@ -1,0 +1,4 @@
+﻿price_case,cloud_gpu_peak_reference_compute_h_per_h,cloud_gpu_groups,cloud_gpu_annual_unit_price_rmb,cloud_gpu_annual_capacity_cost_rmb,cloud_cpu_groups,cloud_cpu_annual_capacity_cost_rmb,cloud_cpu_groups_by_product
+low,302275.9231737895,151138,182668.2,27608106411.600002,1752397,53740954620.36,"{""eas_managed"": 252048, ""ecs_reserved"": 1500349}"
+base,302275.9231737895,151138,210068.43,31749322373.34,1752397,59237354151.846,"{""eas_managed"": 252048, ""ecs_reserved"": 1500349}"
+high,302275.9231737895,151138,237468.66,35890538335.08,1752397,64733753683.332,"{""eas_managed"": 252048, ""ecs_reserved"": 1500349}"

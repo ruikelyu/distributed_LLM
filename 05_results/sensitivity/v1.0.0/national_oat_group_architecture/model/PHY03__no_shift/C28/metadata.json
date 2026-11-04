@@ -1,0 +1,325 @@
+{
+  "model_version": "v1.0.0",
+  "status": "completed_PF_integer_SHG_MSG_continuous_capacity_mechanism_test",
+  "experiment": {
+    "experiment_id": "group_multisite_31industry_core_v1",
+    "solver": "gurobi",
+    "industry": null,
+    "production_load_site_count": "registry_or_representative_group_case",
+    "max_modeled_routing_nodes": 5,
+    "ai_deployment_node_rule": "same_as_modeled_routing_nodes",
+    "architectures": [
+      "PF",
+      "SHG",
+      "MSG"
+    ],
+    "architecture_display_labels": {
+      "PF": "PF",
+      "SHG": "SHG-plant",
+      "MSG": "MSG-coordinated"
+    },
+    "base_load_cases_by_architecture": {
+      "PF": [
+        "actual_load"
+      ],
+      "SHG": [
+        "actual_load",
+        "zero_load"
+      ],
+      "MSG": [
+        "actual_load"
+      ]
+    },
+    "integer_boundary": {
+      "PF_installed_server_groups_integer": true,
+      "SHG_installed_server_groups_integer": false,
+      "MSG_installed_server_groups_integer": false,
+      "online_server_groups_integer": false,
+      "planning_reserve_fraction": 0.15,
+      "n_plus_spare_server_groups": 0,
+      "model_state_minimum_groups_enabled": false
+    },
+    "task_boundary": {
+      "same_group_total_service": true,
+      "representative_group_condition": "known_AI_adopter",
+      "industry_demand_interpretation": "unconditional_total_including_nonadopters",
+      "group_service_scale": "group_activity_share_divided_by_adopter_activity_coverage",
+      "industry_reconstruction": "adopter_activity_coverage_divided_by_group_activity_share",
+      "task_origin_scope": "all_registered_production_load_sites",
+      "task_origin_weighting": "equal_share_proxy_within_adopted_group",
+      "execution_node_scope": "modeled_AI_deployment_routing_nodes",
+      "AI_deployment_points_equal_routing_nodes": true,
+      "all_six_core_tasks_group_routable": true,
+      "flexible_jobs_keep_original_deadlines": true,
+      "report_AI_power_decomposition": "fixed_overhead_unshiftable_active_shiftable_active",
+      "cross_factory_routing": "MSG_only"
+    },
+    "mechanism_controls": {
+      "MSG_no_routing": {
+        "enabled": true,
+        "output_code": "MSG_NO_ROUTING",
+        "display_label": "MSG-no-routing",
+        "formal_architecture": false,
+        "paired_treatment": "MSG",
+        "fixed_share_source": "registered_represented_factory_counts",
+        "rigid_assignment": "each_task_hour_fixed_to_ex_ante_node_share",
+        "flexible_assignment": "each_job_total_fixed_to_ex_ante_node_share_within_original_deadline",
+        "effect_definition": "MSG_no_routing_minus_MSG_coordinated",
+        "positive_effect_interpretation": "burden_avoided_by_cross_site_coordination"
+      }
+    },
+    "energy_boundary": {
+      "pv_capacity_mode": "none",
+      "battery_investment_enabled": false,
+      "same_provincial_hourly_price_at_all_factories": true
+    },
+    "load_curve_selection": {
+      "source": "EWELD",
+      "source_isic": "auto_from_core_lineage",
+      "rule": "distinct_users_first_then_distinct_complete_weeks_until_modeled_routing_node_count",
+      "proxy_rule": "reuse_the_active_core_profile_source_isic_for_industries_without_direct_EWELD_samples",
+      "scaling": "production_load_registry_with_explicit_legacy_compatibility_for_uncalibrated_industries",
+      "representative_sampling_rule": "weighted_load_curves_reconstruct_all_production_sites_only_for_IF",
+      "electrical_boundary": "each_AI_node_uses_only_its_host_factory_load_no_cross_meter_aggregation",
+      "ai_deployment_rule": "one_AI_deployment_point_per_modeled_routing_node",
+      "simultaneity": "align_by_weekday_and_hour_not_same_calendar_week",
+      "week_quality_by_industry": {
+        "C36": {
+          "minimum_monday_to_tuesday_friday_mean_ratio": 0.75,
+          "maximum_weekday_daily_mean_cv": 0.35,
+          "maximum_weekly_peak_to_mean_ratio": 3.0
+        }
+      }
+    },
+    "counterfactual": {
+      "architecture": "SHG",
+      "definition": "zero_original_factory_load_reoptimized_minus_actual_load_reoptimized",
+      "interpretation": "value_of_cooptimizing_AI_with_the_fixed_host_factory_load_shape"
+    },
+    "interpretation": "infrastructure_first_v1_core_with_C36_calibrated_and_other_industries_explicit_legacy_compatibility_boundaries"
+  },
+  "industry": "C28",
+  "source_isic": 20,
+  "group_share": 0.06,
+  "group_activity_share": 0.06,
+  "adopter_activity_share": 0.4634879188665512,
+  "adopter_activity_share_year": 2030,
+  "adopter_activity_share_status": "firm_count_adoption_scenario_used_as_activity_coverage_proxy",
+  "adopter_activity_share_source_measure": "fraction_of_above_size_firms_with_any_AI",
+  "conditional_group_ai_scale": 0.1294532123873446,
+  "industry_equivalent_multiplier": 7.724798647775854,
+  "representative_group_adoption_status": "adopted",
+  "synthetic_factory_count": 8,
+  "physical_factory_count": 8,
+  "production_load_site_count": 8,
+  "modeled_routing_node_count": 5,
+  "ai_task_origin_production_site_count": 8,
+  "within_group_task_origin_rule": "all_registered_production_sites_equal_share_proxy",
+  "ai_service_routing_scope": "full_group_service_across_all_AI_deployment_routing_nodes",
+  "ai_deployment_node_count_by_architecture": {
+    "PF": 8,
+    "SHG": 1,
+    "MSG": 5
+  },
+  "multisite_AI_deployment_points_equal_routing_nodes": true,
+  "electrical_load_aggregation_at_AI_nodes": false,
+  "routing_node_selection_mode": "capped",
+  "representative_factory_weights": [
+    2,
+    2,
+    2,
+    1,
+    1
+  ],
+  "production_load_site_weights": [
+    2,
+    2,
+    2,
+    1,
+    1
+  ],
+  "PF_representative_site_counts": [
+    2,
+    2,
+    2,
+    1,
+    1
+  ],
+  "representative_cluster_power_shares": [
+    0.25,
+    0.25,
+    0.25,
+    0.125,
+    0.125
+  ],
+  "load_calibration": {
+    "mode": "legacy_industry_electricity_share",
+    "boundary_id": "legacy_industry_electricity_times_AI_share_divided_by_production_load_site_count",
+    "method": "historical_compatibility_only",
+    "industry_mean_load_mw": 5815.179393725611,
+    "ai_service_group_share": 0.06,
+    "production_activity_share": 0.06,
+    "production_activity_share_source": "AI_service_group_share_compatibility_proxy",
+    "load_site_count": 8,
+    "load_site_power_weights": [
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125
+    ],
+    "load_site_power_weight_source": "equal_site_power_proxy",
+    "representative_group_mean_load_mw": 348.91076362353664,
+    "representative_site_mean_load_mw": 43.61384545294208,
+    "formal_national_pool_eligible": false
+  },
+  "SHG_factory_id": "R4",
+  "hardware": {
+    "routing_case": "practice_routed",
+    "cpu_price_case": "base"
+  },
+  "common_it_effective_efficiency_case": "it_efficiency_3p0",
+  "common_it_effective_efficiency_multiplier": 3.0,
+  "baseline_reference_workload_per_service_unit": 1.0,
+  "reference_compute_h_per_service_unit": 0.3333333333333333,
+  "reference_server_group": "dual_accelerator_reference_server_group_calibrated_to_2x_NVIDIA_L20_48GB",
+  "variable_counts": {
+    "production_load_site_count": 8,
+    "multisite_ai_deployment_node_count": 5,
+    "multisite_task_routing_node_count": 5,
+    "physical_factory_count": 8,
+    "modeled_routing_node_count": 5,
+    "production_load_site_weights": [
+      2,
+      2,
+      2,
+      1,
+      1
+    ],
+    "PF_representative_site_counts": [
+      2,
+      2,
+      2,
+      1,
+      1
+    ],
+    "representative_cluster_power_shares": [
+      0.25,
+      0.25,
+      0.25,
+      0.125,
+      0.125
+    ],
+    "electrical_load_aggregation_at_AI_nodes": false,
+    "representative_host_site_mean_loads_mw": [
+      43.61384545294208,
+      43.61384545294208,
+      43.61384545294208,
+      43.61384545294208,
+      43.61384545294208
+    ],
+    "multisite_total_host_site_mean_load_mw": 218.0692272647104,
+    "representative_group_all_site_mean_load_mw": 348.91076362353664,
+    "SHG_candidate_node_id": "R4",
+    "SHG_mean_base_load_mw": 43.61384545294208,
+    "group_activity_share": 0.06,
+    "adopter_activity_share": 0.4634879188665512,
+    "conditional_group_ai_scale": 0.1294532123873446,
+    "industry_equivalent_multiplier": 7.724798647775854,
+    "ai_service_routing_scope": "full_group_service_across_all_AI_deployment_routing_nodes",
+    "routing_node_selection_mode": "capped",
+    "PF_installed_server_integer_variables_solved": 10,
+    "PF_installed_server_integer_variables_physical_equivalent": 16,
+    "SHG_installed_server_integer_variables": 0,
+    "MSG_installed_server_integer_variables": 0,
+    "load_profile_mode": "measured_continuous",
+    "horizon_hours": 168,
+    "online_server_variables": 1680,
+    "rigid_route_variables": 5040,
+    "flexible_time_site_route_variables": 0,
+    "grid_peak_variables": 5,
+    "primary_continuous_variables_MSG": 6725,
+    "integer_variables_PF_solved": 10,
+    "MSG_no_routing_additional_solve": true,
+    "MSG_no_routing_fixed_site_shares": [
+      0.25,
+      0.25,
+      0.25,
+      0.125,
+      0.125
+    ]
+  },
+  "selected_architectures": [
+    "SHG"
+  ],
+  "architectures": [
+    "SHG"
+  ],
+  "mechanism_controls": {
+    "MSG_no_routing": {
+      "enabled": false,
+      "formal_architecture": false,
+      "paired_treatment": "MSG",
+      "fixed_share_source": "registered_represented_factory_counts",
+      "fixed_site_service_shares": null,
+      "effect_definition": "MSG_no_routing_minus_MSG_coordinated",
+      "positive_effect_interpretation": "burden_avoided_by_cross_site_coordination",
+      "maximum_rigid_origin_share_absolute_error": null,
+      "maximum_flexible_origin_share_absolute_error": null
+    }
+  },
+  "planning_reserve_fraction": 0.15,
+  "n_plus_spare_server_groups": 0,
+  "base_load_cases_by_architecture": {
+    "SHG": [
+      "actual_load",
+      "zero_load"
+    ]
+  },
+  "load_profile_mode": "measured_continuous",
+  "solver": {
+    "name": "gurobi",
+    "options": {
+      "Threads": 5,
+      "MIPGap": 0.001,
+      "LogToConsole": 0
+    }
+  },
+  "validated_architecture_base_load_pairs": [
+    "SHG__actual_load",
+    "SHG__zero_load"
+  ],
+  "service_conservation_relative_error": {
+    "SHG__actual_load": 0.0,
+    "SHG__zero_load": 0.0
+  },
+  "limitations": [
+    "EWELD users are anonymous same-industry facilities, not observed members of one corporate group",
+    "weeks are aligned by weekday and hour, not observed in the same calendar week",
+    "all six modeled central AI task classes are allowed to route within the synthetic group",
+    "flexible tasks retain their registered intraday and batch deadlines",
+    "cross-site network cost, latency, data-residency restrictions, PV and batteries are excluded",
+    "only PF installed GPU/CPU server groups are integer; SHG and MSG installed capacity is continuous equivalent",
+    "hourly online server groups remain continuous in all three architectures",
+    "same-user distinct weeks are factory-shape proxies when an industry has too few distinct EWELD users",
+    "multisite host nodes are selected by capped mode; each modeled routing node is one AI deployment point on an independent host-factory electrical boundary",
+    "PF solves one integer-capacity factory per representative curve and weights its cost and capacity to reconstruct physical-factory fragmentation",
+    "PF representative weights are not applied to SHG or MSG production loads",
+    "SHG and MSG use the same unaggregated per-host production-load curves for common candidate nodes",
+    "production sites without an AI host contribute to group AI-service demand but their electrical loads are not transferred to host nodes",
+    "the 2030 firm-count AI-adoption scenario is used as a proxy for adopter activity coverage because activity-weighted adoption is unavailable",
+    "the representative group is conditioned on known AI adoption; its service scale is group activity share divided by the adopter activity-coverage proxy",
+    "within the adopted group, every registered production site is assigned an equal share of task origins; task-specific site coverage remains a sensitivity",
+    "zero_load is a reoptimized AI-only counterfactual, not a factory operating condition",
+    "only SHG receives the zero_load paired counterfactual",
+    "SHG load-alignment value includes endogenous changes in AI timing and installed capacity permitted by that architecture",
+    "MSG-no-routing is an internal paired mechanism control, not a formal deployment architecture",
+    "MSG-no-routing fixes every rigid task-hour and each flexible job total to ex-ante represented-factory shares while retaining each job deadline",
+    "only MSG-no-routing minus MSG-coordinated may be interpreted as the modeled cross-site coordination effect",
+    "model-state minimum server floors remain disabled in this group-architecture formulation",
+    "the dual-L20-calibrated reference server group is a common capacity, power and 2U space proxy rather than a 2030 procurement or rack-density forecast"
+  ]
+}

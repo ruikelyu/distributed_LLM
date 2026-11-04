@@ -1,0 +1,126 @@
+{
+  "status": "author_approved_for_figure_and_manuscript_migration",
+  "model_version": "v1.0.0",
+  "analysis_version": "rq1_infrastructure_summary_v1",
+  "author_approval": {
+    "status": "approved",
+    "date": "2026-09-13",
+    "authority": "user_confirmation_after_controlled_RQ1_review"
+  },
+  "configuration": {
+    "path": "config/scenarios/rq1_infrastructure_summary_v1.yaml",
+    "sha256": "ba01bdb722baa3e82183e2f7e7b2ee203224b1b321394a07594bd5e109b96025"
+  },
+  "source_files": {
+    "aggregate_table": {
+      "path": "05_results/sensitivity/v1.0.0/national_grid_capacity_comparison.csv",
+      "sha256": "998cac9d9a5c96f1df8d9445b9fa004e7984864f46f0d29a378be08900112bc6"
+    },
+    "aggregate_marker": {
+      "path": "05_results/sensitivity/v1.0.0/national_grid_capacity_comparison.validated.done.json",
+      "sha256": "5f3ae2bfbb6e8a8996f92447ae4573475770f9ce540a0265eae5088c4cb76048"
+    },
+    "node_table": {
+      "path": "05_results/v1.0.0/result/node_interconnection_distribution/node_interconnection_distribution.csv",
+      "sha256": "da510a12ebd10446a0544a0860257081888f31a1cb5754708ffff3595bb22ac3"
+    },
+    "node_histogram": {
+      "path": "05_results/v1.0.0/result/node_interconnection_distribution/node_interconnection_histogram.csv",
+      "sha256": "b047121613e1307c484bd33197b748dbefb9c5d433b60fcae5ea8dab51fd716e"
+    },
+    "node_marker": {
+      "path": "05_results/v1.0.0/result/node_interconnection_distribution/validated.done.json",
+      "sha256": "f2cf9bf93f14738c773e2b0cf4f2740ecb411d33cf02774e8ffe386c6cdcad50"
+    }
+  },
+  "source_status": {
+    "aggregate": "validated",
+    "node_distribution": "validated"
+  },
+  "equal_service_verified": true,
+  "centralized_capacity_is_one_physical_site": false,
+  "aggregate_row_count": 3,
+  "node_scale_row_count": 28,
+  "node_scale_group_count": 4,
+  "node_scale_proportions_sum_to_one": true,
+  "claim_boundaries": {
+    "aggregate": "site_facing_continuous_MW_screen_not_grid_equipment_investment_projects_or_schedules",
+    "ldc_aggregate": "logical_equal_service_new_capacity_portfolio_not_one_physical_facility_or_interconnection",
+    "node_distribution": "weighted_modeled_deployment_nodes_not_observed_national_site_sample",
+    "empirical_reference": "international_public_facility_or_campus_records_not_china_specific_equal_service_sites_or_independent_interconnections",
+    "forbidden_metrics": [
+      "maximum_modeled_node_claim",
+      "P50_or_P95_claim",
+      "top_k_share",
+      "HHI",
+      "effective_node_count"
+    ]
+  },
+  "evidence_status": "outputs_validated_and_interpretation_author_approved",
+  "aggregate_summary": [
+    {
+      "model_version": "v1.0.0",
+      "analysis_version": "rq1_infrastructure_summary_v1",
+      "comparison_basis": "equal_service_new_LDC_aggregate_capacity_portfolio",
+      "scenario": "PF",
+      "architecture": "factory_distributed",
+      "architecture_national_incremental_grid_expansion_mw": 555.6535247309072,
+      "ldc_aggregate_incremental_grid_expansion_mw": 1487.6531493873642,
+      "capacity_difference_vs_ldc_aggregate_mw": 931.9996246564572,
+      "capacity_difference_vs_ldc_aggregate_fraction": 0.6264898676417061,
+      "lower_screening_capacity_than_ldc_aggregate": true,
+      "centralized_architecture": "LDC_AGGREGATE",
+      "equal_service_verified": true,
+      "centralized_capacity_is_one_physical_site": false,
+      "claim_boundary": "site_facing_continuous_MW_screen_not_grid_equipment_investment_projects_or_schedules"
+    },
+    {
+      "model_version": "v1.0.0",
+      "analysis_version": "rq1_infrastructure_summary_v1",
+      "comparison_basis": "equal_service_new_LDC_aggregate_capacity_portfolio",
+      "scenario": "SHG",
+      "architecture": "group_single_host",
+      "architecture_national_incremental_grid_expansion_mw": 575.7839373174064,
+      "ldc_aggregate_incremental_grid_expansion_mw": 1487.6531493873642,
+      "capacity_difference_vs_ldc_aggregate_mw": 911.8692120699578,
+      "capacity_difference_vs_ldc_aggregate_fraction": 0.6129582103499582,
+      "lower_screening_capacity_than_ldc_aggregate": true,
+      "centralized_architecture": "LDC_AGGREGATE",
+      "equal_service_verified": true,
+      "centralized_capacity_is_one_physical_site": false,
+      "claim_boundary": "site_facing_continuous_MW_screen_not_grid_equipment_investment_projects_or_schedules"
+    },
+    {
+      "model_version": "v1.0.0",
+      "analysis_version": "rq1_infrastructure_summary_v1",
+      "comparison_basis": "equal_service_new_LDC_aggregate_capacity_portfolio",
+      "scenario": "MSG",
+      "architecture": "group_multisite",
+      "architecture_national_incremental_grid_expansion_mw": 30.16369954872454,
+      "ldc_aggregate_incremental_grid_expansion_mw": 1487.6531493873642,
+      "capacity_difference_vs_ldc_aggregate_mw": 1457.4894498386398,
+      "capacity_difference_vs_ldc_aggregate_fraction": 0.9797239702271014,
+      "lower_screening_capacity_than_ldc_aggregate": true,
+      "centralized_architecture": "LDC_AGGREGATE",
+      "equal_service_verified": true,
+      "centralized_capacity_is_one_physical_site": false,
+      "claim_boundary": "site_facing_continuous_MW_screen_not_grid_equipment_investment_projects_or_schedules"
+    }
+  ],
+  "outputs": {
+    "aggregate_summary": {
+      "path": "05_results/v1.0.0/result/rq1_infrastructure/rq1_aggregate_capacity_summary.csv",
+      "sha256": "5c61489192a8f7491bd9bde0c73648d4fcf8f4a471548465f6b6882558b446b4",
+      "rows": 3
+    },
+    "node_scale_summary": {
+      "path": "05_results/v1.0.0/result/rq1_infrastructure/rq1_node_scale_distribution_summary.csv",
+      "sha256": "2f5708eac3b4a3fcde5a5bc43bbc40e0e670b30500073ecda172a05b3946fc5f",
+      "rows": 28
+    },
+    "interpretation_review": {
+      "path": "05_results/v1.0.0/result/rq1_infrastructure/rq1_controlled_interpretation_review.md",
+      "sha256": "2458b68c974c84c0b15b924653393b90b33f55a6b259df0d2c35ae6f4fc442e9"
+    }
+  }
+}

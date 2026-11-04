@@ -1,0 +1,78 @@
+{
+  "status": "validated_source_snapshot",
+  "model_version": "v1.0.0",
+  "analysis_version": "node_interconnection_distribution_v1.0.0",
+  "provider": "Epoch AI",
+  "data_page": "https://epoch.ai/data/ai-data-centers",
+  "documentation_page": "https://epoch.ai/data/data-centers-documentation/records",
+  "downloads_page": "https://epoch.ai/data/data-centers-documentation/downloads",
+  "license": "CC-BY",
+  "dataset_updated_date": "2026-09-10",
+  "access_date": "2026-09-13",
+  "as_of_date": "2026-09-10",
+  "retrieved_at_utc": "2026-09-13T01:59:18.678707+00:00",
+  "field_interpretation": "Current power (MW) in this snapshot is accepted only because it reconciles facility-by-facility to the latest as-of timeline IT power (MW).",
+  "statistical_unit": "one public Epoch facility/campus record; not an independent interconnection point or equal-service LDC allocation",
+  "record_identity_rule": "Equal normalized addresses trigger an explicit review and are never merged automatically. Every collision must exactly match a registered distinct-record group in the analysis YAML.",
+  "raw_files": {
+    "data_centers": {
+      "path": "02_data/raw/epoch_ai/ai_data_centers/2026-09-10/data_centers.csv",
+      "sha256": "322419d5516203f94f258af3ba6b4c08ba14eb0987321b27a8b1792c7d868f12",
+      "bytes": 63910,
+      "requested_url": "https://epoch.ai/data/data_centers/data_centers.csv",
+      "resolved_url": "https://epoch.ai/data/data_centers/data_centers.csv",
+      "http_status": 200,
+      "etag": "\"9a86ba3b312b1e2c9de47fc277f5b2fa\"",
+      "last_modified": null,
+      "content_type": "text/csv"
+    },
+    "timelines": {
+      "path": "02_data/raw/epoch_ai/ai_data_centers/2026-09-10/data_center_timelines.csv",
+      "sha256": "53367a531521525925ac02d0abcfddfa0a8171a1d0703d4aae7b53a3f5f9b5ce",
+      "bytes": 163116,
+      "requested_url": "https://epoch.ai/data/data_centers/data_center_timelines.csv",
+      "resolved_url": "https://epoch.ai/data/data_centers/data_center_timelines.csv",
+      "http_status": 200,
+      "etag": "\"071f02e09e7ed3da3d676e4c3bb0d03c\"",
+      "last_modified": null,
+      "content_type": "text/csv"
+    }
+  },
+  "processed_snapshot": {
+    "path": "02_data/processed/node_interconnection/epoch_ai_current_it_power_2026-09-10.csv",
+    "sha256": "a764decc8576b430b3a88b9873daf1719fa0664bd2223509198afa5e1ac9f3c5",
+    "row_count": 69
+  },
+  "diagnostics": {
+    "data_center_rows": 86,
+    "timeline_rows": 499,
+    "as_of_facility_rows": 86,
+    "main_to_timeline_current_it_power_matches": 86,
+    "positive_current_it_power_rows": 69,
+    "zero_current_it_power_rows_excluded": 17,
+    "latest_selected_timeline_date": "2026-09-08",
+    "same_address_collision_group_count": 1,
+    "registered_distinct_record_group_count": 1,
+    "unresolved_address_collision_group_count": 0,
+    "registered_same_address_distinct_records": [
+      {
+        "address": "7725 Lake Rd, Barker, NY 14012",
+        "facility_names": [
+          "Anthropic Lake Mariner",
+          "Core42 Lake Mariner"
+        ],
+        "current_it_power_mw": {
+          "Core42 Lake Mariner": 58.0,
+          "Anthropic Lake Mariner": 42.0
+        },
+        "rationale": "Epoch publishes these as separate operational records at the same campus. Their as-of timeline entries cover distinct building sequences: Core42 uses CB-1/CB-2, while Anthropic uses CB3. The selected current IT capacities therefore do not overlap and remain separate observations under the registered facility/campus-record statistical unit.",
+        "source_pages": [
+          "https://epoch.ai/data/ai-data-centers/directory/core42-lake-mariner",
+          "https://epoch.ai/data/ai-data-centers/directory/anthropic-lake-mariner"
+        ],
+        "review_outcome": "retain_as_distinct_non_overlapping_records"
+      }
+    ]
+  },
+  "evidence_status": "source_snapshot_validated_not_interpreted"
+}

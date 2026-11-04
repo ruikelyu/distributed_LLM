@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "model_version": "v1.0.0",
+  "demand_case_version": "us_manufacturing_ai_demand_v0.3.0",
+  "formula": "service = US driver * adoption * workload_units_per_active_driver_day * effective_service_per_workload_unit * industry_applicability",
+  "inputs": {
+    "02_data/raw/curated/us_manufacturing_activity_naics3_2022.csv": {
+      "sha256": "e8d6d3242f21ef7ef3f18a89a9c6aa0d954020b69b846d62f6707a2b4f5c4aeb"
+    },
+    "02_data/raw/curated/us_manufacturing_mecs_2022.csv": {
+      "sha256": "c203d7417517bf1dfb9ab398262f7237718af8f375b50409b2de966e51224db8"
+    },
+    "02_data/raw/curated/us_manufacturing_berd_2023.csv": {
+      "sha256": "853d4f0a6a44308c50e231b7c81b59b924bc1f27f981d25308a82d544656689f"
+    },
+    "02_data/processed/us_demand/us_task_driver_parameters_v0.1.csv": {
+      "sha256": "8272a199deb38d5e3cf11308a6b86396144305444148f37d6bbb134e8fe070c8"
+    },
+    "02_data/processed/compute_efficiency/common_it_effective_efficiency_scenarios.csv": {
+      "sha256": "1a6ce9d5771d8b6a49fb9915e68c553da89e16d8e6313339aa19bf679ba375c4"
+    }
+  },
+  "task_shapes": {
+    "source": "transferred_existing_task_shapes",
+    "profile_file": "02_data/future_manufacturing_ai_workload_model.csv",
+    "profile_scenario": "2030_integrated",
+    "profile_record_type": "hourly_curve"
+  },
+  "external_scale_validation": {
+    "method": "compare_bottom_up_us_energy_with_same_case_china_energy",
+    "china_energy_twh": {
+      "low": 8.123729002061372,
+      "base": 13.982936253420563,
+      "high": 27.965872506841126
+    },
+    "expected_us_to_china_ratio_low": 0.45,
+    "expected_us_to_china_ratio_high": 0.55,
+    "central_manufacturing_value_added_ratio": 0.5,
+    "china_energy_source": "02_data/processed/effective_service/validated.done.json_and_05_results/effective_service_bottom_up_recalculation.md",
+    "evidence_status": "external_validation_not_calibration"
+  },
+  "installed_reserve_fraction_applied_once": 0.15,
+  "token_tasks": [
+    "office",
+    "agent"
+  ],
+  "gpu_tasks": [
+    "vision",
+    "maintenance",
+    "scheduling",
+    "simulation"
+  ],
+  "notes": [
+    "U.S. official activity and adoption determine active drivers and NAICS3/task allocation.",
+    "Task-specific operational units per adopted driver create the national total without a top-down multiplier.",
+    "The same-case China energy ratio is only an external validation check.",
+    "This module produces demand and reference-energy diagnostics only.",
+    "Authoritative local/cloud costs are produced by analyze_us_industry_heterogeneous_hardware.py under the shared China/U.S. managed-residual contract."
+  ]
+}

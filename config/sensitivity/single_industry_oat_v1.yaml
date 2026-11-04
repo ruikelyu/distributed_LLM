@@ -1,0 +1,205 @@
+sensitivity_version: single_industry_oat_v1.2.0
+model_version: v1.0.0
+industry: C38
+architectures: [SHG]
+scope: single_industry_factor_screen_only
+cross_industry_sensitivity_expansion: false
+output_root: 05_results/sensitivity/v1.0.0/single_industry_oat
+common_overrides:
+  paths:
+    hourly_industry_profiles: 02_data/processed/core/manufacturing_31sector_real_weeks.csv
+
+# Re-solve a same-code, same-real-week reference inside the sensitivity
+# directory; do not splice architecture files from a partially rerun mainline.
+reference_case:
+  case_id: REF__baseline
+  display_value: central__reserve_0.15__continuous
+  overrides: {}
+
+# These smoke factors do not alter the no-AI factory baseline, so all cases
+# reuse the selected industry's validated v1.0.0 no-AI baseline. Future factors that change
+# base load, tariff, PV or battery assumptions must set baseline_invariant=false.
+baseline_invariant: true
+
+# label_cn values are Chinese factor labels written to the factor_label_cn
+# column of the sensitivity CSV outputs; keep them unchanged (English glosses inline).
+factors:
+  PHY01:
+    label_cn: AI服务需求规模  # AI service demand scale
+    baseline_value: base
+    primary_claims: [C1, C2, C3, C4]
+    cases:
+      low:
+        display_value: low
+        overrides:
+          demand:
+            effective_service:
+              parameter_case: low
+      high:
+        display_value: high
+        overrides:
+          demand:
+            effective_service:
+              parameter_case: high
+  PHY02:
+    label_cn: 2030共同IT有效效率  # 2030 common IT effective efficiency
+    baseline_value: 3.0
+    primary_claims: [C1, C2, C3, C4]
+    cases:
+      low_efficiency:
+        display_value: 1.5
+        overrides:
+          demand:
+            effective_service:
+              common_it_effective_efficiency_case: it_efficiency_1p5
+      high_efficiency:
+        display_value: 5.0
+        overrides:
+          demand:
+            effective_service:
+              common_it_effective_efficiency_case: it_efficiency_5p0
+  PHY03:
+    label_cn: 任务柔性  # task flexibility
+    baseline_value: central
+    primary_claims: [C2]
+    cases:
+      no_shift:
+        display_value: no_shift
+        overrides:
+          demand:
+            flexibility_scenario: no_shift
+  PHY04:
+    label_cn: GPU服务器满载功率  # GPU server full-load power
+    baseline_value: 1.50
+    primary_claims: [C1, C2, C3]
+    cases:
+      low:
+        display_value: 1.05
+        overrides:
+          server:
+            maximum_wall_power_kw: 1.05
+  PHY05:
+    label_cn: GPU服务器在线空闲功率  # GPU server online idle power
+    baseline_value: 0.36
+    primary_claims: [C1, C2, C3]
+    cases:
+      low:
+        display_value: 0.28
+        overrides:
+          server:
+            online_idle_wall_power_kw: 0.28
+      high:
+        display_value: 0.50
+        overrides:
+          server:
+            online_idle_wall_power_kw: 0.50
+  PHY06:
+    label_cn: 本地设施功率乘数  # local facility power multiplier
+    baseline_value: 1.30
+    primary_claims: [C1, C2, C3]
+    cases:
+      low:
+        display_value: 1.20
+        overrides:
+          server:
+            marginal_facility_multiplier: 1.20
+          compute_hardware:
+            cpu_server_overrides:
+              marginal_facility_multiplier: 1.20
+      high:
+        display_value: 1.60
+        overrides:
+          server:
+            marginal_facility_multiplier: 1.60
+          compute_hardware:
+            cpu_server_overrides:
+              marginal_facility_multiplier: 1.60
+  PHY07:
+    label_cn: CPU/GPU服务器装机裕量  # CPU/GPU server installed-capacity margin
+    baseline_value: 0.15
+    primary_claims: [C1, C2]
+    cases:
+      zero:
+        display_value: 0.00
+        overrides:
+          server:
+            installed_reserve_fraction: 0.0
+          compute_hardware:
+            cpu_server_overrides:
+              installed_reserve_fraction: 0.0
+      medium:
+        display_value: 0.30
+        overrides:
+          server:
+            installed_reserve_fraction: 0.30
+          compute_hardware:
+            cpu_server_overrides:
+              installed_reserve_fraction: 0.30
+      high:
+        display_value: 0.50
+        overrides:
+          server:
+            installed_reserve_fraction: 0.50
+          compute_hardware:
+            cpu_server_overrides:
+              installed_reserve_fraction: 0.50
+  PHY08:
+    label_cn: N+1备用服务器组  # N+1 standby server group
+    baseline_value: 0
+    primary_claims: [C1, C2]
+    cases:
+      n_plus_one:
+        display_value: 1
+        overrides:
+          server:
+            n_plus_spare_server_groups: 1
+  PHY09:
+    label_cn: 服务器组整数化  # server-group integerization
+    baseline_value: false
+    primary_claims: [C1, C2]
+    cases:
+      integer:
+        display_value: true
+        overrides:
+          model:
+            server_groups_integer: true
+  PHY11:
+    label_cn: 最大需量电价  # maximum-demand tariff
+    baseline_value: 36.1
+    primary_claims: [C1, C2]
+    cases:
+      low:
+        display_value: 26.1
+        overrides:
+          energy:
+            maximum_demand_rmb_per_kw_month: 26.1
+  HW01:
+    label_cn: CPU/GPU任务路由  # CPU/GPU task routing
+    baseline_value: practice_routed
+    primary_claims: [C1, C2, C3]
+    cases:
+      gpu_only:
+        display_value: gpu_only
+        overrides:
+          compute_hardware:
+            routing_case: gpu_only
+      cpu_heavy:
+        display_value: cpu_heavy
+        overrides:
+          compute_hardware:
+            routing_case: cpu_heavy
+  HW02:
+    label_cn: CPU相对服务时间  # CPU relative service time
+    baseline_value: 1.0
+    primary_claims: [C1, C2, C3]
+    cases:
+      low:
+        display_value: 0.5
+        overrides:
+          compute_hardware:
+            cpu_time_multiplier_factor: 0.5
+      high:
+        display_value: 4.0
+        overrides:
+          compute_hardware:
+            cpu_time_multiplier_factor: 4.0

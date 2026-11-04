@@ -1,0 +1,38 @@
+schema_version: 1
+audit_version: rq1_spatial_water_audit_v1
+status: active_rebuild_readiness_audit
+defaults_config: config/defaults.yaml
+scenario_registry: config/scenarios/mainline.yaml
+legacy_figure_script: 08_code/build_figure5_spatial_concentration_draft.py
+water_stress_source_config: config/scenarios/aqueduct40_province_water_stress_v1.yaml
+
+inputs:
+  approved_resource_summary_subpath: result/rq1_resource_footprint/rq1_resource_footprint_summary.csv
+  approved_resource_validation_subpath: result/rq1_resource_footprint/validated.approved.json
+  province_industry_allocation: 02_data/processed/resource_footprint/province_industry_ai_allocation.csv
+  province_industry_lineage: 02_data/processed/resource_footprint/province_industry_ai_allocation.lineage.json
+  cloud_capacity_proxy: 02_data/processed/resource_footprint/china_province_cloud_ai_capacity_share_caict2025.csv
+  water_stress_context: 02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.csv
+  water_stress_lineage: 02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.lineage.json
+  water_stress_source_receipt: 02_data/raw/resource_footprint/water_stress_sources/aqueduct40/aqueduct-4-0-country-rankings.source.json
+
+validation:
+  expected_industries: 31
+  expected_provinces: 31
+  share_tolerance: 1.0e-12
+  approved_architectures: [PF, LDC_AGGREGATE]
+  water_metric: onsite_cooling_humidification_water
+
+claim_boundaries:
+  pf_allocation: 2030_REFERENCE_manufacturing_electricity_spatial_scenario_not_observed_enterprise_AI_locations
+  ldc_allocation: 2025_CAict_in_use_intelligent_compute_capacity_proxy_not_provider_traffic_or_2030_siting_forecast
+  water: registered_onsite_cooling_and_humidification_water_not_split_withdrawal_or_consumption
+  uniform_wue: spatial_allocation_changes_distribution_and_water_stress_context_not_national_water_total
+  water_stress: Aqueduct40_baseline_industrial_demand_weighted_admin1_prioritization_context_not_real_time_or_local_validation_and_never_multiplied_by_site_water
+
+outputs:
+  subdirectory: audit/rq1_spatial_water
+  report_json: audit_report.json
+  report_markdown: audit_summary.md
+
+automatic_manuscript_edit: false

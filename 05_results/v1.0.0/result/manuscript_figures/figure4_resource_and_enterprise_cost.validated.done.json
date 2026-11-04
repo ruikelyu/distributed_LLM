@@ -1,0 +1,81 @@
+{
+  "status": "validated_v1.0.0_resource_and_enterprise_payment_figure",
+  "model_version": "v1.0.0",
+  "figure_version": "figure4_resource_and_enterprise_cost_v2_radar",
+  "inputs": {
+    "resource_data": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_footprint_data.csv",
+      "sha256": "d4a46095a5c51f1b9125f64205843dc23d1aae676735c74ae24888a6d18d32c7"
+    },
+    "resource_validation": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_footprint.validated.done.json",
+      "sha256": "9b1d5450f18041ce5f3ea4f29884b91631743bc28749baa1bc9e63600ff3e6cb"
+    },
+    "cost_data": {
+      "path": "05_results/v1.0.0/result/national_local_cloud_cost_v1/cost/comparison.csv",
+      "sha256": "1010029895c860334bfd7063a3dc2187c213f8505be3b582240f87573ce0271b"
+    },
+    "cost_validation": {
+      "path": "05_results/v1.0.0/result/national_local_cloud_cost_v1/cost/validated.done.json",
+      "sha256": "2301d9eafe8dde1b931d301377b44b39e37e1a74f3b5581228012b657435772b"
+    },
+    "china_service_data": {
+      "path": "02_data/processed/effective_service/manufacturing_ai_effective_service_2030.csv",
+      "sha256": "c9fa56e7b3f2fbd90cebb9665fc1027563ea3e0f7f9d8222ce76f7d9072c1cfe"
+    },
+    "us_cost_data": {
+      "path": "05_results/v1.0.0/result/cost_benchmark/heterogeneous_hardware_v1/us_naics3/us_national_comparison.csv",
+      "sha256": "6644584e166a93c93bb216553abc3eaba616dc32164d8290965a8843393766b7"
+    },
+    "us_cost_validation": {
+      "path": "05_results/v1.0.0/result/cost_benchmark/heterogeneous_hardware_v1/us_naics3/validated.done.json",
+      "sha256": "e0cdccf242c5bbbffdfed2f3aeb4d29ee5684666588e074a96a985372c4a3876"
+    },
+    "us_demand_validation": {
+      "path": "05_results/v1.0.0/result/us_demand/validated.done.json",
+      "sha256": "cc7c1f4d1b4bfb207b26c4cfc3969d6e24edb6eb7a22694c1b2c1ae285ecd59e"
+    }
+  },
+  "outputs": {
+    "data": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_and_enterprise_cost_data.csv",
+      "sha256": "0e0e9e421458a7fb3d9b1ef454b74cf9fe3674fa4e8e75fd6fafc25712f3ab78"
+    },
+    "svg": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_and_enterprise_cost.svg",
+      "sha256": "26dc2e5e48812b4407e82426b55dd14c70a796d66af781ea385ab6ce10a66909"
+    },
+    "png": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_and_enterprise_cost.png",
+      "sha256": "02e35cc573bd99a8802929e66c669b7abfb2080a60e8844c5b71edbbbcc0076b"
+    },
+    "pdf": {
+      "path": "05_results/v1.0.0/result/manuscript_figures/figure4_resource_and_enterprise_cost.pdf",
+      "sha256": "dc37a7761420a8285eef75b86ed739ada8151df2c7baf3721c0e8d6401e06165"
+    }
+  },
+  "cost_panels": {
+    "panels": [
+      "china_demand_range",
+      "us_demand_range"
+    ],
+    "parameter_cases": [
+      "low",
+      "base",
+      "high"
+    ],
+    "china_low_high_method": "current base ledgers scaled by national total effective-service ratios",
+    "us_method": "national_pooled_residual_service_capacity_after_managed_api_delivery",
+    "boundary": "enterprise payment screening at equal assumed effectiveness; not social cost or procurement advice"
+  },
+  "layout": {
+    "panel_a": "three resource axes independently normalized to the corresponding LDC value of 1; absolute PF/LDC values printed outside the radar",
+    "panel_b": "China annual enterprise-payment ranges in RMB with an independent vertical axis",
+    "panel_c": "United States annual enterprise-payment ranges in USD with an independent vertical axis",
+    "radar_area_is_aggregate_score": false,
+    "cost_point_value_annotations": false
+  },
+  "resource_interpretation_status": "author_approved_for_figure_and_later_manuscript_migration",
+  "cost_scenario_version": "national_local_cloud_core_v1.0.0",
+  "main_manuscript_updated": true
+}

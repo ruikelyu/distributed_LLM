@@ -1,0 +1,44 @@
+schema_version: 1
+audit_version: rq1_resource_footprint_audit_v1
+status: active_pre_rebuild_audit
+defaults_config: config/defaults.yaml
+scenario_registry: config/scenarios/mainline.yaml
+legacy_figure_script: 08_code/build_figure4_resource_footprint.py
+
+inputs:
+  core_summary_subpath: result/group_architecture_core/national/core_scenarios.csv
+  core_validation_subpath: result/group_architecture_core/national/validated.done.json
+  ldc_summary_subpath: sensitivity/{model_version}/national_cloud_center_v1/summary.csv
+  ldc_comparison_validation_subpath: sensitivity/{model_version}/national_grid_capacity_comparison.validated.done.json
+  water_parameters: 02_data/processed/resource_footprint/small_china_us_water_baseline_comparison.csv
+  space_parameters: 02_data/raw/curated/resource_footprint_space_scenarios.csv
+  hardware_routing: config/compute_hardware/cpu_gpu_routing_v1.yaml
+
+selected_cases:
+  distributed_architecture: PF
+  centralized_architecture: LDC_AGGREGATE
+  local_water_mode: small_factory_site
+  ldc_water_mode: china_hyperscaler_harmonized_baseline
+  pf_space_boundary: SMALL_FACTORY_REUSE
+  ldc_space_boundary: CN_LARGE_GREENFIELD
+  local_floor_scenarios:
+    compact: {rack_fill: 0.75, noncompute_rack_share: 0.10, m2_per_rack: 5.0}
+    central: {rack_fill: 0.60, noncompute_rack_share: 0.10, m2_per_rack: 9.0}
+    spacious: {rack_fill: 0.50, noncompute_rack_share: 0.20, m2_per_rack: 14.0}
+  rack_usable_height_u: 42.0
+  server_height_u: 2.0
+
+required_rebuild_boundary:
+  include: [PF, LDC_AGGREGATE]
+  exclude: [SHG, MSG, SHG_zero_load, grid_capacity_panel, construction_materials]
+  pf_new_building_area: unquantified
+  pf_offsite_land_conversion: zero_only_under_existing_factory_site_boundary
+  ldc_building_and_land: greenfield_screening_project_proxy
+  water_metric: onsite_cooling_and_humidification_water_not_distinguished_withdrawal_or_consumption
+  floor_metric: total_facility_floor_requirement_under_reference_equipment_form_not_new_building_area
+
+outputs:
+  subdirectory: audit/rq1_resource_footprint
+  report_json: audit_report.json
+  report_markdown: audit_summary.md
+

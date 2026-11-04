@@ -1,0 +1,16 @@
+{
+  "status": "validated",
+  "model_version": "v1.0.0",
+  "comparison_basis": "equal-service new LDC aggregate capacity portfolio",
+  "distributed_architectures": [
+    "MSG",
+    "PF",
+    "SHG"
+  ],
+  "centralized_architecture": "LDC_AGGREGATE",
+  "centralized_capacity_is_one_physical_site": false,
+  "equal_service_verified": true,
+  "all_distributed_architectures_have_lower_screening_capacity_than_ldc_aggregate": true,
+  "evidence_status": "outputs_validated_not_interpreted",
+  "claim_boundary": "site_facing_continuous_MW_screen_not_avoided_grid_investment"
+}

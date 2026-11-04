@@ -1,0 +1,56 @@
+schema_version: 1
+figure_version: figure3_rq1_grid_capacity_v1
+status: active_author_approved_RQ1_figure
+defaults_config: config/defaults.yaml
+rq1_interpretation_config: config/scenarios/rq1_infrastructure_summary_v1.yaml
+
+required_interpretation_status: author_approved_for_figure_and_manuscript_migration
+
+outputs:
+  subdirectory: result/manuscript_figures
+  data: figure3_grid_capacity_data.csv
+  svg: figure3_grid_capacity.svg
+  png: figure3_grid_capacity.png
+  pdf: figure3_grid_capacity.pdf
+  validation: figure3_grid_capacity.validated.done.json
+
+aggregate_panel:
+  order: [LDC_AGGREGATE, PF, SHG, MSG]
+  labels:
+    LDC_AGGREGATE: LDC aggregate portfolio
+    PF: PF
+    SHG: SHG
+    MSG: MSG
+  colors:
+    LDC_AGGREGATE: '#8D959C'
+    PF: '#3C78A8'
+    SHG: '#E08B32'
+    MSG: '#2B8C7F'
+
+node_panels:
+  order: [PF, SHG, MSG, LDC_EMPIRICAL_REFERENCE]
+  labels:
+    PF: PF weighted modeled nodes
+    SHG: SHG weighted modeled nodes
+    MSG: MSG weighted modeled nodes
+    LDC_EMPIRICAL_REFERENCE: International facility/campus reference
+  colors:
+    PF: '#3C78A8'
+    SHG: '#E08B32'
+    MSG: '#2B8C7F'
+    LDC_EMPIRICAL_REFERENCE: '#8D959C'
+
+figure:
+  width_inches: 14.6
+  height_inches: 7.8
+  png_dpi: 240
+  node_y_max: 0.80
+
+claim_boundaries:
+  - national_aggregate_and_node_scale_are_separate_estimands
+  - LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_site
+  - modeled_node_distributions_use_registered_weights_not_a_national_site_sample
+  - Epoch_is_an_international_facility_or_campus_scale_reference_not_an_equal_service_or_china_specific_LDC_distribution
+  - capacity_bins_are_statistical_intervals_not_grid_equipment_thresholds
+  - no_maximum_percentile_top_k_HHI_or_effective_node_count_claim
+

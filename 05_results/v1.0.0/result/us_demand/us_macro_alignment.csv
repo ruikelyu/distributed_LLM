@@ -1,0 +1,4 @@
+﻿demand_case_version,model_version,parameter_case,annual_ai_facility_energy_twh,china_same_case_energy_twh,us_to_china_energy_ratio,validation_band_low,validation_band_high,inside_external_validation_band,validation_role
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,low,3.96874356748874,8.123729002061372,0.48853716888902654,0.45,0.55,True,external_check_not_input_to_demand_formula
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,base,6.908881897332025,13.982936253420563,0.4940937848902762,0.45,0.55,True,external_check_not_input_to_demand_formula
+us_manufacturing_ai_demand_v0.3.0,v1.0.0,high,13.882210268474937,27.965872506841126,0.4963982534454812,0.45,0.55,True,external_check_not_input_to_demand_formula

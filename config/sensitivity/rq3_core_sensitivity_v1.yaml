@@ -1,0 +1,67 @@
+sensitivity_version: rq3_core_sensitivity_v1.0.0
+defaults_config: config/defaults.yaml
+status: RQ3_author_confirmed_first_batch
+default_enabled: false
+industry: C38
+selected_industries: [C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40, C41, C42, C43]
+architectures: [PF, SHG, MSG]
+solve_architectures: [PF, SHG, MSG]
+centralized_architecture: LDC_AGGREGATE
+matching_ldc_required: true
+equal_service_required: true
+output_subdirectory: rq3_core_sensitivity
+common_overrides:
+  paths:
+    hourly_industry_profiles: 02_data/processed/core/manufacturing_31sector_real_weeks.csv
+reference_case:
+  case_id: REF__baseline
+  display_value: central
+  overrides: {}
+baseline_invariant: true
+# label_cn values are Chinese factor labels written to the factor_label_cn
+# column of the sensitivity CSV outputs; keep them unchanged (English glosses inline).
+factors:
+  PHY01:
+    label_cn: AI服务需求规模  # AI service demand scale
+    rq: RQ3
+    parameter_semantics: architecture_invariant_effective_service_scenario
+    baseline_value: base
+    primary_claims: [C4]
+    cases:
+      low:
+        display_value: low
+        overrides:
+          demand:
+            effective_service:
+              parameter_case: low
+      high:
+        display_value: high
+        overrides:
+          demand:
+            effective_service:
+              parameter_case: high
+  PHY02:
+    label_cn: 2030共同IT有效效率  # 2030 common IT effective efficiency
+    rq: RQ3
+    parameter_semantics: common_architecture_symmetric_IT_effective_efficiency
+    baseline_value: 3.0
+    primary_claims: [C4]
+    cases:
+      low_efficiency:
+        display_value: 1.5
+        overrides:
+          demand:
+            effective_service:
+              common_it_effective_efficiency_case: it_efficiency_1p5
+      high_efficiency:
+        display_value: 5.0
+        overrides:
+          demand:
+            effective_service:
+              common_it_effective_efficiency_case: it_efficiency_5p0
+claim_boundaries:
+  - scenarios_not_confidence_intervals_or_forecasts
+  - every_case_requires_equal_service_PF_SHG_MSG_and_matching_LDC_AGGREGATE
+  - LDC_AGGREGATE_is_a_logical_capacity_portfolio_not_one_physical_site
+  - site_facing_continuous_MW_screen_not_grid_equipment_investment_or_project_count
+  - this_registry_does_not_authorize_automatic_manuscript_editing

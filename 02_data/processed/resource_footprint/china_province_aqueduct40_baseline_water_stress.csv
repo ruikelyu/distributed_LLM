@@ -1,0 +1,32 @@
+﻿province,aqueduct40_gid_1,source_province_name,baseline_water_stress_score,baseline_water_stress_category,baseline_water_stress_label,aggregation_weight,total_weighted_score_diagnostic,context_only_not_multiplied_by_site_water
+anhui,CHN.1_1,Anhui,2.609714811,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,2.226397643,True
+beijing,CHN.2_1,Beijing,4.446072421,4,Extremely High (>80%),industrial_gross_withdrawal_weighted_within_province,4.437439275,True
+chongqing,CHN.3_1,Chongqing,0.639899025,0,Low (<10%),industrial_gross_withdrawal_weighted_within_province,1.207675065,True
+fujian,CHN.4_1,Fujian,2.264551535,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,2.233244939,True
+gansu,CHN.5_1,Gansu,2.65711412,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,3.376894664,True
+guangdong,CHN.6_1,Guangdong,0.993661109,0,Low (<10%),industrial_gross_withdrawal_weighted_within_province,1.213256985,True
+guangxi,CHN.7_1,Guangxi,1.149493918,1,Low - Medium (10-20%),industrial_gross_withdrawal_weighted_within_province,1.189631971,True
+guizhou,CHN.8_1,Guizhou,1.47576951,1,Low - Medium (10-20%),industrial_gross_withdrawal_weighted_within_province,1.356607801,True
+hainan,CHN.9_1,Hainan,2.636034026,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,2.636034026,True
+hebei,CHN.10_1,Hebei,4.699826907,4,Extremely High (>80%),industrial_gross_withdrawal_weighted_within_province,4.738556806,True
+heilongjiang,CHN.11_1,Heilongjiang,1.935209496,1,Low - Medium (10-20%),industrial_gross_withdrawal_weighted_within_province,1.931142356,True
+henan,CHN.12_1,Henan,4.307965884,4,Extremely High (>80%),industrial_gross_withdrawal_weighted_within_province,4.090075177,True
+hubei,CHN.13_1,Hubei,1.098523384,1,Low - Medium (10-20%),industrial_gross_withdrawal_weighted_within_province,1.532674502,True
+hunan,CHN.14_1,Hunan,1.740749886,1,Low - Medium (10-20%),industrial_gross_withdrawal_weighted_within_province,1.458704284,True
+inner mongolia,CHN.19_1,Nei Mongol,3.724002882,3,High (40-80%),industrial_gross_withdrawal_weighted_within_province,4.620475839,True
+jiangsu,CHN.15_1,Jiangsu,2.5240638459999998,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,2.556933843,True
+jiangxi,CHN.16_1,Jiangxi,1.557998206,1,Low - Medium (10-20%),industrial_gross_withdrawal_weighted_within_province,1.806412233,True
+jilin,CHN.17_1,Jilin,2.432795061,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,2.829011662,True
+liaoning,CHN.18_1,Liaoning,3.692205536,3,High (40-80%),industrial_gross_withdrawal_weighted_within_province,3.715058133,True
+ningxia,CHN.20_1,Ningxia Hui,3.878998886,3,High (40-80%),industrial_gross_withdrawal_weighted_within_province,3.697748901,True
+qinghai,CHN.21_1,Qinghai,2.268874192,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,1.622620245,True
+shaanxi,CHN.22_1,Shaanxi,3.29970122,3,High (40-80%),industrial_gross_withdrawal_weighted_within_province,2.895980531,True
+shandong,CHN.23_1,Shandong,4.445861991,4,Extremely High (>80%),industrial_gross_withdrawal_weighted_within_province,4.489181535,True
+shanghai,CHN.24_1,Shanghai,3.522721669,3,High (40-80%),industrial_gross_withdrawal_weighted_within_province,3.450989831,True
+shanxi,CHN.25_1,Shanxi,4.217835299,4,Extremely High (>80%),industrial_gross_withdrawal_weighted_within_province,3.82653455,True
+sichuan,CHN.26_1,Sichuan,2.971403208,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,3.004689576,True
+tianjin,CHN.27_1,Tianjin,3.867060705,3,High (40-80%),industrial_gross_withdrawal_weighted_within_province,4.14137664,True
+tibet,CHN.29_1,Xizang,0.302726378,0,Low (<10%),industrial_gross_withdrawal_weighted_within_province,0.390011189,True
+xinjiang,CHN.28_1,Xinjiang Uygur,4.525257863,4,Extremely High (>80%),industrial_gross_withdrawal_weighted_within_province,4.407529778,True
+yunnan,CHN.30_1,Yunnan,1.501769026,1,Low - Medium (10-20%),industrial_gross_withdrawal_weighted_within_province,1.631299641,True
+zhejiang,CHN.31_1,Zhejiang,2.698304122,2,Medium - High (20-40%),industrial_gross_withdrawal_weighted_within_province,2.78247046,True

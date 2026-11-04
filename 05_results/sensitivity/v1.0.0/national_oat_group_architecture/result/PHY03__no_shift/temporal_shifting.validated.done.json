@@ -1,0 +1,62 @@
+{
+  "status": "validated",
+  "model_version": "v1.0.0",
+  "sensitivity_version": "national_oat_extension_v1.2.0",
+  "pair": {
+    "architecture": "SHG",
+    "base_load_case": "actual_load",
+    "baseline_flexibility_scenario": "central",
+    "control_flexibility_scenario": "no_shift",
+    "effect_definition": "no_shift_minus_flexible",
+    "positive_effect_interpretation": "grid_capacity_avoided_by_temporal_shifting",
+    "resolved_changed_paths": [
+      "demand.flexibility_scenario"
+    ],
+    "all_other_resolved_configuration_leaves_held_constant": true
+  },
+  "industry_count": 31,
+  "equal_effective_service": true,
+  "no_shift_has_zero_shiftable_active_energy": true,
+  "active_compute_energy_conserved": true,
+  "held_constant_result_fields": [
+    "model_version",
+    "architecture",
+    "base_load_case",
+    "physical_factory_count",
+    "production_load_site_count",
+    "ai_deployment_node_count",
+    "modeled_routing_node_count",
+    "installed_server_groups_integer",
+    "online_server_groups_integer",
+    "n_plus_spare_server_groups",
+    "model_state_minimum_groups_enabled",
+    "planning_reserve_fraction",
+    "routing_policy",
+    "common_it_effective_efficiency_case",
+    "common_it_effective_efficiency_multiplier",
+    "baseline_reference_workload_per_service_unit",
+    "reference_compute_h_per_service_unit",
+    "reference_server_group",
+    "production_load_mode",
+    "production_load_boundary_id",
+    "production_activity_share",
+    "load_site_count",
+    "group_activity_share",
+    "adopter_activity_share",
+    "ai_service_group_share",
+    "industry_equivalent_multiplier",
+    "representative_group_adoption_status"
+  ],
+  "national_summary": {
+    "flexible_incremental_grid_capacity_mw": 575.7839373174064,
+    "no_shift_incremental_grid_capacity_mw": 1343.286470357126,
+    "temporal_shifting_effect_incremental_grid_capacity_mw": 767.5025330397197
+  },
+  "output": {
+    "filename": "temporal_shifting_value.csv",
+    "rows": 32,
+    "sha256": "82bc52f63a1c5a7e9184906ac8efdd9648b75968799d2ef883a7bc51a907f5ab"
+  },
+  "claim_boundary": "model_based_SHG_no_shift_minus_flexible_effect_under_registered_K_choice_and_mixed_production_load_boundaries",
+  "evidence_status": "outputs_validated_not_interpreted"
+}

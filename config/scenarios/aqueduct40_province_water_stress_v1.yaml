@@ -1,0 +1,90 @@
+schema_version: 1
+source_id: wri_aqueduct40_country_rankings_y2023m07d05
+status: active_context_source
+dataset:
+  title: Aqueduct 4.0 Current and Future Country Rankings
+  publisher: World Resources Institute
+  release_date: '2023-08-16'
+  source_page: https://www.wri.org/data/aqueduct-40-country-rankings
+  data_explorer: https://datasets.wri.org/datasets/aqueduct-40-current-and-future-country-rankings
+  data_dictionary: https://github.com/wri/Aqueduct40/blob/master/data_dictionary_country-rankings.md
+  technical_note_doi: 10.46830/writn.23.00061
+  license: CC_BY_4.0
+file:
+  download_url: https://files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip
+  destination: 02_data/raw/resource_footprint/water_stress_sources/aqueduct40/aqueduct-4-0-country-rankings.zip
+  official_sha256: 97d50c4b5ba144523f90a06b95369431d54e0f846b9296b11880ed4d4dbc4ba5
+  bytes: 12790153
+  etag: c3749046b4463ef75cfec706baf76cd8
+  last_modified: '2023-08-07T16:11:27Z'
+  archive_member: Aqueduct40_rankings_download_Y2023M07D05/Aqueduct40_rankings_download_Y2023M07D05.xlsx
+access:
+  verified_on: '2026-09-13'
+  source_status: official_file_downloaded_and_checksum_frozen
+selection:
+  sheet: province_baseline
+  country_field: gid_0
+  country_value: CHN
+  indicator_field: indicator_name
+  indicator_value: bws
+  weight_field: weight
+  main_weight_value: Ind
+  main_weight_interpretation: industrial_gross_withdrawal_weighted_within_province
+  diagnostic_weight_value: Tot
+  diagnostic_weight_interpretation: total_gross_withdrawal_weighted_within_province_not_used_in_main_figure
+  expected_provinces: 31
+  output: 02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.csv
+  lineage: 02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.lineage.json
+  source_name_to_project_province:
+    Anhui: anhui
+    Beijing: beijing
+    Chongqing: chongqing
+    Fujian: fujian
+    Gansu: gansu
+    Guangdong: guangdong
+    Guangxi: guangxi
+    Guizhou: guizhou
+    Hainan: hainan
+    Hebei: hebei
+    Heilongjiang: heilongjiang
+    Henan: henan
+    Hubei: hubei
+    Hunan: hunan
+    Jiangsu: jiangsu
+    Jiangxi: jiangxi
+    Jilin: jilin
+    Liaoning: liaoning
+    Nei Mongol: inner mongolia
+    Ningxia Hui: ningxia
+    Qinghai: qinghai
+    Shaanxi: shaanxi
+    Shandong: shandong
+    Shanghai: shanghai
+    Shanxi: shanxi
+    Sichuan: sichuan
+    Tianjin: tianjin
+    Xinjiang Uygur: xinjiang
+    Xizang: tibet
+    Yunnan: yunnan
+    Zhejiang: zhejiang
+future_sensitivity:
+  active_in_main_figure: false
+  registered_for_rq3_only: true
+  sheet: province_future
+  year: 2030
+  scenario: bau
+  indicator: bws
+  weight: Ind
+claim_boundaries:
+  role: province_water_resource_stress_context_only
+  temporal_scope: baseline_1979_2019_not_real_time_or_2030_observation
+  aggregation_scope: WRI_demand_weighted_admin1_screen_using_GADM_3_6
+  site_water_relation: displayed_separately_never_multiplied
+  forbidden_claims:
+    - formal_LCIA_water_scarcity_impact
+    - m3_world_equivalent
+    - local_site_validation
+    - real_time_water_stress
+    - facility_siting_prediction
+  interpretation: prioritization_screen_requiring_local_or_regional_deep_dive
+

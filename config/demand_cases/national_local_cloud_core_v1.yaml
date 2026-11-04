@@ -1,0 +1,49 @@
+scenario_version: national_local_cloud_core_v1.0.0
+base_scenario_config: config/demand_cases/c36_local_cloud_core_v2.yaml
+routing_config: config/compute_hardware/cpu_gpu_routing_v2.yaml
+parameter_case: base
+industry_codes:
+  - C13
+  - C14
+  - C15
+  - C16
+  - C17
+  - C18
+  - C19
+  - C20
+  - C21
+  - C22
+  - C23
+  - C24
+  - C25
+  - C26
+  - C27
+  - C28
+  - C29
+  - C30
+  - C31
+  - C32
+  - C33
+  - C34
+  - C35
+  - C36
+  - C37
+  - C38
+  - C39
+  - C40
+  - C41
+  - C42
+  - C43
+local_summary: 05_results/v1.0.0/result/group_architecture_core/national/core_scenarios.csv
+output_root: 05_results/v1.0.0/result/national_local_cloud_cost_v1
+
+comparison_boundary:
+  local_service_share: 1.0
+  cloud_service_share: 1.0
+  local_architectures: [PF, SHG, MSG]
+  cloud_delivery: managed_model_API_plus_RAG_Agent_QLoRA_plus_residual_CPU_GPU_capacity
+  cloud_local_effectiveness_assumption: equal_quality_and_service_efficiency_per_equivalent_physical_compute_resource
+  cloud_performance_benchmark_required: false
+  cloud_capacity_pooling: national_31_industry_deadline_feasible_waterfilled_upper_bound
+  cloud_price_cases: [low, base, high]
+  result_status: national_enterprise_payment_screening_not_social_cost_or_procurement_recommendation

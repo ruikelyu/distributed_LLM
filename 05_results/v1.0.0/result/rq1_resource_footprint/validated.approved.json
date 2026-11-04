@@ -1,0 +1,100 @@
+{
+  "status": "author_approved_for_figure_and_later_manuscript_migration",
+  "model_version": "v1.0.0",
+  "analysis_version": "rq1_resource_footprint_summary_v1",
+  "evidence_status": "outputs_validated_interpretation_author_approved",
+  "interpretation_status": "author_approved_for_figure_and_later_manuscript_migration",
+  "figure_authorization": true,
+  "automatic_manuscript_edit": false,
+  "author_approval": {
+    "status": "approved",
+    "date": "2026-09-13",
+    "authority": "user_selected_central_floor_scenario_and_instructed_continuation"
+  },
+  "equal_effective_service_verified": true,
+  "selected_floor_case": "central",
+  "selected_floor_direction": "PF_LOWER",
+  "pf_new_building_area_status": "unquantified",
+  "source_hashes": {
+    "summary_configuration": {
+      "path": "config/scenarios/rq1_resource_footprint_summary_v1.yaml",
+      "sha256": "5773127641848f6aeb0f38a174c54afc9fb498fc1cf0acda85c6feff19180d4e"
+    },
+    "summary_script": {
+      "path": "08_code/build_rq1_resource_footprint_summary.py",
+      "sha256": "147d818e1531c3c34c77c512836526379d306ff827bdde196748df88791b9a78"
+    },
+    "audit_script": {
+      "path": "08_code/audit_rq1_resource_footprint.py",
+      "sha256": "15b7e868c9f572f63927529cf77682e2c0e6571fecbbab7cc93ed8c37c6eeefe"
+    },
+    "configuration": {
+      "path": "config/scenarios/rq1_resource_footprint_audit_v1.yaml",
+      "sha256": "488ebeced49e14b5e72155a98acd48b1d0b6900f1949976688eff57276b5d8f0"
+    },
+    "defaults": {
+      "path": "config/defaults.yaml",
+      "sha256": "46e15afecba40dcb8a1bab939cd033c11c0ad5479850261c1f4ed3453e5f98a1"
+    },
+    "scenario_registry": {
+      "path": "config/scenarios/mainline.yaml",
+      "sha256": "1b0ca5a3d2e9e3141277fa6d0e86e30adbf787b20f421adb7a343a4a6ade1a4d"
+    },
+    "legacy_figure_script": {
+      "path": "08_code/build_figure4_resource_footprint.py",
+      "sha256": "72688cedc19e2c7992e3705fd0b78139f24296e4674a72b36a8121e9b2d37921"
+    },
+    "core_summary": {
+      "path": "05_results/v1.0.0/result/group_architecture_core/national/core_scenarios.csv",
+      "sha256": "c5a35d2e4d721b9547290e20a25e383a6a1be300e616d5104bc59177b3407cd1"
+    },
+    "core_validation": {
+      "path": "05_results/v1.0.0/result/group_architecture_core/national/validated.done.json",
+      "sha256": "40217c7e2aba0876a3b64d56842058ac1c0d596e95d8ccf0681652b219330228"
+    },
+    "ldc_summary": {
+      "path": "05_results/sensitivity/v1.0.0/national_cloud_center_v1/summary.csv",
+      "sha256": "5525dd34e2b27035a1b636266a319b612038cfd4282ef7f0a9ff27348fb9a894"
+    },
+    "ldc_comparison_validation": {
+      "path": "05_results/sensitivity/v1.0.0/national_grid_capacity_comparison.validated.done.json",
+      "sha256": "5f3ae2bfbb6e8a8996f92447ae4573475770f9ce540a0265eae5088c4cb76048"
+    },
+    "water_parameters": {
+      "path": "02_data/processed/resource_footprint/small_china_us_water_baseline_comparison.csv",
+      "sha256": "0789a4af721709f3a9a0db60fa5342a91954762fdbb90302a5ba27fe59002ba9"
+    },
+    "space_parameters": {
+      "path": "02_data/raw/curated/resource_footprint_space_scenarios.csv",
+      "sha256": "1c408e2e0c160b2a543b842ed313b203dbb43b96b273f3f6e8fb177353406086"
+    },
+    "hardware_routing": {
+      "path": "config/compute_hardware/cpu_gpu_routing_v1.yaml",
+      "sha256": "e6d9685b8ceffb3e425043fd704082e755b884135dc7962d7c479b4575d8cc83"
+    }
+  },
+  "outputs": {
+    "summary_table": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/rq1_resource_footprint_summary.csv",
+      "rows": 6,
+      "sha256": "39115f3c8bc6341595420575a8a33637f13bdd4847c7ec4da53a045ff0adefbf"
+    },
+    "field_status_table": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/rq1_resource_footprint_field_status.csv",
+      "rows": 2,
+      "sha256": "a4c0d45dc29e5b9552123a038f0607135b871cc33847b791eecd5e35055863fb"
+    },
+    "interpretation_review": {
+      "path": "05_results/v1.0.0/result/rq1_resource_footprint/rq1_resource_footprint_interpretation_review.md",
+      "sha256": "64d161e32017eb219e2cb5226c3cbba9bead33d371aac95addbc83f179421f9d"
+    }
+  },
+  "claim_boundaries": {
+    "water": "scenario_accounting_from_IT_energy_times_registered_WUE_not_architecture_only_effect_and_not_split_withdrawal_or_consumption",
+    "pf_floor": "total_facility_floor_requirement_under_reference_equipment_and_rack_scenarios_not_new_building_area_or_site_suitability",
+    "ldc_floor": "greenfield_project_screening_proxy_not_provider_weighted_or_national_mean",
+    "pf_land": "zero_only_under_existing_factory_site_boundary_not_empirical_zero_land_need",
+    "ldc_land": "greenfield_project_screening_proxy_not_observed_portfolio_land_conversion",
+    "comparison": "equal_effective_service_logical_portfolio_comparison_with_different_registered_facility_boundaries"
+  }
+}

@@ -1,0 +1,76 @@
+schema_version: 1
+figure_version: figure5_rq1_spatial_water_v2_typography
+status: active_validated_approved_design_figure
+defaults_config: config/defaults.yaml
+resource_summary_config: config/scenarios/rq1_resource_footprint_summary_v1.yaml
+spatial_audit_config: config/scenarios/rq1_spatial_water_audit_v1.yaml
+water_stress_source_config: config/scenarios/aqueduct40_province_water_stress_v1.yaml
+required_spatial_audit_status: READY_FOR_SPATIAL_REBUILD
+
+inputs:
+  core_summary_subpath: result/group_architecture_core/national/core_scenarios.csv
+  core_validation_subpath: result/group_architecture_core/national/validated.done.json
+  pf_allocation: 02_data/processed/resource_footprint/province_industry_ai_allocation.csv
+  pf_allocation_lineage: 02_data/processed/resource_footprint/province_industry_ai_allocation.lineage.json
+  ldc_capacity_proxy: 02_data/processed/resource_footprint/china_province_cloud_ai_capacity_share_caict2025.csv
+  water_stress_context: 02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.csv
+  water_stress_lineage: 02_data/processed/resource_footprint/china_province_aqueduct40_baseline_water_stress.lineage.json
+  china_map: 02_data/raw/province_shapes/CHN_full_adm/CHN_full_adm.shp
+
+validation:
+  expected_industries: 31
+  expected_provinces: 31
+  share_tolerance: 1.0e-10
+  approved_architectures: [PF, LDC_AGGREGATE]
+  water_metric: onsite_cooling_humidification_water
+  water_sensitivity_case: registered_main
+  required_resource_interpretation_status: author_approved_for_figure_and_later_manuscript_migration
+
+architecture_labels:
+  PF: PF
+  LDC_AGGREGATE: LDC aggregate
+colors:
+  PF: '#3C78A8'
+  LDC_AGGREGATE: '#8D959C'
+
+panels:
+  - id: PF_MAP
+    title: 'a  Provincial factory-site water allocation (PF)'
+    subtitle: 2030 REFERENCE manufacturing-electricity spatial scenario
+  - id: PF_TOP
+    title: 'b  Seven largest factory-site water allocations'
+    subtitle: Bar length = site water; color = independent stress context
+  - id: LDC_MAP
+    title: 'c  Provincial data-center water allocation (LDC)'
+    subtitle: 2025 in-use intelligent-compute capacity proxy
+  - id: LDC_TOP
+    title: 'd  Seven largest data-center water allocations'
+    subtitle: Bar length = site water; color = independent stress context
+
+figure:
+  width_inches: 16.8
+  height_inches: 10.4
+  png_dpi: 240
+  top_value_labels: 5
+  maximum_bubble_area_points2: 900
+
+outputs:
+  subdirectory: result/manuscript_figures
+  data: figure5_spatial_water_data.csv
+  svg: figure5_spatial_water.svg
+  png: figure5_spatial_water.png
+  pdf: figure5_spatial_water.pdf
+  validation: figure5_spatial_water.validated.done.json
+
+claim_boundaries:
+  - PF_and_LDC_each_preserve_their_own_approved_national_site_water_total
+  - PF_allocation_is_a_2030_REFERENCE_manufacturing_electricity_scenario_not_observed_enterprise_AI_locations
+  - LDC_allocation_is_a_2025_in_use_intelligent_compute_capacity_proxy_not_provider_traffic_or_2030_siting
+  - site_water_is_on_site_cooling_and_humidification_water_not_split_between_withdrawal_and_consumption
+  - Aqueduct40_baseline_is_a_1979_2019_prioritization_screen_not_real_time_or_site_validated_stress
+  - industrial_gross_withdrawal_is_the_within_province_aggregation_weight_not_a_data_center_water_inventory
+  - site_water_quantity_and_water_stress_are_independent_visual_encodings_and_are_never_multiplied
+  - no_m3_world_equivalent_or_formal_LCIA_water_scarcity_impact_is_reported
+  - LDC_AGGREGATE_is_a_logical_equal_service_portfolio_not_one_physical_site
+  - 2030_BAU_water_stress_is_reserved_for_RQ3_sensitivity_and_excluded_from_the_main_figure
+automatic_manuscript_edit: false

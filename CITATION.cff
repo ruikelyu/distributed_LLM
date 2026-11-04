@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper and this repository."
+title: "Code and data for: Coordinating Distributed AI Servers with Industrial Loads to Reduce Grid-Interconnection Needs"
+type: software
+authors:
+  - family-names: Lyu
+    given-names: Ruike
+    affiliation: Columbia University
+  - family-names: Xu
+    given-names: Bolun
+    affiliation: Columbia University
+license: MIT
+version: 1.0.0
+date-released: 2026-10-10
+repository-code: "https://github.com/ruikelyu/distributed_LLM"

@@ -1,0 +1,16 @@
+core_architecture: PF
+# Chinese display label (gloss inline); not used to match data.
+core_architecture_label_cn: 来源工厂固定端点（PF）  # plant-fixed endpoint (PF)
+architecture_labels:
+  PF: PF
+  SHG: SHG-plant
+  MSG: MSG-coordinated
+include_incremental_private_network_cost: false
+include_incremental_data_governance_cost: false
+interpretation: >-
+  Active output codes are the infrastructure-first physical architectures:
+  PF is the source-factory fixed endpoint, SHG is the designated group-host
+  factory, and MSG is the coordinated multisite architecture. Ownership,
+  procurement, private-network management and governance remain overlays rather
+  than physical architecture categories. No separate private-network,
+  governance or coordination-platform cost is added.

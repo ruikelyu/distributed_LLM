@@ -1,0 +1,83 @@
+analysis_version: node_interconnection_distribution_v1.0.0
+defaults_config: config/defaults.yaml
+
+source:
+  provider: Epoch AI
+  data_page: https://epoch.ai/data/ai-data-centers
+  documentation_page: https://epoch.ai/data/data-centers-documentation/records
+  downloads_page: https://epoch.ai/data/data-centers-documentation/downloads
+  license: CC-BY
+  dataset_updated_date: 2026-09-10
+  access_date: 2026-09-13
+  as_of_date: 2026-09-10
+  snapshot_directory: 02_data/raw/epoch_ai/ai_data_centers/2026-09-10
+  data_centers:
+    url: https://epoch.ai/data/data_centers/data_centers.csv
+    filename: data_centers.csv
+  timelines:
+    url: https://epoch.ai/data/data_centers/data_center_timelines.csv
+    filename: data_center_timelines.csv
+  processed_snapshot: 02_data/processed/node_interconnection/epoch_ai_current_it_power_2026-09-10.csv
+  snapshot_manifest: 02_data/processed/node_interconnection/epoch_ai_current_it_power_2026-09-10.lineage.json
+
+record_identity_review:
+  approved_same_address_distinct_records:
+    - address: 7725 Lake Rd, Barker, NY 14012
+      facility_names:
+        - Anthropic Lake Mariner
+        - Core42 Lake Mariner
+      rationale: >-
+        Epoch publishes these as separate operational records at the same campus.
+        Their as-of timeline entries cover distinct building sequences: Core42 uses
+        CB-1/CB-2, while Anthropic uses CB3. The selected current IT capacities
+        therefore do not overlap and remain separate observations under the
+        registered facility/campus-record statistical unit.
+      source_pages:
+        - https://epoch.ai/data/ai-data-centers/directory/core42-lake-mariner
+        - https://epoch.ai/data/ai-data-centers/directory/anthropic-lake-mariner
+
+distributed_model:
+  result_subdirectory: group_architecture_core
+  architectures: [PF, SHG, MSG]
+  base_load_case: actual_load
+  negative_solver_tolerance_mw: 1.0e-8
+  reconciliation_relative_tolerance: 1.0e-7
+  reconciliation_absolute_tolerance_mw: 1.0e-5
+
+ldc_empirical_reference:
+  architecture_code: LDC_EMPIRICAL_REFERENCE
+  main_case: peak_facility_multiplier_1p20
+  cases:
+    peak_facility_multiplier_1p20: 1.20
+    peak_facility_multiplier_1p40: 1.40
+  statistical_unit: public_facility_or_campus_record_not_independent_interconnection
+  equal_service_comparator: false
+  china_specific: false
+
+histogram:
+  positive_bin_edges_mw:
+    - 1.0e-13
+    - 1.0e-12
+    - 1.0e-11
+    - 1.0e-10
+    - 1.0e-9
+    - 1.0e-8
+    - 1.0e-7
+    - 1.0e-6
+    - 1.0e-5
+    - 1.0e-4
+    - 1.0e-3
+    - 1.0e-2
+    - 1.0e-1
+    - 1.0
+    - 10.0
+    - 100.0
+    - 1000.0
+    - 10000.0
+  zero_bin_label: 0 MW
+
+outputs:
+  result_subdirectory: node_interconnection_distribution
+  node_data: node_interconnection_distribution.csv
+  histogram_data: node_interconnection_histogram.csv
+  validation: validated.done.json

@@ -1,0 +1,70 @@
+﻿model_version,analysis_version,source_snapshot_date,facility_name,current_timeline_date,current_it_power_mw,current_total_facility_power_mw,main_table_current_power_mw,country,address,statistical_unit
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,AWS Berwick,2026-08-01,108.0,139.0,108.0,United States,"1125 Electron Ave, Berwick, PA 18603",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,AWS New Albany,2026-05-18,213.0,255.0,213.0,United States,13360 Miller Rd NW,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Alibaba Zhangbei,2026-01-03,169.0,203.0,169.0,China,"Alibaba Zhangbei Yun Calculation Data Center, Zhangbei County, Zhangjiakou, Hebei, China, 076471",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Amazon Madison Mega Site,2026-06-04,284.0,341.0,284.0,United States,"Amazon Data Services Inc, Madison Mega Site Nissan Parkway and Highway 22 Canton, Mississippi Madison County",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Amazon Ridgeland,2026-05-15,228.0,273.0,228.0,United States,"1626 County Line Road Ridgeland, Mississippi",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Anthropic Lake Mariner,2026-07-23,42.0,49.0,42.0,United States,"7725 Lake Rd, Barker, NY 14012",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Anthropic-Amazon New Carlisle,2026-06-03,910.0,1092.0,910.0,United States,"55001 Larrison Blvd, New Carlisle, IN 46552",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Colossus 1,2026-06-15,340.0,425.0,340.0,United States,"3231 Riverport Rd, Memphis, TN 38109",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Colossus 2,2026-06-15,946.0,1276.0,946.0,United States,"5420 Tulane Rd, Memphis, TN 38109",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Core42 Lake Mariner,2026-07-23,58.0,58.0,58.0,United States,"7725 Lake Rd, Barker, NY 14012",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,CoreWeave Chester VA,2026-05-20,82.0,114.0,82.0,United States,"1401 Meadowville Technology Parkway, Chester, VA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,CoreWeave Dalton 1 & 2,2026-02-20,28.0,40.0,28.0,United States,"2205 Industrial South Rd, Dalton, GA, 30721",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,CoreWeave Denton TX,2026-09-01,262.0,367.0,262.0,United States,"8171 Jim Christal Rd, Denton, TX 76207",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,CoreWeave Ellendale ND,2026-06-30,68.0,88.0,68.0,United States,"9685 87th Ave SE, Ellendale, ND 58436",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,CoreWeave Marble NC,2026-05-06,65.0,91.0,65.0,United States,"155 Palmer Ln, Marble, NC 28905",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,CoreWeave Norway,2026-04-25,42.0,50.0,42.0,Norway,"Stølevegen 39, 4715 Øvrebø, Norway",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Coreweave Helios,2026-08-30,132.0,200.0,132.0,United States,"984 County Road 112, Afton, TX 79220",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,DayOne Nusajaya,2026-04-05,240.0,336.0,240.0,Malaysia,,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Arcola,2026-06-16,77.0,93.0,77.0,United States,"42575 Arcola Blvd, Sterling, VA 20166",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Bristow,2026-05-20,238.0,286.0,238.0,United States,"13001 Rollins Ford Road, Bristow, VA 20136",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Columbus,2026-08-05,303.0,364.0,303.0,United States,"5076 S High St, Columbus, OH 43207",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Council Bluffs (East),2026-07-07,237.0,284.0,237.0,United States,"10410 Bunge Ave, Council Bluffs, IA 51503",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Kansas City East,2026-08-01,105.0,126.0,105.0,United States,,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Lancaster,2026-03-12,137.0,164.0,137.0,United States,"105 Whiley Rd, Lancaster, OH 43130",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Lincoln,2026-05-12,141.0,170.0,141.0,United States,"5475 Cloud Ct, Lincoln, NE 68514",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Mesa,2026-08-15,183.0,237.0,183.0,United States,,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Midlothian,2026-07-01,103.0,123.0,103.0,United States,"3250 Railport Parkway, Midlothian, TX 76065",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google New Albany,2026-08-16,453.0,543.0,453.0,United States,"1101 Beech Rd SW, New Albany, OH 43054",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Omaha,2026-06-30,237.0,284.0,237.0,United States,"11110 State St, Omaha, NE 68142",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Papillion,2026-05-04,237.0,284.0,237.0,United States,"14651-15249 Gold Coast Rd 68138 Papillion Nebraska, USA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Pryor (North),2026-09-08,368.0,442.0,368.0,United States,"4581 Webb St, Pryor, OK 74361",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Red Oak,2026-02-06,77.0,93.0,77.0,United States,"330 Austin Blvd, Red Oak, TX 75154",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Storey County,2026-04-13,161.0,214.0,161.0,United States,,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google The Dalles,2026-04-29,154.0,185.0,154.0,United States,"3500 River Rd, The Dalles, OR",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Google Waltham Cross,2026-04-23,88.0,124.0,88.0,United Kingdom,"Land at Maxwell's Farm West, Great Cambridge Road, Cheshunt, EN8 8XH",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Huawei Horinger,2026-07-01,241.8,278.0,241.8,China,"Huawei, Horinger, China",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Aiken,2026-07-15,142.0,185.0,142.0,United States,"7601 State Hwy 105, Trenton, SC 29847, USA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Cheyenne,2026-07-25,152.0,182.0,152.0,United States,"Cheyenne, WY 82007, USA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Eagle Mountain,2026-05-02,133.0,179.0,133.0,United States,"1275 N Community Cir, Eagle Mountain, UT 84005",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Gallatin,2026-06-15,87.0,114.0,87.0,United States,"1 Meta Lp, Gallatin, TN 37066",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Huntsville,2026-06-02,146.0,198.0,146.0,United States,"5400 Prosperity Dr NW, Toney, AL",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Jeffersonville,2026-06-04,178.0,241.0,178.0,United States,"500 8th St, Jeffersonville, IN 47130, USA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Kuna,2026-06-01,152.0,198.0,152.0,United States,"601 Kuna Mora Rd,  Kuna ID 83634",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Los Lunas,2026-03-01,87.0,105.0,87.0,United States,"4250 Messenger Lp, Los Lunas, NM 87031",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Montgomery,2026-06-18,153.0,199.0,153.0,United States,"Co Rd 42, Montgomery, AL 36105, USA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Prometheus,2026-08-01,562.0,731.0,562.0,United States,"1 Community Cir, New Albany, OH 43054",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Rosemount,2026-06-19,178.0,241.0,178.0,United States,"1772-2396 145th St, Rosemount, MN 55068, USA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Sarpy,2026-08-02,80.0,105.0,80.0,United States,"14436-14998 Fairview Rd, Springfield, NE 68059, USA",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta Temple,2026-02-24,152.0,198.0,152.0,United States,"2310 Eberhardt Rd, Temple, TX 76504",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Meta-QTS Hillsboro 2,2026-04-17,180.0,243.0,180.0,United States,"4755 NE Huffman St, Hillsboro, OR 97124",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Microsoft Fairwater Atlanta,2026-06-14,636.0,859.0,636.0,United States,"1435 Hwy 54 W, Fayetteville, GA 30214",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Microsoft Fairwater Wisconsin,2026-05-15,369.0,442.0,369.0,United States,"4800 90th St, Mount Pleasant, WI 53403",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Microsoft Goodyear,2026-04-27,202.0,263.0,202.0,United States,"14250 W Broadway Rd, Goodyear, AZ 85338",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Microsoft Project Osmium,2026-06-16,190.0,228.0,190.0,United States,"5855 SW Kerry St, Cumming, IA 50061",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Microsoft SAT14,2026-03-31,47.0,66.0,47.0,United States,"3545 Wiseman Boulevard, San Antonio, TX 78251",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Microsoft SAT40,2026-02-04,75.0,106.0,75.0,United States,"15000 Lambda Drive, San Antonio, TX 78245",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Microsoft-Nebius New Jersey,2026-07-12,50.0,70.0,50.0,United States,"3963 S Lincoln Ave, Vineland, New Jersey",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,OpenAI Stargate Abilene,2026-07-28,421.0,590.0,421.0,United States,"5502 Spinks Rd, Abilene, TX 79601",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Oracle Batam,2026-05-06,72.0,94.0,72.0,Indonesia,,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,QTS Richmond 1,2026-02-13,238.0,333.0,238.0,United States,"6000 Technology Blvd, Sandston, VA 23150",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,QTS Richmond 2,2026-05-14,180.0,252.0,180.0,United States,"6030–6070 Technology Blvd, Sandston, VA 23150",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,QTS Richmond 3,2026-05-14,144.0,202.0,144.0,United States,"3525–3543 Portugee Rd, Sandston, VA 23150",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,STACK Infrastructure NVA02,2026-02-14,85.0,118.0,85.0,United States,"9590 Hornbaker Rd, Manassas, VA 20109",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Southgate Melbourne,2026-08-09,41.0,57.0,41.0,Australia,,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Start Campus Sines Data Campus,2026-08-16,33.0,40.0,33.0,Portugal,"Start Campus - Sustainable Data Center Services, Sines, Portugal",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Stream Phoenix,2026-05-01,64.0,77.0,64.0,United States,2950 S. Litchfield Road,public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,VNET Bayin Ulanqab,2026-05-06,221.0,252.0,221.0,China,"Bayin, Ulanqab, China",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,Vantage TX1,2026-02-15,32.0,44.8,32.0,United States,"14720 Omicron Dr, San Antonio, TX 78245",public_facility_or_campus_record
+v1.0.0,node_interconnection_distribution_v1.0.0,2026-09-10,xAI QTS Atlanta,2026-07-10,17.32971,24.0,17.32971,United States,"1025 Jefferson Street NW, Atlanta, GA 30318",public_facility_or_campus_record

@@ -1,0 +1,38 @@
+{
+  "generated_on": "2026-08-11",
+  "scenario_year": 2030,
+  "source": "02_data/external/d_energy.csv",
+  "source_sha256": "dd09880889da3d7b63d5b3909d6a86acb12b2625a37e32c9e29c268aee55ae9e",
+  "generator": "08_code/prepare_resource_footprint_province_allocation.py",
+  "output": "02_data/processed/resource_footprint/province_industry_ai_allocation.csv",
+  "diagnostics": "02_data/processed/resource_footprint/province_industry_ai_allocation_diagnostics.csv",
+  "rows": 961,
+  "manufacturing_industries": 31,
+  "provinces": 31,
+  "zero_value_rows": 133,
+  "identical_profile_groups": [
+    [
+      "C17",
+      "C18",
+      "C19"
+    ],
+    [
+      "C20",
+      "C21",
+      "C22",
+      "C23"
+    ],
+    [
+      "C29",
+      "C42"
+    ],
+    [
+      "C34",
+      "C35",
+      "C43"
+    ]
+  ],
+  "share_validation": "each industry sums to 1 within absolute tolerance 1e-12",
+  "interpretation": "REFERENCE-scenario province allocation anchor, not observed enterprise AI adoption or an empirical factory-location sample",
+  "allocation_decision": "Frozen by user decision as the accepted REFERENCE spatial scenario. Record structural features for interpretation but do not recalibrate, replace, or add weight sensitivity."
+}
