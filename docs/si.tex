@@ -1,0 +1,533 @@
+% Supplementary Information for "Coordinating Distributed AI Servers with Industrial Loads to Reduce
+% Grid-Interconnection Needs" (IEEE PES GM 2027).  Numbers are typed in and checked against the outputs listed in
+% Supplementary Table S2.  Build: pdflatex si.tex (twice).
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,xcolor,enumitem}
+\usepackage[font=small,labelfont=bf,skip=4pt]{caption}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlist{itemsep=2pt,topsep=3pt}
+\setlength{\LTcapwidth}{\textwidth}
+\usepackage{fancyhdr,titlesec,float}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\itshape Supplementary Information}
+\fancyhead[R]{\small\itshape Lyu and Xu}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{0pt}{12pt}
+\titleformat{\subsection}{\large\bfseries}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{14pt}{6pt}
+\DeclareCaptionLabelSeparator{bar}{\ \textbar\ }
+\captionsetup{labelsep=bar}
+\renewcommand{\thetable}{M\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\cny}{CNY~}
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+{\LARGE\bfseries Supplementary Information}\\[10pt]
+{\large Coordinating Distributed AI Servers with Industrial Loads to Reduce Grid-Interconnection Needs}\\[12pt]
+{\normalsize Ruike Lyu and Bolun Xu}\\[3pt]
+{\small Columbia University, Earth and Environmental Engineering, New York, NY, USA}
+\end{center}
+\vspace{6pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{2pt}
+
+\noindent\textbf{This file includes:} Overview; Supplementary Methods 1--6; Tables M1--M10 (within the Supplementary Methods); Supplementary Tables S1--S2.
+
+\vspace{4pt}
+\renewcommand{\contentsname}{\normalsize Contents}
+\begingroup\small
+\tableofcontents
+\endgroup
+\clearpage
+
+% ===================================================================== Overview
+\section*{Overview}
+\addcontentsline{toc}{section}{Overview}
+
+\noindent This Supplementary Information describes the data, equations and assumptions behind the results of the main paper. The study covers 31 manufacturing industries in China (C13--C43 of the national industry classification) in 2030. AI service demand of each industry is served by one representative corporate group, which is optimized over one representative week of 168 hours and scaled to the national total. All results refer to the core scenario (base demand, central task flexibility and the parameter values in Supplementary Methods 2--6) unless stated otherwise. Monetary values are in nominal Chinese yuan (CNY). Code, processed data and model outputs are available in the public repository \url{https://github.com/ruikelyu/distributed_LLM}, which also documents the location of every input and output file.
+
+\subsection*{Key terms}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}L{0.27\textwidth}L{0.69\textwidth}@{}}
+\toprule
+Term & Meaning \\
+\midrule
+Service unit & The unit of AI service demand, equal to one hour of work of a 2024 reference accelerator (NVIDIA L20). \\
+Task class ($k$) & One of six categories of manufacturers' AI services: office knowledge services, business-process agents, visual quality review, predictive maintenance and diagnosis, production scheduling and optimization, and R\&D simulations and digital twins. \\
+Firm and flexible demand & Firm demand is served in its arrival hour. Flexible demand may be delayed until an intraday deadline or a multi-day (batch) deadline. \\
+Flexible job ($j$) & Flexible demand that shares the same task class, release hour and deadline, aggregated for scheduling. \\
+Corporate group & A manufacturer that operates several factories (sites) in one industry. Each industry is represented by one group. \\
+Node & A factory site that hosts AI servers. \\
+Production load ($L_{n,t}$) & The factory's own electricity demand without AI servers, held fixed. \\
+Connection capacity ($K_n$) & The existing grid-connection capacity of a site, taken as its peak production load. \\
+Additional interconnection capacity ($\delta_n$) & The increase in peak grid demand caused by AI servers, $\max\{0,\max_t(L_{n,t}+p_{n,t})-K_n\}$. \\
+AI load ($p_{n,t}$) & Facility power of the AI servers, including cooling and power delivery. \\
+Facility multiplier ($M_a$) & Ratio of facility power to server power. \\
+Planning margin ($r$) & Installed server capacity above average compute demand. \\
+PFD & Per-factory deployment. Each factory runs its own AI services on site. \\
+HFD & Host-factory deployment. One factory of the group hosts the AI services of all its factories. \\
+MSD & Multi-site deployment. Up to five factories of the group host servers, and tasks are routed among them within their deadlines. \\
+LDC & Large-data-center deployment. The same AI demand is served in new facilities without production load or an existing grid connection. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Guide to the main-text results}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}L{0.36\textwidth}L{0.34\textwidth}L{0.24\textwidth}@{}}
+\toprule
+Main-text result & Supplementary section & Tables \\
+\midrule
+Manufacturing AI service demand (Fig.~2) & Supplementary Methods 2 & Tables \ref{tab:scope}--\ref{tab:flex} \\
+Sizing and scheduling model (1a)--(1i), architectures (Fig.~1, Table~I) & Supplementary Methods 3 & Tables \ref{tab:params}, \ref{tab:arch} \\
+Production loads, connection capacity and prices & Supplementary Methods 4 & Table \ref{tab:prices} \\
+Additional capacity and site distribution (Table~II, Fig.~3) & Supplementary Methods 3 and 4 & Table \ref{tab:trace} \\
+Mechanisms of capacity reduction (Fig.~4) & Supplementary Methods 3, ``Mechanism counterfactuals'' & Table \ref{tab:trace} \\
+Battery alternative (Table~II) & Supplementary Methods 5 & Table \ref{tab:battery} \\
+Water, floor area, land and enterprise payments & Supplementary Methods 6 & Tables \ref{tab:footprint}, \ref{tab:payments} \\
+Data sources & Supplementary Methods 1 & Table \ref{tab:sources} \\
+Parameter ranges and traceability & Supplementary Tables & Tables \ref{tab:ranges}, \ref{tab:trace} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\setcounter{table}{0}      % the two overview tables are not numbered
+
+% ===================================================================== SM1
+\clearpage
+\section*{Supplementary Methods 1. Data sources}
+\addcontentsline{toc}{section}{Supplementary Methods 1. Data sources}
+
+Table~\ref{tab:sources} lists the main datasets used by the model. Values reported in documents, such as server prices, cloud prices, facility efficiencies and project filings, are cited where they are used in Supplementary Methods 2--6. Each value is recorded in a parameter register in the repository with its source title, address, access date and an evidence grade.
+
+Third-party data are used as published and are not altered. The repository includes processed extracts where the licence allows. Original third-party files are not redistributed, and the repository explains how to obtain them. The hourly Guangdong day-ahead prices are not redistributed, so the optimization cannot be re-solved without them; all other results can be rebuilt from the repository.
+
+{\small
+\begin{longtable}{@{}L{0.27\textwidth}L{0.33\textwidth}L{0.34\textwidth}@{}}
+\caption{Main datasets.}\label{tab:sources}\\
+\toprule
+Dataset & Publisher and year & Use in the model \\
+\midrule
+\endfirsthead
+\toprule
+Dataset & Publisher and year & Use in the model \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Fifth National Economic Census & National Bureau of Statistics of China, 2023 data & Number of above-size manufacturing firms by industry \\
+China Statistical Yearbook 2024 & National Bureau of Statistics of China & Firms using AI in 2023, by industry \\
+EWELD industrial and commercial load dataset & Liu et al., \emph{Scientific Data}, 2023 (CC BY 4.0) & Hourly shapes of production load \\
+2030 industry and provincial electricity & Authors' China energy-system model, reference scenario & Magnitude of production load; provincial allocation of water use \\
+Manufacturing sales of vehicle groups & China Association of Automobile Manufacturers, 2024 & Output share and size of the vehicle-manufacturing group (C36) \\
+Day-ahead electricity prices, 28 May--3 June 2026 & Guangdong Power Exchange Center & Hourly energy price (not redistributed) \\
+Agency power-purchase price notice, April 2026 & Guangdong Power Grid & Maximum-demand charge and volumetric adders \\
+Monthly energy-storage bid prices, Sep.~2026 & China Energy Storage Alliance (CNESA) & Battery cost \\
+AI Data Centers database, snapshot 10 Sep.~2026 & Epoch AI (CC BY 4.0) & Size distribution of reported AI data centers (Fig.~3) \\
+Comprehensive Compute Index Blue Book 2025 & China Academy of Information and Communications Technology (CAICT) & Provincial distribution of large-data-center computing; 2030 scale context \\
+Aqueduct 4.0 & World Resources Institute, 2023 (CC BY 4.0) & Provincial water stress (context only) \\
+Server, cloud and API prices & Vendor price pages and public procurement records, 2025--2026 & Server cost and enterprise payments \\
+Data-center project filings & Environmental approvals and operator disclosures & Floor area, land and grid-connection cost of large data centers \\
+\end{longtable}}
+
+% ===================================================================== SM2
+\clearpage
+\section*{Supplementary Methods 2. AI service demand}
+\addcontentsline{toc}{section}{Supplementary Methods 2. AI service demand}
+
+\subsection*{Service unit}
+AI service demand is measured in service units. One unit is the work of one 2024 reference accelerator (NVIDIA L20) for one hour. Hardware, model and software efficiency is assumed to improve threefold by 2030 for all architectures and both CPU and GPU, so one unit requires $W_k=1/3$ reference accelerator-hours of compute in 2030. The improvement is assumed; 1.5-fold and 5-fold improvements bound its range (Supplementary Table S1).
+
+\subsection*{Task classes}
+The six task classes and the parts of each task that are excluded from the analysis are listed in Table~\ref{tab:scope}. Only the parts that can run either at the factory or in a shared computing pool are modeled. Parts that must stay on site, such as closed-loop control, and parts that exceed a factory server room, such as foundation-model pretraining, are excluded.
+
+\begin{table}[H]
+\centering\small
+\caption{Scope of the six task classes.}\label{tab:scope}
+\begin{tabular}{@{}L{0.26\textwidth}L{0.70\textwidth}@{}}
+\toprule
+Item & Description \\
+\midrule
+Modeled task classes & Office knowledge services; business-process agents; visual quality review; predictive maintenance and diagnosis; production scheduling and optimization; R\&D simulations and digital twins \\
+Excluded, must stay on site & Raw camera frames and closed-loop vision; programmable-logic and model-predictive control at second scale; safety interlocks; logic that must keep running during network outages; operational twins coupled to equipment \\
+Excluded, beyond a factory server room & Large shared models; high-concurrency multi-agent search; tightly coupled multiphysics; foundation-model and time-series pretraining \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Annual demand}
+Demand of task class $k$ in industry $i$ in 2030 is
+\begin{equation}
+S_{i,k}=N_i\,s_{i,k}\,G_k,\label{eq:demand}
+\end{equation}
+where $N_i$ is the number of above-size firms in industry $i$ that used AI in 2023, $s_{i,k}$ is the 2023 service intensity per AI-using firm (service units per day), and $G_k$ is the growth of service per firm from 2023 to 2030. In 2023, 96,311 of the 460,054 above-size manufacturing firms used AI (20.9\%), with industry rates from 11.4\% (C20) to 36.6\% (C16), from the Fifth National Economic Census and the China Statistical Yearbook 2024.
+
+The service intensities $s_{i,k}$ are assumed. They are set for a vehicle-manufacturing template (C36) at 2.5 (office), 1.5 (agent), 0.67 (visual review), 1.0 (maintenance), 1.0 (scheduling) and 1.6 (simulation) units per day per AI-using firm. Other industries apply task-specific multipliers of 0.4--1.2 to this template. Thirteen industries have their own templates; the other 18 use templates adapted from similar industries or calibrated internally.
+
+The growth factors $G_k$ (Table~\ref{tab:growth}) are assumed joint scenarios of the growth in adoption, users per firm, tasks per user, calls per task and compute per call. Each factor is lower than the product of its components, because these components are correlated. The high scenario doubles every $G_k$, and the low scenario scales it by 0.58--0.60. The resulting national demand is 55.5, 95.5 and 191.1 million units per day in the low, base and high scenarios (Fig.~2 of the main paper). In the base scenario, R\&D simulation accounts for 36.1\% and production scheduling for 25.1\% of demand. The three largest industries are C39 (computers and electronics, 10.40 million units per day), C34 (general equipment, 10.29) and C38 (electrical machinery, 10.11).
+
+\begin{table}[H]
+\centering\small
+\caption{Growth of service per AI-using firm, 2023--2030 ($G_k$).}\label{tab:growth}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Scenario & Office & Agent & Visual review & Maintenance & Scheduling & Simulation \\
+\midrule
+Low & 12 & 75 & 70 & 52 & 145 & 128 \\
+Base & 20 & 130 & 120 & 90 & 250 & 220 \\
+High & 40 & 260 & 240 & 180 & 500 & 440 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For scale, the AI facility electricity of the model is 12.11~TWh per year, or about 0.25\% of the 4,799~TWh of 2030 electricity use of the 31 industries. A top-down estimate gives about 14~TWh per year, from 400~TWh of computing-center electricity in 2030 (CAICT), an assumed 50\% AI share and an assumed 7\% manufacturing share. This estimate is context and not a calibration target.
+
+\subsection*{Adoption in 2030}
+The share of AI-using firms in 2030 is used to scale the representative group to its industry (Supplementary Methods 3). For industry $i$, the 2023 share $A_{i,2023}$ is projected with an odds-ratio diffusion,
+\begin{equation}
+\frac{A_{i,2030}}{1-A_{i,2030}}=\frac{A_{i,2023}}{1-A_{i,2023}}\left(\frac{A^{*}/(1-A^{*})}{\bar A_{2023}/(1-\bar A_{2023})}\right)^{\gamma_i},\label{eq:adoption}
+\end{equation}
+where $\bar A_{2023}=0.209$ is the national 2023 share, $A^{*}=0.48$ is the assumed national target for 2030, and $\gamma_i$ is an industry diffusion speed between 0.80 and 1.15. The resulting national share, weighted by firm count, is 46.8\%, with industry values from 25.9\% to 67.2\%. For comparison, the Ministry of Industry and Information Technology reported in 2026 an adoption rate above 30\% for above-size manufacturers.
+
+\subsection*{Hourly arrivals and flexibility}
+Daily demand is distributed over the 24 hours of the day with assumed arrival shapes that repeat on all seven days of the week. Office and agent tasks follow office hours (76\% and 62\% of arrivals between 08:00 and 18:00). Visual review follows the industry's average production load. Maintenance is $0.75$ times the production shape plus a constant $0.25$. Scheduling has a base level of 0.2 with peaks at 05:00--07:00, 13:00--15:00 and 21:00--23:00. Simulation is concentrated between 22:00 and 05:00.
+
+Each task class is split into firm, intraday and multi-day demand (Table~\ref{tab:flex}). The shares are assumed from the nature of each task. Weighted by base demand, about one third of demand is firm.
+
+\begin{table}[H]
+\centering\small
+\caption{Flexibility of each task class (central case).}\label{tab:flex}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Task class & Firm & Intraday & Multi-day & Intraday deadline (h) & Multi-day deadline (h) \\
+\midrule
+Office knowledge services & 0.70 & 0.25 & 0.05 & 4 & 72 \\
+Business-process agents & 0.55 & 0.35 & 0.10 & 4 & 72 \\
+Visual quality review & 0.75 & 0.20 & 0.05 & 4 & 72 \\
+Predictive maintenance & 0.35 & 0.50 & 0.15 & 12 & 72 \\
+Production scheduling & 0.25 & 0.55 & 0.20 & 12 & 72 \\
+R\&D simulation & 0.10 & 0.20 & 0.70 & 12 & 72 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ===================================================================== SM3
+\clearpage
+\section*{Supplementary Methods 3. Server sizing and scheduling model}
+\addcontentsline{toc}{section}{Supplementary Methods 3. Server sizing and scheduling model}
+
+\subsection*{Formulation}
+For each architecture $a$ and industry, the representative group sizes CPU and GPU servers at each node and schedules AI tasks over a representative week $\mathcal{T}$ of 168 hours to minimize annualized cost. The model is deterministic, and production loads are fixed. Sets, decision variables and parameters are defined in the main paper and in Table~\ref{tab:params}. The problem is
+\begin{subequations}\label{eq:model}
+\begin{align}
+\min\;& \sum_{n,h}C_hz_{n,h}+C_{\mathrm{d}}\sum_n\delta_n+Y\sum_{n,t}\Pi_tp_{n,t} \label{eq:obj}\\
+\text{s.t.}\;& \sum_{n\in\mathcal{N}_a}y_{k,n,t}=R_{k,t}, \label{eq:firm}\\
+& \sum_{n\in\mathcal{N}_a}\sum_{t\in\mathcal{T}_j}x_{j,n,t}=D_j, \label{eq:flex}\\
+& y_{k,n,t}=\Omega_nR_{k,t},\quad \sum_{t\in\mathcal{T}_j}x_{j,n,t}=\Omega_nD_j, \label{eq:share}\\
+& u_{n,h,t}=\sum_kW_kQ_{k,h}\Big(y_{k,n,t}+\sum_{j:k_j=k}x_{j,n,t}\Big), \label{eq:compute}\\
+& u_{n,h,t}\le G_hv_{n,h,t},\quad 0\le v_{n,h,t}\le z_{n,h}, \label{eq:throughput}\\
+& p_{n,t}=M_a\sum_h\Big[B_hz_{n,h}+(I_h-B_h)v_{n,h,t}+(P_h-I_h)\,u_{n,h,t}/G_h\Big], \label{eq:power}\\
+& L_{n,t}+p_{n,t}\le K_n+\delta_n,\quad \delta_n\ge0, \label{eq:balance}\\
+& z_{n,h}\ge(1+r)\sum_{t}u_{n,h,t}/(|\mathcal{T}|G_h), \label{eq:margin}
+\end{align}
+\end{subequations}
+where each constraint holds for all indices that appear in it, and $\mathcal{T}_j=\{(A_j+\tau)\bmod|\mathcal{T}|:\tau=0,\ldots,F_j\}$ is the cyclic execution window of job $j$ with release hour $A_j$ and maximum delay $F_j$. Constraints \eqref{eq:obj}--\eqref{eq:margin} correspond to (1a)--(1i) of the main paper. Constraint~\eqref{eq:share} applies to PFD, HFD and the no-routing counterfactual of MSD. The installed server groups $z_{n,h}$ are integers in PFD and continuous in HFD, MSD and LDC, where each node hosts many server groups. The online server groups $v_{n,h,t}$ are continuous in all architectures.
+
+The flexible jobs are formed from the hourly flexible demand. All intraday demand of task class $k$ released in hour $t$ forms one job with maximum delay $F_j$ equal to the intraday deadline, and all multi-day demand forms another with $F_j=72$~h (Table~\ref{tab:flex}). The week is cyclic, so jobs released late on Sunday may run early on Monday.
+
+\subsection*{Parameters}
+The annualized cost of a server group is
+\begin{equation}
+C_h=\left[(1+\phi)\,\frac{\rho(1+\rho)^{\Lambda}}{(1+\rho)^{\Lambda}-1}+\mu\right]\Psi_h,\label{eq:annual}
+\end{equation}
+where $\Psi_h$ is the purchase price, $\phi=0.20$ the facility investment as a share of the server price, $\rho=8\%$ the discount rate, $\Lambda=5$~years the lifetime and $\mu=5\%$ the annual operation and maintenance cost. The capital recovery factor is 0.2505, so $C_h=0.3506\,\Psi_h$. The compute routed to hardware $h$ per unit of reference compute is $Q_{k,\mathrm{gpu}}=1-q_k$ and $Q_{k,\mathrm{cpu}}=q_k m_k$, where $q_k$ is the share of task class $k$ routed to CPU servers and $m_k$ converts reference accelerator-hours into CPU server-hours. Table~\ref{tab:params} lists all parameter values.
+
+{\small
+\begin{longtable}{@{}L{0.30\textwidth}L{0.27\textwidth}L{0.37\textwidth}@{}}
+\caption{Model parameters (core scenario).}\label{tab:params}\\
+\toprule
+Parameter & Value & Basis \\
+\midrule
+\endfirsthead
+\toprule
+Parameter & Value & Basis \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+GPU server group & Two NVIDIA L20 48~GB in one 2U server & Lenovo WR5220 G3 public configuration \\
+GPU throughput $G_{\mathrm{gpu}}$ & 2 reference accelerator-h per h & Two reference accelerators \\
+GPU power $P$, $I$, $B$ & 1.50, 0.36, 0.02~kW & Upper end of 1.05--1.50~kW, assumed because distributed server rooms are typically less efficient; same value in all architectures \\
+GPU price $\Psi_{\mathrm{gpu}}$; annual cost $C_{\mathrm{gpu}}$ & \cny150,000; \cny52,582 per year & Within public prices of \cny127,500--258,060 \\
+CPU server group & $2\times32$ cores, 256~GB & Public procurement records \\
+CPU throughput $G_{\mathrm{cpu}}$ & 1 CPU server-h per h & Definition \\
+CPU power $P$, $I$, $B$ & 0.78, 0.28, 0.02~kW & Assumed engineering values \\
+CPU price $\Psi_{\mathrm{cpu}}$; annual cost $C_{\mathrm{cpu}}$ & \cny90,000; \cny31,549 per year & Midpoint of 2025 procurement prices of \cny60,000--118,000 \\
+CPU share $q_k$ & Maintenance 0.5, scheduling 0.8, simulation 0.5, others 0 & Assumed \\
+CPU time per reference compute $m_k$ & Maintenance 2.0, scheduling 1.0, simulation 1.0 & Assumed \\
+Compute per service unit $W_k$ & 1/3 & Threefold efficiency gain, 2024--2030 (assumed) \\
+Planning margin $r$ & 0.15 & Assumed; covers demand uncertainty and operating buffer \\
+Facility multiplier $M_a$, factory sites & 1.30 & Engineering estimate, $1+0.25$ (cooling) $+0.04$ (power delivery) $+0.01$ (other) \\
+Facility multiplier $M_a$, LDC & 1.22 & Annual PUE of advanced large facilities (Tencent 2023, 1.246; leading cloud operators, about 1.20) \\
+Maximum-demand charge $C_{\mathrm{d}}$ & 36.1~CNY/(kW$\cdot$month), \cny433,200 per MW-year & Guangdong two-part tariff, 1--10~kV \\
+Hourly price $\Pi_t$ & Day-ahead price plus 0.25427~CNY/kWh & Supplementary Methods 4 \\
+Annualization $Y$ & $365/7=52.14$ & Representative week repeated over the year \\
+\end{longtable}}
+
+The maximum-demand charge is applied to every month of the year, which assumes that the weekly peak recurs in every month.
+
+\subsection*{Architectures}
+Each industry is represented by one corporate group that has adopted AI. The group has $F$ production sites, between 4 and 40 depending on the industry, and holds an output share $s$ of its industry, between 0.5\% and 10\%. Both values are taken from concentration ratios and annual reports. For example, the vehicle-manufacturing group (C36) represents an average top-10 vehicle manufacturer, with $s=8.5\%$ of national sales (CAAM 2024) and nine production sites. The group serves the AI demand of its industry scaled by $s/A_{i,2030}$, and task demand originates equally at its $F$ sites. Table~\ref{tab:arch} defines the architectures as instances of \eqref{eq:model}.
+
+\begin{table}[H]
+\centering\small
+\caption{Architectures as model instances.}\label{tab:arch}
+\begin{tabular}{@{}L{0.21\textwidth}L{0.16\textwidth}L{0.16\textwidth}L{0.19\textwidth}L{0.16\textwidth}@{}}
+\toprule
+ & PFD & HFD & MSD & LDC \\
+\midrule
+Nodes $\mathcal{N}_a$ & each factory & one host factory & $\min(F,5)$ host factories & one pool \\
+Production load $L_{n,t}$ & own site & host site & host sites & 0 \\
+Connection capacity $K_n$ & $\max_tL_{n,t}$ & $\max_tL_{n,t}$ & $\max_tL_{n,t}$ & 0 \\
+Share $\Omega_n$ in \eqref{eq:share} & $1/F$ & 1 & not applied & not applied \\
+Installed servers $z_{n,h}$ & integer & continuous & continuous & continuous \\
+Facility multiplier $M_a$ & 1.30 & 1.30 & 1.30 & 1.22 \\
+Demand served & own site & whole group & whole group & all 31 industries \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Further rules complete the instances. In HFD, the host is the modeled site with the median weekly peak load. In MSD, the $F$ sites are assigned to $\min(F,5)$ nodes with near-equal integer weights (for C36, nine sites on five nodes with weights 2, 2, 2, 2, 1), and each node represents its sites' production load. In PFD, sites with identical load profiles are solved once and weighted. In LDC, the demand of all 31 industries is pooled at one node, which spreads arrivals over many industries and is therefore a conservative estimate of the LDC peak. LDC also keeps at least one GPU server group online in every hour. Network, ownership and governance costs of routing are not included.
+
+\subsection*{National scaling}
+Results of the representative group of industry $i$ are scaled to the industry by the factor $A_{i,2030}/s_i$, which restores the national demand of \eqref{eq:demand} exactly. The national additional capacity is $\sum_i (A_{i,2030}/s_i)\sum_n\delta_n$. The scaled number of AI-hosting sites is 7,586 under PFD, 888 under HFD and 4,231 under MSD; these counts are the denominators of the site shares in Fig.~3.
+
+\subsection*{Mechanism counterfactuals}
+The capacity reductions in Section~IV-B of the main paper compare each architecture with a counterfactual that removes one mechanism. All counterfactuals use the same demand, deadlines, prices and parameters.
+\begin{itemize}
+\item \emph{No production load at the host.} HFD with $L_{n,t}=0$ and $K_n=0$, so the entire AI peak is additional (1,585~MW, against 576~MW with production load).
+\item \emph{No task shifting.} HFD with all demand firm ($F_j=0$). With production load, the requirement is 1,343~MW. The standalone requirement, 2,372~MW, is the same schedule evaluated with $L_{n,t}=0$ and $K_n=0$, that is, the co-located requirement plus the peak avoided by the production-load headroom.
+\item \emph{No routing.} MSD with the fixed shares \eqref{eq:share}, where $\Omega_n$ is the number of sites represented by node $n$ divided by $F$ (562~MW, against 30~MW with routing).
+\end{itemize}
+
+\subsection*{Solution}
+The model is solved for each industry and architecture with Gurobi 13.0.2 through Linopy 0.7.0 and PyPSA 1.2.2, with a relative MIP gap of 0.1\%. The planning margin \eqref{eq:margin} is binding in all HFD, MSD and LDC solutions. In PFD, integer rounding of small sites gives installed capacity 15--37\% above average compute demand.
+
+% ===================================================================== SM4
+\clearpage
+\section*{Supplementary Methods 4. Production loads, connection capacity and prices}
+\addcontentsline{toc}{section}{Supplementary Methods 4. Production loads, connection capacity and prices}
+
+\subsection*{Hourly shapes of production load}
+Production-load shapes come from measured hourly loads of industrial users in the EWELD dataset. Each industry is mapped to an ISIC division of EWELD; four industries without a direct sample use a division with a similar load pattern (C16 and C42 use ISIC 22, C25 uses ISIC 17, C37 uses ISIC 25). For each EWELD user, the selected week is a complete Monday--Sunday week with at least 80 valid readings on every day and no negative values that has the smallest root-mean-square difference between its median daily shape and the industry's 24-hour template. The nodes of a group use distinct EWELD users of the same division, taken in order of user identifier, and are aligned by weekday and hour. For C36, weeks are additionally screened for a stable weekday pattern (Monday to Tuesday--Friday mean ratio at least 0.75, coefficient of variation of weekday daily means at most 0.35, weekly peak-to-mean ratio at most 3.0).
+
+\subsection*{Magnitude of production load}
+Each normalized week is rescaled to the mean load of its site. For the vehicle-manufacturing group (C36), the mean load is built bottom-up from production volume. The group sells $26.70\times10^6\times0.085/0.849=2.67$ million vehicles per year, and each vehicle requires 2.97~MWh of energy, of which 43.3\% is electricity (Mercedes-Benz, 2023), or 1.287~MWh. The group therefore uses 3.44~TWh per year, a mean load of 392.9~MW, or 43.7~MW per site across nine sites. For the other 30 industries, the mean load of a site is the 2030 industry electricity use from the authors' China energy-system model multiplied by $s/F$.
+
+\subsection*{Connection capacity}
+The existing connection capacity of a site is its peak production load in the representative week, $K_n=\max_tL_{n,t}$. Actual connections often have contractual or network capacity above this peak, which this definition does not credit, so the additional capacity is a conservative estimate. With $C_{\mathrm{d}}>0$, the optimal additional capacity is
+\begin{equation}
+\delta_n=\max\Big\{0,\ \max_t\big(L_{n,t}+p_{n,t}\big)-K_n\Big\}.\label{eq:delta}
+\end{equation}
+
+\subsection*{Electricity prices}
+All sites and architectures, including LDC, face the same Guangdong two-part industrial tariff for comparability (Table~\ref{tab:prices}). The hourly energy price is the Guangdong province-average day-ahead nodal price of 28 May to 3 June 2026, averaged from 15-minute to hourly values, plus regulated volumetric adders. The price week is reordered to start on Monday, 1 June, so that each weekday's prices meet the same weekday's load. The tariff affects cost and scheduling incentives but not how additional capacity is measured.
+
+\begin{table}[H]
+\centering\small
+\caption{Electricity tariff (Guangdong, 1--10~kV, Pearl River Delta).}\label{tab:prices}
+\begin{tabular}{@{}L{0.40\textwidth}L{0.25\textwidth}L{0.29\textwidth}@{}}
+\toprule
+Component & Value & Source \\
+\midrule
+Maximum-demand charge & 36.1~CNY/(kW$\cdot$month) & Guangdong Power Grid, April 2026 \\
+Energy price & Day-ahead price, hourly & Guangdong Power Exchange Center \\
+Line-loss adder & 0.0147~CNY/kWh & Guangdong Power Grid, April 2026 \\
+Transmission and distribution & 0.1260~CNY/kWh & same \\
+System operation & 0.0859~CNY/kWh & same \\
+Government funds & 0.02767~CNY/kWh & same \\
+Sum of volumetric adders & 0.25427~CNY/kWh & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ===================================================================== SM5
+\clearpage
+\section*{Supplementary Methods 5. Battery peak shaving}
+\addcontentsline{toc}{section}{Supplementary Methods 5. Battery peak shaving}
+
+\subsection*{Sizing}
+One behind-the-meter battery is placed at each AI-hosting site (each factory under PFD, the host under HFD and each node under MSD) and shaves only that site's peak. Batteries are sized on the optimized schedules of Supplementary Methods 3, which are not re-optimized with storage, so the sizes are an upper bound for the same service. The hourly excess above the existing connection capacity is
+\begin{equation}
+e_{n,t}=\max\{0,\ L_{n,t}+p_{n,t}-K_n\}.\label{eq:excess}
+\end{equation}
+The battery power and energy are
+\begin{equation}
+P^{\mathrm{b}}_n=\max_t e_{n,t},\qquad E^{\mathrm{b}}_n=\max_{d}\ \frac{1}{\eta}\sum_{t\in d}e_{n,t},\label{eq:battery}
+\end{equation}
+where $d$ indexes the seven days of the week (midnight to midnight) and $\eta=\sqrt{0.90}$ is the one-way efficiency for a round-trip efficiency of 90\%. The battery thus covers the largest daily excess and recharges once per day. By \eqref{eq:delta}, $P^{\mathrm{b}}_n=\delta_n$, so the batteries avoid all additional capacity if they can recharge.
+
+An hourly simulation of three repeated weeks tests whether each battery can recharge within the site's existing connection capacity, charging only in hours with headroom $K_n-L_{n,t}-p_{n,t}>0$. Sites that cannot recharge fully are counted but not resized. They are 1.6\% of PFD sites, where AI load stays above the pre-AI peak for most of the week; all HFD and MSD sites can recharge.
+
+\subsection*{Cost}
+The battery cost of site $n$ is $c_PP^{\mathrm{b}}_n+c_EE^{\mathrm{b}}_n$. The power cost $c_P$ and energy cost $c_E$ are fitted to the average winning bids for 2-hour and 4-hour batteries reported by CNESA for September 2026, using
+\begin{equation}
+\pi(H)=c_E+\frac{c_P}{H},\label{eq:pricefit}
+\end{equation}
+where $\pi(H)$ is the price per kWh of a battery with duration $H$ hours. The bids are for utility-scale projects and exclude framework procurement and user-side projects; they are applied here to behind-the-meter batteries. The fit is done separately for system prices and for engineering, procurement and construction (EPC) prices (Table~\ref{tab:battery}), and the two give the range in Table~II of the main paper.
+
+\begin{table}[H]
+\centering\small
+\caption{Battery prices and fitted cost components.}\label{tab:battery}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Scope & 2-h bid (CNY/kWh) & 4-h bid (CNY/kWh) & $c_P$ (CNY/kW) & $c_E$ (CNY/kWh) \\
+\midrule
+System & 653.1 & 529.1 & 496 & 405 \\
+EPC & 1,005.5 & 882.8 & 491 & 760 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Degradation, replacement, depth-of-discharge limits, sub-hourly peaks and arbitrage revenue are not modeled.
+
+\subsection*{Grid-connection benchmark}
+The 220-kV substation and lines of phase 2 of the Taihang computing center in Datong, Shanxi, comprise three 150-MVA transformers, two of them in service (300~MVA), and lines of 10.4 and 35.3~km, with a planned investment of \cny231.96 million (Datong Ecology and Environment Bureau, approval of 7 May 2025). Scaled linearly to the 1,488~MW of LDC, assuming 1~MVA $\approx$ 1~MW, the cost is $231.96\times1{,}488/300=$ \cny1.15 billion. Upstream network reinforcement is not included.
+
+% ===================================================================== SM6
+\clearpage
+\section*{Supplementary Methods 6. Water, floor area, land and enterprise payments}
+\addcontentsline{toc}{section}{Supplementary Methods 6. Water, floor area, land and enterprise payments}
+
+These quantities are computed from the optimized schedules and server sizes and do not enter the objective \eqref{eq:obj}.
+
+\subsection*{Water}
+On-site cooling and humidification water is the IT electricity use multiplied by the water-use intensity, where IT electricity is facility electricity divided by $M_a$. Factory server rooms are assumed to be small (about 50~kW of IT power or less) and air cooled, with 0.05~L/kWh of IT energy. Large data centers use 0.335~L/kWh, the mean of Alibaba's mostly air-cooled 0.329~L/kWh (fiscal year 2025) and Microsoft's 0.340~L/kWh in the Americas (fiscal year 2025). Withdrawal and consumption are not separated.
+
+\subsection*{Floor area and land}
+Under PFD, server groups occupy 42U racks that hold 21 two-unit server groups. The number of racks is
+\begin{equation}
+N^{\mathrm{rack}}=\frac{z_{\mathrm{gpu}}+z_{\mathrm{cpu}}}{21\,\varphi}\,(1+\nu),\label{eq:racks}
+\end{equation}
+with rack fill $\varphi=0.60$ and non-compute racks $\nu=0.10$, and the floor area is $\beta=9$~m$^2$ per rack. This follows the national code for data-center design (GB~50174-2017, \S4.2.2), which gives a main-room area of 2.0--4.0~m$^2$ per rack plus auxiliary and support areas of 1.5--2.5 times the main room; the central value is $3.0\times3.0$~m$^2$. For LDC, IT power is the installed server groups times their maximum power, the floor area is 1,100~m$^2$ per MW of IT power and the land area 313~m$^2$ per MW of IT power, from two recent projects (China Telecom Wuhu phase 1, 127,000~m$^2$ for 93.72~MW; China Unicom Tianjin Wuqing, 100,000~m$^2$ and 54~mu for 115~MW). LDC is assumed to be built on new land. Factory server rooms are assumed to fit within existing industrial sites. Table~\ref{tab:footprint} lists the results.
+
+\begin{table}[H]
+\centering\small
+\caption{Water, floor area and land (core scenario).}\label{tab:footprint}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Quantity & PFD & LDC \\
+\midrule
+On-site water (million m$^3$ per year) & 0.47 & 3.12 \\
+Floor area (million m$^2$) & 0.92 & 1.34 \\
+Land conversion (million m$^2$) & 0 & 0.38 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Enterprise payments}
+Annual payments compare owning servers at factory sites with buying the same service from cloud providers.
+
+The factory-site payment is the optimal value of \eqref{eq:obj}, that is, annualized servers, electricity at hourly prices and maximum-demand charges, plus the electricity for fine-tuning models with QLoRA (24 GPU-hours per 15.36 million training tokens, fully shiftable). Retrieval storage is covered by the drives bundled with each server.
+
+The cloud payment buys each task class partly as managed services and partly as reserved computing capacity. Managed services, which comprise language-model and vision APIs, retrieval, fine-tuning and agent runtime, cover office knowledge services and agents fully, visual review 75\%, maintenance 50\%, scheduling 35\% and simulation 25\% of demand. They are priced with public token prices of Alibaba Cloud (Qwen) and DeepSeek in August 2026 without discounts or caching, combined with two agent types (with and without a managed agent runtime), which gives four provider bundles. The remaining demand is served on reserved capacity: Alibaba Cloud GPU instances with two L20 GPUs, CPU instances of 32 virtual CPUs (one quarter of a local CPU server) and PAI-EAS for maintenance tasks. A 15\% enterprise-delivery surcharge (0--30\% as a range) is added to the reserved GPU and CPU capacity.
+
+\begin{table}[H]
+\centering\small
+\caption{Enterprise payments (core scenario, CNY billion per year).}\label{tab:payments}
+\begin{tabular}{@{}L{0.42\textwidth}L{0.24\textwidth}L{0.28\textwidth}@{}}
+\toprule
+Item & Value & Note \\
+\midrule
+Factory sites, PFD & 55.43 & servers 46.07, energy 9.10, demand charges 0.24, QLoRA 0.02 \\
+Factory sites, HFD and MSD & 55.16 and 54.92 & \\
+Cloud procurement & 95.13--100.72 & range over four provider bundles \\
+\quad of which reserved capacity & about 91 & GPU 31.7, CPU 42.1, PAI-EAS 17.1 \\
+\quad of which managed services & 4.1--9.7 & lowest with DeepSeek, highest with Alibaba Cloud and a managed agent runtime \\
+Cloud, low and high price cases & 85.5--110.4 & surcharge 0\% and 30\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ===================================================================== Supplementary Tables
+\clearpage
+\section*{Supplementary Tables}
+\addcontentsline{toc}{section}{Supplementary Tables}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}
+
+{\small
+\begin{longtable}{@{}L{0.42\textwidth}L{0.20\textwidth}L{0.32\textwidth}@{}}
+\caption{Parameter ranges registered in the repository. The paper reports only the demand scenarios and the no-shift case; the other ranges document the uncertainty of each input.}\label{tab:ranges}\\
+\toprule
+Parameter & Base & Low / high \\
+\midrule
+\endfirsthead
+\toprule
+Parameter & Base & Low / high \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Demand scenario & base & low / high \\
+Task flexibility & central & no shift / conservative / flexible \\
+IT efficiency gain, 2024--2030 & 3.0 & 1.5 / 5.0 \\
+GPU server maximum power (kW) & 1.50 & 1.05 / 1.50 \\
+GPU server idle power (kW) & 0.36 & 0.28 / 0.50 \\
+Facility multiplier, factory sites & 1.30 & 1.20 / 1.60 \\
+Planning margin & 0.15 & 0 / 0.50 \\
+Maximum-demand charge (CNY/(kW$\cdot$month)) & 36.1 & 26.1 / 36.1 \\
+GPU server price (CNY) & 150,000 & 127,500 / 258,060 \\
+CPU server price (CNY) & 90,000 & 60,000 / 118,000 \\
+Server lifetime (years) & 5 & 4 / 7 \\
+Discount rate & 8\% & 6\% / 12\% \\
+Operation and maintenance (per year) & 5\% & 2\% / 8\% \\
+Facility investment (share of server price) & 20\% & 10\% / 35\% \\
+CPU routing & practice routed & GPU only / CPU heavy \\
+Cloud delivery surcharge & 15\% & 0\% / 30\% \\
+Water-use intensity, factory sites (L/kWh) & 0.05 & 0 / 0.329 \\
+Water-use intensity, LDC (L/kWh) & 0.335 & 0.06 / 1.8 \\
+\end{longtable}}
+
+\noindent In Table~\ref{tab:trace}, paths are relative to the repository root, with \texttt{R} = \texttt{05\_results/v1.0.0/result} and \texttt{S} = \texttt{05\_results/sensitivity/v1.0.0}. The repository file \texttt{docs/paper\_map.md} gives the column of each value.
+
+{\small
+\begin{longtable}{@{}L{0.20\textwidth}L{0.44\textwidth}L{0.30\textwidth}@{}}
+\caption{Traceability of the main-text results.}\label{tab:trace}\\
+\toprule
+Result & Output file & Script \\
+\midrule
+\endfirsthead
+\toprule
+Result & Output file & Script \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Fig.~2, demand & \nolinkurl{R/manuscript_figures/figure1_manufacturing_ai_demand_data.csv} & \nolinkurl{08_code/build_figure1_manufacturing_ai_demand.py} \\
+AI facility electricity, 12.11~TWh & \nolinkurl{R/group_architecture_core/national/core_scenarios.csv} & \nolinkurl{08_code/run_group_architecture_core.py} \\
+Table~II, additional capacity & \nolinkurl{S/national_grid_capacity_comparison.csv} & \nolinkurl{08_code/summarize_national_grid_capacity_comparison.py} \\
+LDC, 1,488~MW & \nolinkurl{S/national_cloud_center_v1/summary.csv} & \nolinkurl{08_code/run_national_cloud_center.py} \\
+Table~II, batteries; 1.6\% of PFD sites & \nolinkurl{R/bess_peak_shaving/bess_peak_shaving_national.csv} & \nolinkurl{08_code/analyze_bess_peak_shaving.py} \\
+Fig.~3, site shares & \nolinkurl{R/manuscript_figures/figure3_grid_capacity_data.csv} & \nolinkurl{08_code/build_figure3_rq1_grid_capacity.py} \\
+Fig.~3, Epoch AI records & \nolinkurl{R/node_interconnection_distribution/node_interconnection_distribution.csv} & \nolinkurl{08_code/build_node_interconnection_distribution.py} \\
+Fig.~4, C36 loads & \nolinkurl{R/group_architecture_core/C36/hourly.csv} & \nolinkurl{08_code/build_figure3_load_coordination_redesign.py} \\
+Mechanisms, 1,585 and 576~MW & \nolinkurl{R/rq2_mechanisms/rq2_mechanism_effects.csv} & \nolinkurl{08_code/summarize_rq2_mechanisms.py} \\
+Mechanisms, 2,372 and 1,343~MW & \nolinkurl{S/national_oat_group_architecture/result/PHY03__no_shift/} & \nolinkurl{08_code/summarize_rq2_mechanisms.py} \\
+Mechanisms, 562 and 30~MW & \nolinkurl{R/group_architecture_core/national/msg_coordination_value.csv} & \nolinkurl{08_code/run_group_architecture_core.py} \\
+Water, floor area and land & \nolinkurl{R/rq1_resource_footprint/rq1_resource_footprint_summary.csv} & \nolinkurl{08_code/build_rq1_resource_footprint_summary.py} \\
+Enterprise payments & \nolinkurl{R/national_local_cloud_cost_v1/cost/comparison.csv} & \nolinkurl{08_code/run_national_local_vs_cloud_cost_v1.py} \\
+\end{longtable}}
+
+\end{document}

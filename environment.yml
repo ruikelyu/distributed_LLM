@@ -15,5 +15,7 @@ dependencies:
   - pyyaml>=6.0
   - psutil>=6.0
   - matplotlib>=3.9
+  # Only to open the demo notebook (demo/mechanism_demo.ipynb).
+  - notebook
   # Needed only to re-solve the optimization (Level 2); requires a licence.
   - gurobi=13.0.2

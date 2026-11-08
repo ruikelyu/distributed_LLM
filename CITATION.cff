@@ -10,6 +10,6 @@ authors:
     given-names: Bolun
     affiliation: Columbia University
 license: MIT
-version: 1.0.0
-date-released: 2026-10-10
+version: 1.0.3
+date-released: 2026-11-07
 repository-code: "https://github.com/ruikelyu/distributed_LLM"
