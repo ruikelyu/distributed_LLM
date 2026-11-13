@@ -16,6 +16,10 @@ and the annual enterprise payments compared with cloud procurement.
 
 ## The mechanism at a glance
 
+A narrated video (2.5 min) walks through the toy example below and the national results.
+
+<a href="https://youtu.be/TQo0aO5MaXo"><img src="https://img.youtube.com/vi/TQo0aO5MaXo/maxresdefault.jpg" alt="Video: AI Servers at Factories Can Cut the Grid Capacity Needed for AI by 60–98%" width="560"></a>
+
 ![Toy example of the mechanism](demo/figures/mechanism_at_a_glance.png)
 
 A toy corporate group with three factories, whose production peaks are eight hours apart, serves its AI demand
